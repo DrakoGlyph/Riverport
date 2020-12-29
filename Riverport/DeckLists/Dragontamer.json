@@ -1,0 +1,391 @@
+{
+  "name": "Dragontamer",
+  "kind": "Hero",
+  "initialCardIdentifiers": [
+    "DragontamerCharacter"
+  ],
+
+  "cards": [
+    {
+      "identifier": "DragontamerCharacter",
+      "character": true,
+      "backgroundColor": "9B28F0",
+      "title": "Dragontamer",
+      "count": 1,
+      "hitpoints": 25,
+      "nemesisIdentifiers": "Dragontamer",
+      "body": "Sic 'em",
+      "powers": "{Dragontamer} deals 1 target 1 Projectile damage. Increase damage dealt by Dragons to that target by 1 until the start of your next turn.",
+      "icons": [
+        "DealDamageProjectile",
+        "IncreaseDamageDealt"
+      ],
+      "incapacitatedAbilities": [
+        "You may destroy a Device",
+        "One hero may use a Power now",
+        "Increase the damage dealt by Heroes by 1 until the start of your next turn"
+      ],
+      "openingLines": {
+        "default": "Here Be Dragons!"
+      },
+      "complexity": 2
+    },
+
+    {
+      "identifier": "Drako",
+      "title": "Drako",
+      "count": 1,
+      "hitpoints": 7,
+      "keywords": [
+        "dragon"
+      ],
+      "body": [
+        "At the start of your turn, if there are cards under Drako, destroy one. If Drako reduces a target to 0 HP, put it under him",
+        "If there are cards under Drako, increase damage dealt by Drako by 1"
+      ],
+      "powers": [
+        "Drako deals 1 target 2 Melee damage then 2 Fire damage."
+      ],
+      "icons": [
+        "IncreaseDamageDealt",
+        "HasPower",
+        "DealDamageMelee",
+        "DealDamageFire"
+      ],
+      "flavorText": "Experiment Replic-6:{BR}Dinosaur DNA",
+      "flavorReference": "Label on Drako's Cage, Here Be Dragons #1"
+    },
+    {
+      "identifier": "Elgor",
+      "title": "Elgor",
+      "count": 1,
+      "hitpoints": 3,
+      "keywords": [
+        "dragon"
+      ],
+      "body": [
+        "When {Elgor} deals damage to a Character card, he may take an Ongoing or Device card from their play area and put it under him.",
+        "Reduce damage dealt by {Elgor} by 1 for each card under him."
+      ],
+      "powers": [
+        "Elgor deals 1 target 1 Fire damage.",
+        "Destroy a card under Elgor."
+      ],
+      "icons": [
+        "DestroyOngoing",
+        "HasPower",
+        "DealDamageFire",
+        "DestroyCard"
+      ],
+      "flavorText": "Experiment Replic-2:{BR}Gecko DNA",
+      "flavorReference": "Label on Elgor's Cage, Here Be Dragons #1"
+    },
+    {
+      "identifier": "Hydra",
+      "title": "Hydra",
+      "count": 1,
+      "hitpoints": 5,
+      "keywords": [
+        "dragon"
+      ],
+      "body": [
+        "At the start of your turn, if there are cards under this one, destroy one and Hydra regains 1 HP.",
+        "Whenever Hydra deal Melee damage, she then deals that target 1 Fire Damage."
+      ],
+      "powers": [
+        "Hydra deals 1 target 1 Melee damage."
+      ],
+      "icons": [
+        "StartOfTurnEffect",
+        "DealDamageFire",
+        "HasPower",
+        "DealDamageMelee"
+      ],
+      "flavorText": "Experiment Replic-7:{BR}Hydra DNA",
+      "flavorReference": "Label on Hydra's Cage, Here Be Dragons #1"
+    },
+    {
+      "identifier": "Tortuga",
+      "title": "Tortuga",
+      "count": 1,
+      "hitpoints": 9,
+      "keywords": [
+        "dragon"
+      ],
+      "body": [
+        "When Tortuga enters play, you may put up to 3 cards from the your hand under him. Draw as many cards as you moved this way.",
+        "When {Dragontamer} or a Dragon would be dealt damage, you may destroy a card under Tortuga to prevent that damage."
+      ],
+      "powers": [
+        "Put the top card of your deck under Tortuga."
+      ],
+      "icons": [
+        "DrawCardNow",
+        "CancelledDamageGreen",
+        "HasPower"
+      ],
+      "flavorText": "Experiment Replic-5:{BR}Turtle DNA",
+      "flavorReference": "Label on Tortuga's Cage, Here Be Dragons #1"
+    },
+    {
+      "identifier": "Jormungander",
+      "title": "Jormungander",
+      "count": 1,
+      "hitpoints": 7,
+      "keywords": [
+        "dragon"
+      ],
+      "body": [
+        "When this card enters play, you may destroy an Environment Card. You may put that card under Jorgumander."
+      ],
+      "powers": [
+        "Destroy a card under this one. If you do, Destroy an Environment card. You may put that Environment card under this one, or deal 2 Fire damage to a Villain target."
+      ],
+      "icons": [
+        "DestroyEnvironment",
+        "HasPower"
+      ],
+      "flavorText": "Experiment Replic-3:{BR}Snake DNA",
+      "flavorReference": "Label on Jorg's Cage, Here Be Dragons #1"
+    },
+
+    {
+      "identifier": "CommandPresence",
+      "title": "Command Presence",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "command"
+      ],
+      "body": [
+        "Command cards affect an additional Dragon."
+      ],
+      "powers": [
+        "One Dragon deals 1 target 2 Melee damage.",
+        "One Dragon deals up to 3 targets 1 Fire damage."
+      ],
+      "icons": [
+        "HasPower",
+        "DealDamageMelee",
+        "DealDamageFire"
+      ],
+      "flavorText": "You just need to earn their respect.",
+      "flavorReference": "Dragontamer, Here Be Dragons #2"
+    },
+    {
+      "identifier": "BiteCommand",
+      "title": "Bite!",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "command"
+      ],
+      "body": [
+        "One Dragon deals 1 target 2 Melee Damage.",
+        "You may put this card under a dragon in play."
+      ],
+      "icons": [
+        "DealDamageMelee"
+      ],
+      "flavorText": "Sharp Teeth, check.",
+      "flavorReference": "Dragontamer, Here Be Dragons #2"
+    },
+    {
+      "identifier": "BurnCommand",
+      "title": "Burn!",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "command"
+      ],
+      "body": [
+        "One Dragon deals up to 3 targets 1 Fire damage each.",
+        "You may put this card under a dragon in play."
+      ],
+      "icons": [
+        "DealDamageFire"
+      ],
+      "flavorText": "Flame Breath. Dangerous, but check.",
+      "flavorReference": "Dragontamer, Here Be Dragons #3"
+    },
+    {
+      "identifier": "WeFightAsOne",
+      "title": "We Fight as One!",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "command"
+      ],
+      "body": [
+        "Use a power on One dragon",
+        "You may put this card under a dragon in play."
+      ],
+      "icons": [
+        "UsePowerNow"
+      ],
+      "flavorText": "They're incredible well synchronized."
+      "flavorReference": "Fenrir, Moonbeams and Dragon Heartstrings"
+    },
+
+    {
+      "identifier": "HealthyTreat",
+      "title": "Healthy Treat",
+      "count": 3,
+      "keywords": [
+        "one-shot",
+        "treat"
+      ],
+      "body": [
+        "A dragon in play regains 2 HP, then put this card under it."
+      ],
+      "icons": [
+        "GainHP"
+      ],
+      "flavorText": "Someone once said an army marches on its stomach.{BR}I find it helps with dragons too.",
+      "flavorReference": "Dragontamer, Here Be Dragons #10"
+    },
+    {
+      "identifier": "ProteinSnack",
+      "title": "Protein Snack",
+      "count": 3,
+      "keywords": [
+        "one-shot",
+        "treat"
+      ],
+      "body": [
+        "Choose a Dragon.",
+        "Increase the next damage dealt by that dragon by 1, then put this card under it."
+      ],
+      "icons": [
+        "IncreaseDamageDealt"
+      ],
+      "flavorText": "No, stop eating the training carcass!",
+      "flavorReference": "Dragontamer, Here Be Dragons #22"
+    },
+
+    {
+      "identifier": "HereBeDragons",
+      "title": "Here Be Dragons!",
+      "count": 4,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Reveal cards from the top of your deck until you reveal a Dragon and put it into play. Shuffle the remaining cards back into your deck.",
+        "If no cards are played this way, search your trash for a Dragon and put it into play.",
+        "Then, you may play a Command card."
+      ],
+      "icons": [
+        "Manipulate",
+        "Search",
+        "PlayCardNow"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Fenrir",
+          "text": "[b]Please[\b] don't say it again."
+        },
+        {
+          "identifier": "Dragontamer",
+          "text": "But it's my catch phrase!"
+        }
+      ],
+      "flavorReference": "Moonbeams and Dragon Heartstrings"
+    },
+    {
+      "identifier": "OnTheFly",
+      "title": "On The Fly",
+      "count": 2,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Reveal cards from your deck until you reveal a Command card and put it in your hand",
+        "You may play a Command card."
+      ],
+      "icons": [
+        "Manipulate",
+        "PlayCardNow"
+      ],
+      "flavorText": "We'll just have to make something up!",
+      "flavorReference": "Dragontamer, Bahamut's Dawn"
+    },
+    {
+      "identifier": "Strategize",
+      "title": "Strategize",
+      "count": 3,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Reveal cards from your deck until you reveal 2 Command cards. Put them in your hand and shuffle the rest back into your deck."
+      ],
+      "icons": [
+        "Manipulate"
+      ],
+      "flavorText": "So here's the plan...",
+      "flavorReference": "Dragontamer, Bahamut's Dusk"
+    },
+
+    {
+      "identifier": "DragonEgg",
+      "title": "Dragon Egg",
+      "count": 3,
+      "keywords": [
+        "ongoing"
+      ],
+      "body": [
+        "When this card is destroyed, you may search your deck or trash for a Dragon and put it into play.",
+        "At the start of your turn, destroy this card."
+      ],
+      "icons": [
+        "Search",
+        "DestroySelf"
+      ],
+      "flavorText": "I have a few backup plans,",
+      "flavorReference": "Dragontamer, Dragons Amongst Gods"
+    },
+    {
+      "identifier": "ActiveTraining",
+      "title": "Active Training",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": [
+        "You may draw an additional card on your draw phase.",
+        "At the start of your turn, you may put the top card of your deck under a Dragon in play."
+      ],
+      "icons": [
+        "DrawCardExtra",
+        "StartOfTurnAction"
+      ],
+      "flavorText": "Come on, you can do it!",
+      "flavorReference": "Dragontamer, Bahamut's Dusk"
+    },
+
+    {
+      "identifier": "SerumApplicator",
+      "title": "Serum Applicator",
+      "count": 1,
+      "keywords": [
+        "equipment"
+      ],
+      "body": [
+        "Increase Projectile Damage dealt by {Dragontamer} by 1"
+      ],
+      "powers": [
+        "{Dragontamer} deals 1 target 2 Projectile Damage. Then a Dragon in play may deal that target 1 Melee Damage."
+      ],
+      "icons": [
+        "IncreaseDamageDealtProjectile",
+        "HasPower",
+        "DealDamageProjectile",
+        "DealDamageMelee"
+      ],
+      "flavorText": "What once propogated Replic-8{BR}will now help stop it",
+      "flavorReference": "Dragontamer, Bahamut's Dawn"
+    }
+  ]
+}
