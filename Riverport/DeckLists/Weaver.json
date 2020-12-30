@@ -1,0 +1,417 @@
+{
+  "name": "Weaver",
+  "kind": "Hero",
+  "initialCardIdentifiers": [
+    "WeaverCharacter"
+  ],
+
+  "cards": [
+    {
+      "identifier": "WeaverCharacter",
+      "character": true,
+      "backgrounfColor": "442eb2",
+      "title": "Weaver",
+      "count": 1,
+      "hitpoints": 21,
+      "nemesisIdentifiers": "Weaver",
+      "body": "Needlepoint",
+      "powers": "{Weaver} deals 1 target 1 Projectile damage. That target deals 1 less damage until the start of Weaver's next turn.",
+      "icons": [
+        "DealDamageProjectile",
+        "ReduceDamageDealt"
+      ],
+      "incapacitatedAbilities": [
+        "Destroy an Ongoing or Device",
+        "One player may play a card now",
+        "Reduce the damage dealt to Hero character by 1 until the start of your next turn"
+      ],
+      "openingLines": {
+        "default": "A Stitch in Time saves Lives!"
+      },
+      "complexity": 2
+    },
+
+    {
+      "identifier": "InertiaConduitSuit",
+      "title": "Inertia Conduit Suit",
+      "count": 4,
+      "keywords": [
+        "equipment",
+        "suit"
+      ],
+      "body": [
+        "Play next to a Hero Character card.",
+        "A Hero may only have one Suit next to them at a time. If another suit is played next to them, return all but 1 to Weaver's Hand.",
+        "If the equipped hero takes 5 or more damage in one blow, destroy this suit.",
+        "Increase damage dealt by the equipped hero to Non-Hero targets by 1"
+      ],
+      "icons": [
+        "DestroySelf",
+        "IncreaseDamageDealt"
+      ],
+      "flavorText": "To Keep You Fighting",
+      "FlavorReference": "Memo from Weaver to Fenrir"
+    },
+    {
+      "identifier": "KevlarShellSuit",
+      "title": "Kevlar Shell Suit",
+      "count": 4,
+      "keywords": [
+        "equipment",
+        "suit"
+      ],
+      "body": [
+        "Play next to a Hero Character card.",
+        "A Hero may only have one Suit next to them at a time. If another suit is played next to them, return all but 1 to Weaver's Hand.",
+        "If the equipped hero takes 5 or more damage in one blow, destroy this suit.",
+        "Reduce damage dealt to this hero by 1"
+      ],
+      "icons": [
+        "DestroySelf",
+        "ReduceDamageTaken"
+      ],
+      "flavorText": "To Keep You Safe",
+      "flavorReference": "Memo from Weaver to Artificier"
+    },
+
+    {
+      "identifier": "Akashaweave",
+      "title": "Akashaweave",
+      "count": 2,
+      "keywords": [
+        "equipment",
+        "material"
+      ],
+      "body": [
+        "Play next to a suit.",
+        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
+        "If the suit ever leaves play, destroy this card.",
+        "At the end of this Hero's turn, they regain 1 HP"
+      ],
+      "icons": [
+        "GainHP"
+      ],
+      "flavorText": "Woven from Life Itself",
+      "flavorReference": "Weaver's Multiverse of Materials"
+    },
+    {
+      "identifier": "Hasteweave",
+      "title": "Hasteweave",
+      "count": 2,
+      "keywords": [
+        "equipment",
+        "material"
+      ],
+      "body": [
+        "Play next to a suit.",
+        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
+        "If the suit ever leaves play, destroy this card.",
+        "This hero may play an additional card."
+      ],
+      "icons": [
+        "PlayCardExtra"
+      ],
+      "flavorText": "Woven from the Rush of Velocity",
+      "flavorReference": "Weaver's Multiverse of Materials"
+    },
+    {
+      "identifier": "Adrenalweave",
+      "title": "Adrenalweave",
+      "count": 2,
+      "keywords": [
+        "equipment",
+        "material"
+      ],
+      "body": [
+        "Play next to a suit.",
+        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
+        "If the suit ever leaves play, destroy this card.",
+        "This Hero may use an additional Power"
+      ],
+      "icons": [
+        "UsePowerExtra"
+      ],
+      "flavorText": "Woven from an Essence of Mana",
+      "flavorReference": "Weaver's Multiverse of Materials"
+    },
+    {
+      "identifier": "Psychweave",
+      "title": "Psychweave",
+      "count": 2,
+      "keywords": [
+        "equipment",
+        "material"
+      ],
+      "body": [
+        "Play next to a suit.",
+        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
+        "If the suit ever leaves play, destroy this card.",
+        "This Hero may draw an additional card"
+      ],
+      "icons": [
+        "DrawCardExtra"
+      ],
+      "flavorText": "Woven from Thoughts of the Future",
+      "flavorReference": "Weaver's Multiverse of Materials"
+    },
+    {
+      "identifier": "Phaseweave",
+      "title": "Phaseweave",
+      "count": 2,
+      "keywords": [
+        "equipment",
+        "material"
+      ],
+      "body": [
+        "Play next to a suit.",
+        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
+        "If the suit ever leaves play, destroy this card.",
+        "Damage dealt by this hero is irreducible"
+      ],
+      "icons": [
+        "MakeDamageIrreducible"
+      ],
+      "flavorText": "Woven between Universes",
+      "flavorReference": "Weaver's Multiverse of Materials"
+    },
+
+    {
+      "identifier": "SpoolTheThread",
+      "title": "Spool the Thread",
+      "count": 3,
+      "keywords": [
+        "one-shot",
+        "weave"
+      ],
+      "body": [
+        "Draw 4 cards.",
+        "Discard 2 cards"
+      ],
+      "icons": [
+        "DrawCardNow",
+        "Discard"
+      ],
+      "flavorText": "I need my finest thread, Six Three!",
+      "flavorReference": "Weaver, Weaver #12"
+    },
+    {
+      "identifier": "RaidTheStockpiles",
+      "title": "Raid the Stockpiles",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "weave"
+      ],
+      "body": [
+        "Reveal cards from your deck until you reveal 2 Suits or Materials. Put them in your hand, shuffle the rest back into your deck",
+        "You may play a card."
+      ],
+      "icons": [
+        "Manipulate",
+        "PlayCardNow"
+      ],
+      "flavorText": "I know it was in here somewhere!",
+      "flavorReference": "Weaver, Lost Weave"
+    },
+    {
+      "identifier": "QuickPatchwork",
+      "title": "Quick Patchwork",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "weave"
+      ],
+      "body": [
+        "When one of your equipment cards would be destroyed, you may discard a Material to prevent it."
+      ],
+      "powers": [
+        "You may discard a material. If you do, you may put a Suit from your trash into play."
+      ],
+      "icons": [
+        "Discard",
+        "HasPower",
+        "Search"
+      ],
+      "flavorText": "This should be a quick patch",
+      "flavorReference": "Weaver, Moonlight #5"
+    },
+    {
+      "identifier": "PremadeMasterpiece",
+      "title": "Premade Masterpiece",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "weave"
+      ],
+      "body": [
+        "You may play a Suit",
+        "You may play a Material",
+        "You may play a card"
+      ],
+      "icons": [
+        "PlayCardNow"
+      ],
+      "flavorText": "I made it ahead of time.",
+      "flavorReference": "Weaver, Weaver #12"
+    },
+    {
+      "identifier": "ReadTheWeave",
+      "title": "Read the Weave",
+      "count": 1,
+      "keywords": [
+        "ongoing",
+        "weave"
+      ],
+      "body": [
+        "At the start of each turn, Weaver may deal herself 1 Psychic damage. If she does, look at the top 2 cards of any deck and put them back in any order.",
+        "If Book of Fate is in play, look at the top 4",
+        "At the start if your turn, destroy this card."
+      ],
+      "icons": [
+        "StartOfTurnEffect",
+        "DestroySelf"
+      ],
+      "flavorText": "By reading the Seams of the Universe{BR}I can influence the future.",
+      "flavorReference": "Weaver, Ark-Hive Hunted"
+    },
+
+    {
+      "identifier": "InspirationStrikes",
+      "title": "Inspiration Strikes",
+      "count": 2,
+      "keywords": [
+        "ongoing"
+      ],
+      "powers": [
+        "You may deal up to 3 targets 1 Projectile damage. For each target dealt damage this way, you may draw a card."
+      ],
+      "icons": [
+        "HasPower",
+        "DealDamageProjectile",
+        "DrawCardNow"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Weaver",
+          "text": "I just had a wonderous idea"
+        },
+        {
+          "identifier": "Fenrir",
+          "text": "Focus on the battle, please!"
+        }
+      ],
+      "flavorReference": "Moonbeams and Dragon Heartstrings"
+    },
+    {
+      "idenfitier": "ResourceReclamation",
+      "title": "Resource Reclamation",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": [
+        "When one of your equipments is destroyed, you may draw a card."
+      ],
+      "icons": [
+        "DrawCardNow"
+      ],
+      "flavorText": "Some things are salvagable.",
+      "flavorReference": "Weaver, Bahamut's Dawn"
+    },
+
+    {
+      "identifier": "BookOfFate",
+      "title": "Book of Fate",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "When you play a Weave, you may discard a Material to use a Power"
+      ],
+      "powers": [
+        "Look at the top 3 cards of any deck and put them back in any order."
+      ],
+      "icons": [
+        "Discard",
+        "UsePowerNow",
+        "HasPower",
+        "Manipulate"
+      ],
+      "flavorText": "More than samples, dear,{BR}It's the story of us.",
+      "flavorReference": "Weaver, Unravelled"
+    },
+    {
+      "identifier": "LoomOfFate",
+      "title": "LoomOfFate",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "At the start of your turn, you may put a Suit or Material from your trash into your hand."
+      ],
+      "powers": [
+        "You may play a Suit or Material"
+      ],
+      "icons": [
+        "Search",
+        "HasPower",
+        "PlayCardNow"
+      ],
+      "flavorText": "That loom can rewrite fate itself!",
+      "flavorReference": "Skoll, Moonlight #12"
+    },
+    {
+      "identifier": "DivineNeedles",
+      "title": "Divine Needles",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "Increase Projectile Damage dealt by Weaver by 1."
+      ],
+      "powers": [
+        "You may deal up to 3 targets 1 Irreducible Psychic damage. Targets dealt damage this way deal 1 less damage until the start of your next turn."
+      ],
+      "icons": [
+        "IncreaseDamageDealtProjectile",
+        "HasPower",
+        "MakeDamageIrreducible",
+        "ReduceDamageDealt"
+      ],
+      "flavorText": "Careful, they can rip the universe",
+      "flavorReference": "Weaver, Adam and Weave"
+    },
+
+    {
+      "identifier": "Anansi",
+      "title": "Anansi",
+      "count": 1,
+      "hitpoints": 8
+      "keywords": [
+        "familiar"
+      ],
+      "body": [
+        "At the start of your turn, {Anansi} deals himself 2 Psychic damage.",
+        "Suits are indestructible"
+      ],
+      "powers": [
+        "Anansi deals himself 2 Psychic damage, then you may search your deck for a Suit or Material and put it into play."
+      ],
+      "icons": [
+        "DealDamagePsychic",
+        "Indestructible",
+        "HasPower",
+        "Search"
+      ],
+      "flavorText": "Trickster God or Helpful Arthropod",
+      "flavorReference": "Artificier's Notes"
+    }
+  ]
+}

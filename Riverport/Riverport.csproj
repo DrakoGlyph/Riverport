@@ -45,13 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DeckLists\MigrantCoderDeckList.json" />
-    <EmbeddedResource Include="DeckLists\TheBaddiesDeckList.json" />
-    <EmbeddedResource Include="DeckLists\DevStreamDeckList.json" />
-    <EmbeddedResource Include="DeckLists\TheHugMonsterTeamDeckList.json" />
-    <EmbeddedResource Include="DeckLists\PromoCardList.json" />
+    <None Include="DeckLists\Dragontamer.json" />
+    <None Include="DeckLists\Weaver.json" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
