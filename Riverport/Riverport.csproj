@@ -45,8 +45,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DeckLists\Dragontamer.json" />
-    <None Include="DeckLists\Weaver.json" />
+    <None Include="DeckLists\DragontamerDeckList.json" />
+    <None Include="DeckLists\WeaverDeckList.json" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
