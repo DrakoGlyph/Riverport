@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{44F8C838-553C-482C-B389-2B375B8590C9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Workshopping</RootNamespace>
-    <AssemblyName>MyMod</AssemblyName>
+    <RootNamespace>Riverport</RootNamespace>
+    <AssemblyName>Riverport</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -42,10 +42,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dragontamer\BiteCommandCardController.cs" />
+    <Compile Include="Dragontamer\BurnCommandCardController.cs" />
+    <Compile Include="Dragontamer\CommandCardController.cs" />
+    <Compile Include="Dragontamer\CommandPresenceCardController.cs" />
+    <Compile Include="Dragontamer\WeFightAsOneCardController.cs" />
+    <Compile Include="Dragontamer\DragonCardController.cs" />
+    <Compile Include="Dragontamer\DrakoCardController.cs" />
+    <Compile Include="Dragontamer\ElgorCardController.cs" />
+    <Compile Include="Dragontamer\HydraCardController.cs" />
+    <Compile Include="Dragontamer\JormunganderCardController.cs" />
+    <Compile Include="Dragontamer\TortugaCardController.cs" />
+    <Compile Include="Dragontamer\DragontamerCharacterCardController.cs" />
+    <Compile Include="Dragontamer\SerumApplicatorCardController.cs" />
+    <Compile Include="Dragontamer\HereBeDragonsCardController.cs" />
+    <Compile Include="Dragontamer\OnTheFlyCardController.cs" />
+    <Compile Include="Dragontamer\StrategizeCardController.cs" />
+    <Compile Include="Dragontamer\ActiveTrainingCardController.cs" />
+    <Compile Include="Dragontamer\DragonEggCardController.cs" />
+    <Compile Include="Dragontamer\HealthyTreatCardController.cs" />
+    <Compile Include="Dragontamer\ProteinSnackCardController.cs" />
+    <Compile Include="Dragontamer\TreatCardController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DeckLists\DragontamerDeckList.json" />
+    <EmbeddedResource Include="DeckLists\DragontamerDeckList.json" />
     <None Include="DeckLists\WeaverDeckList.json" />
   </ItemGroup>
   <ItemGroup />

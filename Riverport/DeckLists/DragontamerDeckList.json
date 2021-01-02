@@ -44,7 +44,7 @@
         "If there are cards under Drako, increase damage dealt by Drako by 1"
       ],
       "powers": [
-        "Drako deals 1 target 2 Melee damage then 2 Fire damage."
+        "Drako deals 1 non-Hero target 2 Melee damage then 2 Fire damage."
       ],
       "icons": [
         "IncreaseDamageDealt",
@@ -93,7 +93,7 @@
         "Whenever Hydra deal Melee damage, she then deals that target 1 Fire Damage."
       ],
       "powers": [
-        "Hydra deals 1 target 1 Melee damage."
+        "Hydra deals up to 3 targets 1 Melee damage."
       ],
       "icons": [
         "StartOfTurnEffect",
@@ -136,7 +136,7 @@
         "dragon"
       ],
       "body": [
-        "When this card enters play, you may destroy an Environment Card. You may put that card under Jorgumander."
+        "When this card enters play, you may destroy an Environment Card. Put that card under Jorgumander."
       ],
       "powers": [
         "Destroy a card under this one. If you do, Destroy an Environment card. You may put that Environment card under this one, or deal 2 Fire damage to a Villain target."

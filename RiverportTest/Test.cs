@@ -1,13 +1,13 @@
 ﻿using NUnit.Framework;
 using System;
-using Workshopping;
-using Workshopping.MigrantCoder;
+using Riverport;
+using Riverport.MigrantCoder;
 using Handelabra.Sentinels.Engine.Model;
 using Handelabra.Sentinels.Engine.Controller;
 using System.Linq;
 using System.Collections;
 using Handelabra.Sentinels.UnitTest;
-using Workshopping.TheBaddies;
+using Riverport.TheBaddies;
 
 namespace MyModTest
 {
