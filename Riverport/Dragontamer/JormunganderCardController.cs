@@ -31,21 +31,18 @@ namespace Riverport.Dragontamer
         {
             //Destroy a card under this one, if you do, Destroy an environment card. 
             //You can put it under Jormungander or deal 2 Fire damage to a Villain Turn
-            if(HasCardsUnder)
-            {
-                var destroy = DestroyCardUnderThis();
-                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+            
+            var destroy = DestroyCardUnderThis();
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
 
-                var raze = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.IsEnvironment), true, destroyed, Card, GetCardSource());
-                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(raze); } else { this.GameController.ExhaustCoroutine(raze); }
+            var raze = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.IsEnvironment), true, destroyed, Card, GetCardSource());
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(raze); } else { this.GameController.ExhaustCoroutine(raze); }
 
 
-                Function move = new Function(HeroTurnTakerController, "Move card under Jormungander", SelectionType.MoveCard, Move);
-                Function damage = new Function(HeroTurnTakerController, "Deal 2 Fire damage to 1 target", SelectionType.DealDamage, Damage);
-                var select = SelectAndPerformFunction(HeroTurnTakerController, new List<Function>() { move, damage }, false);
-                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(select); } else { this.GameController.ExhaustCoroutine(select); }
-
-            }
+            Function move = new Function(HeroTurnTakerController, "Move card under Jormungander", SelectionType.MoveCard, Move);
+            Function damage = new Function(HeroTurnTakerController, "Deal 2 Fire damage to 1 target", SelectionType.DealDamage, Damage);
+            var select = SelectAndPerformFunction(HeroTurnTakerController, new List<Function>() { move, damage }, false);
+            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(select); } else { this.GameController.ExhaustCoroutine(select); }
 
             
         }

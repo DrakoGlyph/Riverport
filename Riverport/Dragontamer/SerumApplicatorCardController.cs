@@ -22,11 +22,11 @@ namespace Riverport.Dragontamer
         public override IEnumerator UsePower(int index = 0)
         {
             List<DealDamageAction> hit = new List<DealDamageAction>();
-            var shoot = DealDamage(CharacterCard, c => c.IsVillainTarget, 2, DamageType.Projectile, false, false, hit);
+            var shoot = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, CharacterCard), 2, DamageType.Projectile, 1, false, 0, false, storedResultsDamage: hit, selectTargetsEvenIfCannotDealDamage: true, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(shoot); } else { this.GameController.ExhaustCoroutine(shoot); }
             DealDamageAction dda = hit.FirstOrDefault();
             List<SelectCardDecision> chosen = new List<SelectCardDecision>();
-            var select = this.GameController.SelectCardAndStoreResults(HeroTurnTakerController, SelectionType.CardToDealDamage, new LinqCardCriteria(c => c.DoKeywordsContain("dragon")), chosen, true, cardSource: GetCardSource());
+            var select = this.GameController.SelectCardAndStoreResults(HeroTurnTakerController, SelectionType.CardToDealDamage, new LinqCardCriteria(c => c.DoKeywordsContain("dragon") && c.IsInPlayAndNotUnderCard), chosen, true, cardSource: GetCardSource());
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(select); } else { this.GameController.ExhaustCoroutine(select); }
             if(DidSelectCard(chosen))
             {

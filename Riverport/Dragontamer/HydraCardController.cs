@@ -45,7 +45,7 @@ namespace Riverport.Dragontamer
             int a = GetPowerNumeral(0, 3);
             int b = GetPowerNumeral(1, 1);
 
-            var bite = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, Card), a, DamageType.Melee, b, false, 0, cardSource: GetCardSource());
+            var bite = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, Card), b, DamageType.Melee, a, false, 0, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(bite); } else { this.GameController.ExhaustCoroutine(bite); }
         }
     }

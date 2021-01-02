@@ -17,6 +17,8 @@ using Handelabra;
 using Boomlagoon.JSON;
 using System.Xml.XPath;
 
+using Riverport.Dragontamer;
+
 namespace Handelabra.MyModConsole // this has to be this way to work around an EngineCommon issue, will be fixed soon.
 {
     // Loading a game in "friendly mode" throws an exception so we can get out of wherever we were.
@@ -50,8 +52,11 @@ namespace Handelabra.MyModConsole // this has to be this way to work around an E
             bool challenge = false;
             Dictionary<string, string> promos = new Dictionary<string, string>();
 
+            var dragontamer = Assembly.GetAssembly(typeof(DragontamerTurnTakerController));
+            ModHelper.AddAssembly("Riverport", dragontamer);
+
             // Set up a game how you want, stack decks, etc.
-            game = new Game(new string[] { "BaronBlade", "Bunker", "Legacy", "TheWraith", "PikeIndustrialComplex" }, advanced, promos, isChallenge: challenge);
+            game = new Game(new string[] { "BaronBlade", "Riverport.Dragontamer", "Legacy", "TheWraith", "PikeIndustrialComplex" }, advanced, promos, isChallenge: challenge);
 
             return game;
         }
@@ -59,7 +64,7 @@ namespace Handelabra.MyModConsole // this has to be this way to work around an E
         private void ConfigurePostGameStartTesting()
         {
             // Do whatever you want after the game starts.
-            RunCoroutine(GameController.SetActiveTurnTaker("Legacy"));
+            // RunCoroutine(GameController.SetActiveTurnTaker("Legacy"));
         }
 
         private static void SetHitPoints(Game game, string identifier, int amount)

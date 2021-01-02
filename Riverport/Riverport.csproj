@@ -46,6 +46,7 @@
     <Compile Include="Dragontamer\BurnCommandCardController.cs" />
     <Compile Include="Dragontamer\CommandCardController.cs" />
     <Compile Include="Dragontamer\CommandPresenceCardController.cs" />
+    <Compile Include="Dragontamer\DragontamerTurnTakerController.cs" />
     <Compile Include="Dragontamer\WeFightAsOneCardController.cs" />
     <Compile Include="Dragontamer\DragonCardController.cs" />
     <Compile Include="Dragontamer\DrakoCardController.cs" />
