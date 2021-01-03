@@ -33,7 +33,7 @@ namespace Riverport.Dragontamer
         {
             get
             {
-                return GetCardsBelowThisCard().Count<Card>();
+                return Card.UnderLocation.NumberOfCards;
             }
         }
 
@@ -41,7 +41,7 @@ namespace Riverport.Dragontamer
         {
             get
             {
-                return GetCardsBelowThisCard().Count<Card>() > 0;
+                return Card.UnderLocation.HasCards;
             }
         }
     }

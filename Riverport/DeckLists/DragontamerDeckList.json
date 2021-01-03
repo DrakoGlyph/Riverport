@@ -158,18 +158,19 @@
         "command"
       ],
       "body": [
-        "Command cards affect an additional Dragon."
+        "Command cards affect an additional Dragon.",
+        "X on this card equals 1 plus the number of copies of Command Presence in play."
       ],
       "powers": [
-        "One Dragon deals 1 target 2 Melee damage.",
-        "One Dragon deals up to 3 targets 1 Fire damage."
+        "Up to X Dragons deals 1 target 2 Melee damage.",
+        "Up to X Dragons deals up to 3 targets 1 Fire damage."
       ],
       "icons": [
         "HasPower",
         "DealDamageMelee",
         "DealDamageFire"
       ],
-      "flavorText": "You just need to earn their respect.",
+      "flavorText": "\"You just need to earn their respect.\"",
       "flavorReference": "Dragontamer, Here Be Dragons #2"
     },
     {
@@ -181,13 +182,13 @@
         "command"
       ],
       "body": [
-        "One Dragon deals 1 target 2 Melee Damage.",
+        "Up to X Dragons deals 1 target 2 Melee Damage, where X is 1 plus the number of copies of Command Presence in play.",
         "You may put this card under a dragon in play."
       ],
       "icons": [
         "DealDamageMelee"
       ],
-      "flavorText": "Sharp Teeth, check.",
+      "flavorText": "\"Sharp Teeth, check.\"",
       "flavorReference": "Dragontamer, Here Be Dragons #2"
     },
     {
@@ -199,13 +200,13 @@
         "command"
       ],
       "body": [
-        "One Dragon deals up to 3 targets 1 Fire damage each.",
+        "Up to X Dragons deal up to 3 targets 1 Fire damage each, where X is 1 plus the number of copies of Command Presence in play.",
         "You may put this card under a dragon in play."
       ],
       "icons": [
         "DealDamageFire"
       ],
-      "flavorText": "Flame Breath. Dangerous, but check.",
+      "flavorText": "\"Flame Breath. Dangerous, but check.\"",
       "flavorReference": "Dragontamer, Here Be Dragons #3"
     },
     {
@@ -217,13 +218,13 @@
         "command"
       ],
       "body": [
-        "Use a power on One dragon",
+        "Use up to X powers on Dragons, where X is 1 plus the number of copies of Command Presence in play.",
         "You may put this card under a dragon in play."
       ],
       "icons": [
         "UsePowerNow"
       ],
-      "flavorText": "They're incredibly well synchronized.",
+      "flavorText": "\"They're incredibly well synchronized.\"",
       "flavorReference": "Fenrir, Moonbeams and Dragon Heartstrings"
     },
 
@@ -241,7 +242,7 @@
       "icons": [
         "GainHP"
       ],
-      "flavorText": "Someone once said an army marches on its stomach.{BR}I find it helps with dragons too.",
+      "flavorText": "\"Someone once said an army marches on its stomach. I find it helps with dragons too.\"",
       "flavorReference": "Dragontamer, Here Be Dragons #10"
     },
     {
@@ -259,7 +260,7 @@
       "icons": [
         "IncreaseDamageDealt"
       ],
-      "flavorText": "No, stop eating the training carcass!",
+      "flavorText": "\"No, stop eating the training carcass!\"",
       "flavorReference": "Dragontamer, Here Be Dragons #22"
     },
 
@@ -283,7 +284,7 @@
       "flavorQuotes": [
         {
           "identifier": "Fenrir",
-          "text": "[b]Please[\b] don't say it again."
+          "text": "[b]Please[b] don't say it again."
         },
         {
           "identifier": "Dragontamer",
@@ -307,7 +308,7 @@
         "Manipulate",
         "PlayCardNow"
       ],
-      "flavorText": "We'll just have to make something up!",
+      "flavorText": "\"We'll just have to make something up!\"",
       "flavorReference": "Dragontamer, Bahamut's Dawn"
     },
     {
@@ -323,8 +324,8 @@
       "icons": [
         "Manipulate"
       ],
-      "flavorText": "So here's the plan...",
-      "flavorReference": "Dragontamer, Bahamut's Dusk"
+      "flavorText": "\"So here's the plan...\"",
+      "flavorReference": "Artificier, Bahamut's Dusk"
     },
 
     {
@@ -342,7 +343,7 @@
         "Search",
         "DestroySelf"
       ],
-      "flavorText": "I have a few backup plans,",
+      "flavorText": "\"I have a few backup plans, especially after Bahamut\"",
       "flavorReference": "Dragontamer, Dragons Amongst Gods"
     },
     {
@@ -361,8 +362,8 @@
         "DrawCardExtra",
         "StartOfTurnAction"
       ],
-      "flavorText": "Come on, you can do it!",
-      "flavorReference": "Dragontamer, Bahamut's Dusk"
+      "flavorText": "\"Come on, you can do it!\"",
+      "flavorReference": "Dragontamer, Moonbeams and Dragon Heartstrings"
     },
 
     {
@@ -384,7 +385,7 @@
         "DealDamageProjectile",
         "DealDamageMelee"
       ],
-      "flavorText": "What once propogated Replic-8{BR}will now help stop it",
+      "flavorText": "\"What once propogated Replic-8{BR}will now help stop it\"",
       "flavorReference": "Dragontamer, Bahamut's Dawn"
     }
   ]

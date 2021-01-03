@@ -42,28 +42,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dragontamer\BiteCommandCardController.cs" />
-    <Compile Include="Dragontamer\BurnCommandCardController.cs" />
-    <Compile Include="Dragontamer\CommandCardController.cs" />
-    <Compile Include="Dragontamer\CommandPresenceCardController.cs" />
+    <Compile Include="Dragontamer\Command\BiteCommandCardController.cs" />
+    <Compile Include="Dragontamer\Command\BurnCommandCardController.cs" />
+    <Compile Include="Dragontamer\Command\CommandCardController.cs" />
+    <Compile Include="Dragontamer\Command\CommandPresenceCardController.cs" />
     <Compile Include="Dragontamer\DragontamerTurnTakerController.cs" />
-    <Compile Include="Dragontamer\WeFightAsOneCardController.cs" />
-    <Compile Include="Dragontamer\DragonCardController.cs" />
-    <Compile Include="Dragontamer\DrakoCardController.cs" />
-    <Compile Include="Dragontamer\ElgorCardController.cs" />
-    <Compile Include="Dragontamer\HydraCardController.cs" />
-    <Compile Include="Dragontamer\JormunganderCardController.cs" />
-    <Compile Include="Dragontamer\TortugaCardController.cs" />
+    <Compile Include="Dragontamer\Command\WeFightAsOneCardController.cs" />
+    <Compile Include="Dragontamer\Dragon\DragonCardController.cs" />
+    <Compile Include="Dragontamer\Dragon\DrakoCardController.cs" />
+    <Compile Include="Dragontamer\Dragon\ElgorCardController.cs" />
+    <Compile Include="Dragontamer\Dragon\HydraCardController.cs" />
+    <Compile Include="Dragontamer\Dragon\JormunganderCardController.cs" />
+    <Compile Include="Dragontamer\Dragon\TortugaCardController.cs" />
     <Compile Include="Dragontamer\DragontamerCharacterCardController.cs" />
-    <Compile Include="Dragontamer\SerumApplicatorCardController.cs" />
-    <Compile Include="Dragontamer\HereBeDragonsCardController.cs" />
-    <Compile Include="Dragontamer\OnTheFlyCardController.cs" />
-    <Compile Include="Dragontamer\StrategizeCardController.cs" />
-    <Compile Include="Dragontamer\ActiveTrainingCardController.cs" />
-    <Compile Include="Dragontamer\DragonEggCardController.cs" />
-    <Compile Include="Dragontamer\HealthyTreatCardController.cs" />
-    <Compile Include="Dragontamer\ProteinSnackCardController.cs" />
-    <Compile Include="Dragontamer\TreatCardController.cs" />
+    <Compile Include="Dragontamer\Equipment\SerumApplicatorCardController.cs" />
+    <Compile Include="Dragontamer\One-Shot\HereBeDragonsCardController.cs" />
+    <Compile Include="Dragontamer\One-Shot\OnTheFlyCardController.cs" />
+    <Compile Include="Dragontamer\One-Shot\StrategizeCardController.cs" />
+    <Compile Include="Dragontamer\Ongoing\ActiveTrainingCardController.cs" />
+    <Compile Include="Dragontamer\Ongoing\DragonEggCardController.cs" />
+    <Compile Include="Dragontamer\Treat\HealthyTreatCardController.cs" />
+    <Compile Include="Dragontamer\Treat\ProteinSnackCardController.cs" />
+    <Compile Include="Dragontamer\Treat\TreatCardController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

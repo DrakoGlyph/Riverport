@@ -21,7 +21,7 @@ namespace Riverport.Dragontamer
         {
             List<Card> played = new List<Card>();
             //Reveal cards from deck until a Dragon is revealed, put it into play
-            var reveal = RevealCards_MoveMatching_ReturnNonMatchingCards(TurnTakerController, TurnTaker.Deck, true, false, false, new LinqCardCriteria(c => c.DoKeywordsContain("dragon")), 1, null, true, true, RevealedCardDisplay.ShowMatchingCards, true, false, played);
+            var reveal = RevealCards_MoveMatching_ReturnNonMatchingCards(TurnTakerController, TurnTaker.Deck, true, false, false, new LinqCardCriteria(c => c.DoKeywordsContain("dragon")), 1, null, true, false, RevealedCardDisplay.ShowMatchingCards, true, false, played);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(reveal); } else { this.GameController.ExhaustCoroutine(reveal); }
             //If no cards are played this way...
             if(played.Count == 0)
