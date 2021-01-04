@@ -41,7 +41,7 @@
       ],
       "body": [
         "Play next to a Hero Character card.",
-        "A Hero may only have one Suit next to them at a time. If another suit is played next to them, return all but 1 to Weaver's Hand.",
+        "A Hero may only have one Suit next to them at a time. If another suit would be put in play, return all but 1 suit to Weaver's hand.",
         "If the equipped hero takes 5 or more damage in one blow, destroy this suit.",
         "Increase damage dealt by the equipped hero to Non-Hero targets by 1"
       ],
@@ -61,8 +61,8 @@
         "suit"
       ],
       "body": [
-        "Play next to a Hero Character card.",
-        "A Hero may only have one Suit next to them at a time. If another suit is played next to them, return all but 1 to Weaver's Hand.",
+        "Play next to a Hero Character card.",  
+        "A Hero may only have one Suit next to them at a time. If another suit would be put in play, return all but 1 suit to Weaver's hand.",
         "If the equipped hero takes 5 or more damage in one blow, destroy this suit.",
         "Reduce damage dealt to this hero by 1"
       ],
@@ -191,7 +191,7 @@
         "DrawCardNow",
         "Discard"
       ],
-      "flavorText": "I need my finest thread, Six Three!",
+      "flavorText": "I need my finest thread, Sixty-Three!",
       "flavorReference": "Weaver, Weaver #12"
     },
     {
@@ -303,7 +303,7 @@
       "flavorReference": "Moonbeams and Dragon Heartstrings"
     },
     {
-      "idenfitier": "ResourceReclamation",
+      "identifier": "ResourceReclamation",
       "title": "Resource Reclamation",
       "count": 2,
       "keywords": [
@@ -329,7 +329,7 @@
         "relic"
       ],
       "body": [
-        "When you play a Weave, you may discard a Material to use a Power"
+        "The first time you play a Weave each turn, you may use a power."
       ],
       "powers": [
         "Look at the top 3 cards of any deck and put them back in any order."
@@ -345,7 +345,7 @@
     },
     {
       "identifier": "LoomOfFate",
-      "title": "LoomOfFate",
+      "title": "Loom Of Fate",
       "count": 1,
       "keywords": [
         "equipment",
@@ -377,7 +377,7 @@
         "Increase Projectile Damage dealt by Weaver by 1."
       ],
       "powers": [
-        "You may deal up to 3 targets 1 Irreducible Psychic damage. Targets dealt damage this way deal 1 less damage until the start of your next turn."
+        "You may deal up to 3 targets 1 Irreducible Projectile damage. Targets dealt damage this way deal 1 less damage until the start of your next turn."
       ],
       "icons": [
         "IncreaseDamageDealtProjectile",
@@ -402,7 +402,7 @@
         "Suits are indestructible"
       ],
       "powers": [
-        "Anansi deals himself 2 Psychic damage, then you may search your deck for a Suit or Material and put it into play."
+        "You may search your deck for a Suit or Material and put it into play, then Anansi deals himself 2 Psychic damage."
       ],
       "icons": [
         "DealDamagePsychic",
