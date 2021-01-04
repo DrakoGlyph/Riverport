@@ -65,10 +65,32 @@
     <Compile Include="Dragontamer\Treat\ProteinSnackCardController.cs" />
     <Compile Include="Dragontamer\Treat\TreatCardController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Weaver\AnansiCardController.cs" />
+    <Compile Include="Weaver\Equipments\BookOfFateCardController.cs" />
+    <Compile Include="Weaver\Equipments\DivineNeedlesCardController.cs" />
+    <Compile Include="Weaver\Equipments\LoomOfFateCardController.cs" />
+    <Compile Include="Weaver\Ongoings\InspirationStrikesCardController.cs" />
+    <Compile Include="Weaver\Materials\AdrenalweaveCardController.cs" />
+    <Compile Include="Weaver\Materials\AkashaweaveCardController.cs" />
+    <Compile Include="Weaver\Materials\HasteweaveCardController.cs" />
+    <Compile Include="Weaver\Materials\MaterialCardController.cs" />
+    <Compile Include="Weaver\Materials\PhaseweaveCardController.cs" />
+    <Compile Include="Weaver\Materials\PsychweaveCardController.cs" />
+    <Compile Include="Weaver\Ongoings\ResourceReclamationCardController.cs" />
+    <Compile Include="Weaver\Weaves\ReadTheWeaveCardController.cs" />
+    <Compile Include="Weaver\Weaves\PremadeMasterpieceCardController.cs" />
+    <Compile Include="Weaver\Weaves\QuickPatchworkCardController.cs" />
+    <Compile Include="Weaver\Weaves\RaidTheStockpilesCardController.cs" />
+    <Compile Include="Weaver\Weaves\SpoolTheThreadCardController.cs" />
+    <Compile Include="Weaver\Suits\InertiaConduitSuitCardController.cs" />
+    <Compile Include="Weaver\Suits\KevlarShellSuitCardController.cs" />
+    <Compile Include="Weaver\Suits\SuitCardController.cs" />
+    <Compile Include="Weaver\WeaverCharacterCardController.cs" />
+    <Compile Include="Weaver\WeaverTurnTakerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DeckLists\DragontamerDeckList.json" />
-    <None Include="DeckLists\WeaverDeckList.json" />
+    <EmbeddedResource Include="DeckLists\WeaverDeckList.json" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

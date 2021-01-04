@@ -18,6 +18,7 @@ using Boomlagoon.JSON;
 using System.Xml.XPath;
 
 using Riverport.Dragontamer;
+using Riverport.Weaver;
 
 namespace Handelabra.MyModConsole // this has to be this way to work around an EngineCommon issue, will be fixed soon.
 {
@@ -54,9 +55,11 @@ namespace Handelabra.MyModConsole // this has to be this way to work around an E
 
             var dragontamer = Assembly.GetAssembly(typeof(DragontamerTurnTakerController));
             ModHelper.AddAssembly("Riverport", dragontamer);
+            //var weaver = Assembly.GetAssembly(typeof(WeaverTurnTakerController));
+            //ModHelper.AddAssembly("Riverport", weaver);
 
             // Set up a game how you want, stack decks, etc.
-            game = new Game(new string[] { "BaronBlade", "Riverport.Dragontamer", "Legacy", "TheWraith", "PikeIndustrialComplex" }, advanced, promos, isChallenge: challenge);
+            game = new Game(new string[] { "Omnitron", "Riverport.Dragontamer", "Riverport.Weaver", "Ra", "PikeIndustrialComplex" }, advanced, promos, isChallenge: challenge);
 
             return game;
         }

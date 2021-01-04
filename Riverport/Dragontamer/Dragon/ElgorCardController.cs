@@ -27,7 +27,7 @@ namespace Riverport.Dragontamer
             if (arg.DidDealDamage)
             {
                 // Put a Device or Ongoing under Elgor
-                var steal = this.GameController.SelectAndMoveCard(HeroTurnTakerController, c => c.IsInPlayAndNotUnderCard && (c.IsOngoing || c.IsDevice) && c.Owner == arg.Target.Owner, Card.UnderLocation, cardSource: GetCardSource());
+                var steal = this.GameController.SelectAndMoveCard(HeroTurnTakerController, c => c.IsInPlayAndNotUnderCard && (c.IsOngoing || c.IsDevice) && c.Owner == arg.Target.Owner && !c.IsCharacter, Card.UnderLocation, cardSource: GetCardSource());
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(steal); } else { this.GameController.ExhaustCoroutine(steal); }
 
             }

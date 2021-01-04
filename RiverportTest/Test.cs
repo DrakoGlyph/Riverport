@@ -12,135 +12,135 @@ namespace MyModTest
     [TestFixture()]
     public class Test : BaseTest
     {
-        protected TurnTakerController baddies { get { return FindVillain("TheBaddies"); } }
-        protected TurnTakerController hug { get { return FindVillain("TheHugMonsterTeam"); } }
-        protected HeroTurnTakerController migrant { get { return FindHero("MigrantCoder"); } }
+        //protected TurnTakerController baddies { get { return FindVillain("TheBaddies"); } }
+        //protected TurnTakerController hug { get { return FindVillain("TheHugMonsterTeam"); } }
+        //protected HeroTurnTakerController migrant { get { return FindHero("MigrantCoder"); } }
 
         [Test()]
         public void TestModWorks()
         {
-            SetupGameController("Workshopping.TheBaddies", "Workshopping.MigrantCoder", "Workshopping.DevStream");
+            //SetupGameController("Workshopping.TheBaddies", "Workshopping.MigrantCoder", "Workshopping.DevStream");
 
-            Assert.AreEqual(3, this.GameController.TurnTakerControllers.Count());
+            //Assert.AreEqual(3, this.GameController.TurnTakerControllers.Count());
 
-            Assert.IsNotNull(baddies);
-            Assert.IsInstanceOf(typeof(TheBaddiesTurnTakerController), baddies);
-            Assert.IsInstanceOf(typeof(TheBaddiesCharacterCardController), baddies.CharacterCardController);
+            //Assert.IsNotNull(baddies);
+            //Assert.IsInstanceOf(typeof(TheBaddiesTurnTakerController), baddies);
+            //Assert.IsInstanceOf(typeof(TheBaddiesCharacterCardController), baddies.CharacterCardController);
 
-            Assert.IsNotNull(migrant);
-            Assert.IsInstanceOf(typeof(MigrantCoderTurnTakerController), migrant);
-            Assert.IsInstanceOf(typeof(MigrantCoderCharacterCardController), migrant.CharacterCardController);
+            //Assert.IsNotNull(migrant);
+            //Assert.IsInstanceOf(typeof(MigrantCoderTurnTakerController), migrant);
+            //Assert.IsInstanceOf(typeof(MigrantCoderCharacterCardController), migrant.CharacterCardController);
 
             Assert.IsNotNull(env);
 
-            Assert.AreEqual(40, baddies.CharacterCard.HitPoints);
-            Assert.AreEqual(39, migrant.CharacterCard.HitPoints);
-            QuickHPStorage(baddies, migrant);
+            //Assert.AreEqual(40, baddies.CharacterCard.HitPoints);
+            //Assert.AreEqual(39, migrant.CharacterCard.HitPoints);
+            //QuickHPStorage(baddies, migrant);
 
             // Always deals 5 psychic!
-            PlayTopCard(baddies);
+            //PlayTopCard(baddies);
 
-            QuickHPCheck(-5, -6); // Nemesis!
+            //    QuickHPCheck(-5, -6); // Nemesis!
 
-            PlayTopCard(env);
+            //    PlayTopCard(env);
 
-            // Deals 1 damage
-            QuickHPCheck(-1, -1);
+            //    // Deals 1 damage
+            //    QuickHPCheck(-1, -1);
 
-            // Heals 1 at the start of the environment turn
-            GoToStartOfTurn(env);
-            QuickHPCheck(1, 1);
+            //    // Heals 1 at the start of the environment turn
+            //    GoToStartOfTurn(env);
+            //    QuickHPCheck(1, 1);
         }
 
-        [Test()]
-        public void TestPunchingBag()
-        {
-            SetupGameController("BaronBlade", "Workshopping.MigrantCoder", "Megalopolis");
+        //[Test()]
+        //public void TestPunchingBag()
+        //{
+        //    SetupGameController("BaronBlade", "Workshopping.MigrantCoder", "Megalopolis");
 
-            StartGame();
+        //    StartGame();
 
-            GoToUsePowerPhase(migrant);
+        //    GoToUsePowerPhase(migrant);
 
-            // Punching Bag does 1 damage!
-            QuickHPStorage(migrant);
-            PlayCard("PunchingBag");
-            QuickHPCheck(-1);
-        }
+        //    // Punching Bag does 1 damage!
+        //    QuickHPStorage(migrant);
+        //    PlayCard("PunchingBag");
+        //    QuickHPCheck(-1);
+        //}
 
-        [Test()]
-        public void TestInnatePower()
-        {
-            SetupGameController("BaronBlade", "Workshopping.MigrantCoder", "Megalopolis");
+        //[Test()]
+        //public void TestInnatePower()
+        //{
+        //    SetupGameController("BaronBlade", "Workshopping.MigrantCoder", "Megalopolis");
 
-            StartGame();
+        //    StartGame();
 
-            var mdp = GetCardInPlay("MobileDefensePlatform");
+        //    var mdp = GetCardInPlay("MobileDefensePlatform");
 
-            // Base power draws 3 cards! Deals 1 target 2 damage!
-            QuickHandStorage(migrant.ToHero());
-            DecisionSelectTarget = mdp;
-            QuickHPStorage(mdp);
+        //    // Base power draws 3 cards! Deals 1 target 2 damage!
+        //    QuickHandStorage(migrant.ToHero());
+        //    DecisionSelectTarget = mdp;
+        //    QuickHPStorage(mdp);
 
-            UsePower(migrant.CharacterCard);
+        //    UsePower(migrant.CharacterCard);
 
-            QuickHandCheck(3);
-            QuickHPCheck(-2);
+        //    QuickHandCheck(3);
+        //    QuickHPCheck(-2);
 
-        }
+        //}
 
-        [Test()]
-        public void TestHugMonster()
-        {
-            SetupGameController("Workshopping.TheHugMonsterTeam", "Workshopping.MigrantCoder", "BugbearTeam", "Legacy", "GreazerTeam", "TheWraith", "Megalopolis");
+        //[Test()]
+        //public void TestHugMonster()
+        //{
+        //    SetupGameController("Workshopping.TheHugMonsterTeam", "Workshopping.MigrantCoder", "BugbearTeam", "Legacy", "GreazerTeam", "TheWraith", "Megalopolis");
 
-            StartGame();
+        //    StartGame();
 
-            var warm = PlayTopCard(hug);
+        //    var warm = PlayTopCard(hug);
 
-            QuickHPStorage(hug, migrant, bugbearTeam, legacy, greazerTeam, wraith);
-            GoToEndOfTurn(hug);
-            QuickHPCheck(0, -2, 0, -2, 0, -4);
+        //    QuickHPStorage(hug, migrant, bugbearTeam, legacy, greazerTeam, wraith);
+        //    GoToEndOfTurn(hug);
+        //    QuickHPCheck(0, -2, 0, -2, 0, -4);
 
-            GoToPlayCardPhase(migrant);
-            DestroyCard(warm);
-            GoToEndOfTurn(migrant);
-            QuickHPCheckZero();
+        //    GoToPlayCardPhase(migrant);
+        //    DestroyCard(warm);
+        //    GoToEndOfTurn(migrant);
+        //    QuickHPCheckZero();
 
-        }
+        //}
 
-        [Test()]
-        public void TestMigrantCoderLockdown()
-        {
-            SetupGameController("BaronBlade", "Workshopping.MigrantCoder/MigrantCoderLockdown", "Megalopolis");
+        //[Test()]
+        //public void TestMigrantCoderLockdown()
+        //{
+        //    SetupGameController("BaronBlade", "Workshopping.MigrantCoder/MigrantCoderLockdown", "Megalopolis");
 
-            StartGame();
+        //    StartGame();
 
-            GoToUsePowerPhase(migrant);
+        //    GoToUsePowerPhase(migrant);
 
-            // Use power to reduce damage by 1
-            QuickHPStorage(migrant);
-            UsePower(migrant);
-            PlayCard("PunchingBag");
-            QuickHPCheck(0);
-        }
+        //    // Use power to reduce damage by 1
+        //    QuickHPStorage(migrant);
+        //    UsePower(migrant);
+        //    PlayCard("PunchingBag");
+        //    QuickHPCheck(0);
+        //}
 
-        [Test()]
-        public void TestBunkerVariant()
-        {
-            SetupGameController("BaronBlade", "Bunker/Workshopping.WaywardBunkerCharacter", "Megalopolis");
+        //[Test()]
+        //public void TestBunkerVariant()
+        //{
+        //    SetupGameController("BaronBlade", "Bunker/Workshopping.WaywardBunkerCharacter", "Megalopolis");
 
-            StartGame();
+        //    StartGame();
 
-            Assert.IsTrue(bunker.CharacterCard.IsPromoCard);
-            Assert.AreEqual("WaywardBunkerCharacter", bunker.CharacterCard.PromoIdentifierOrIdentifier);
-            Assert.AreEqual(30, bunker.CharacterCard.MaximumHitPoints);
+        //    Assert.IsTrue(bunker.CharacterCard.IsPromoCard);
+        //    Assert.AreEqual("WaywardBunkerCharacter", bunker.CharacterCard.PromoIdentifierOrIdentifier);
+        //    Assert.AreEqual(30, bunker.CharacterCard.MaximumHitPoints);
 
-            GoToUsePowerPhase(bunker);
+        //    GoToUsePowerPhase(bunker);
 
-            // Use the power, it draws 2 cards not 1!
-            QuickHandStorage(bunker);
-            UsePower(bunker);
-            QuickHandCheck(2);
-        }
+        //    // Use the power, it draws 2 cards not 1!
+        //    QuickHandStorage(bunker);
+        //    UsePower(bunker);
+        //    QuickHandCheck(2);
+        //}
     }
 }

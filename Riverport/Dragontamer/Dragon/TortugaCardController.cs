@@ -22,15 +22,21 @@ namespace Riverport.Dragontamer
 
         private IEnumerator Protect(DealDamageAction arg)
         {
-            var protect = MoveUnderCardToTrashToPreventDamage(Card, arg);
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(protect); } else { this.GameController.ExhaustCoroutine(protect); }
+            List<YesNoCardDecision> doIt = new List<YesNoCardDecision>();
+            var decide = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.PreventDamage, Card, arg, doIt, null, GetCardSource());
+            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+            if (DidPlayerAnswerYes(doIt))
+            {
+                var protect = MoveUnderCardToTrashToPreventDamage(Card, arg);
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(protect); } else { this.GameController.ExhaustCoroutine(protect); }
+            }
         }
 
         public override IEnumerator Play()
         {
             //When Tortuga enters play, you may put up to 3 cards from your hand under him
             List<MoveCardDestination> under = new List<MoveCardDestination>() { new MoveCardDestination(Card.UnderLocation) };
-            var empower = this.GameController.SelectCardsFromLocationAndMoveThem(HeroTurnTakerController, HeroTurnTaker.Hand, 0, 3, new LinqCardCriteria(c => true), under, flipFaceDown: true, cardSource: GetCardSource());
+            var empower = this.GameController.SelectCardsFromLocationAndMoveThem(HeroTurnTakerController, HeroTurnTaker.Hand, 0, 3, new LinqCardCriteria(c => true), under, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(empower); } else { this.GameController.ExhaustCoroutine(empower); }
         }
 

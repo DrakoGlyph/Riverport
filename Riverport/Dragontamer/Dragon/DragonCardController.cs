@@ -24,9 +24,10 @@ namespace Riverport.Dragontamer
         protected IEnumerator DestroyCardUnderThis(PhaseChangeAction arg = null)
         {
             List<SelectCardDecision> chosen = new List<SelectCardDecision>();
-            var decide = this.GameController.SelectCardAndStoreResults(HeroTurnTakerController, SelectionType.DestroyCard, GetCardsBelowThisCard(), chosen, false, true, cardSource: GetCardSource());
+            var decide = this.GameController.SelectCardAndStoreResults(HeroTurnTakerController, SelectionType.DestroyCard, Card.UnderLocation.Cards, chosen, false, true, cardSource: GetCardSource());
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
-
+            var destroy = this.GameController.DestroyCard(HeroTurnTakerController, GetSelectedCard(chosen), cardSource: GetCardSource());
+            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
         }
 
         public int NumberOfCardsUnder

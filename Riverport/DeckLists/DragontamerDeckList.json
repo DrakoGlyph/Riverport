@@ -96,7 +96,7 @@
         "Hydra deals up to 3 targets 1 Melee damage."
       ],
       "icons": [
-        "StartOfTurnEffect",
+        "StartOfTurnAction",
         "DealDamageFire",
         "HasPower",
         "DealDamageMelee"
@@ -242,7 +242,7 @@
       "icons": [
         "GainHP"
       ],
-      "flavorText": "\"Someone once said an army marches on its stomach. I find it helps with dragons too.\"",
+      "flavorText": "\"Someone once said an army marches on{BR}its stomach.{BR}I find it helps with dragons too.\"",
       "flavorReference": "Dragontamer, Here Be Dragons #10"
     },
     {
@@ -284,7 +284,7 @@
       "flavorQuotes": [
         {
           "identifier": "Fenrir",
-          "text": "[b]Please[b] don't say it again."
+          "text": "[b]Please[/b] don't say it again."
         },
         {
           "identifier": "Dragontamer",
@@ -301,8 +301,9 @@
         "one-shot"
       ],
       "body": [
-        "Reveal cards from your deck until you reveal a Command card and put it in your hand",
-        "You may play a Command card."
+        "Choose Dragon or Command.",
+        "Reveal cards from your deck until you reveal a card with the chosen keyword and put it in your hand",
+        "You may play a Dragon or Command card."
       ],
       "icons": [
         "Manipulate",
