@@ -1,0 +1,301 @@
+{
+  "name": "Fenrir",
+  "kind": "Hero",
+  "initialCardIdentifiers": [
+    "FenrirHumanCharacter"
+  ],
+  "initialOffToTheSideCardIdentifiers": [
+    "FenrirWolfCharacter"
+  ],
+
+  "cards": [
+    {
+      "identifier": "FenrirHumanCharacter",
+      "character": true,
+      "sharedIdentifier": "FenrirCharacter",
+      "title": "Fenrir",
+      "backgroundColor": "AFAFAF",
+      "count": 1,
+      "hitpoints": 32,
+      "nemesisIdentifiers": "Fenrir",
+      "gameplay": "You may activate Human text.",
+      "body": "Inquire",
+      "powers": "Draw a card",
+      "icons": "DrawCardNow",
+      "incapacitatedAbilities": [
+        "One Hero may regain 1 HP",
+        "One player may draw a card now",
+        "Reduce Damage dealt to hero targets by 1 until the start of your next turn"
+      ],
+      "openingLines": {
+        "default": "In the name of Moonlight Investigations, I request you desist."
+      },
+      "complexity": 3
+    },
+    {
+      "identifier": "FenrirWolfCharacter",
+      "character": true,
+      "sharedIdentifier": "FenrirCharacter",
+      "title": "Fenrir",
+      "count": 1,
+      "gameplay": "You may activate Wolf text.",
+      "body": "Howl",
+      "powers": "{Fenrir} deals up to 3 targets 1 Sonic damage.",
+      "icons": "DealDamageSonic",
+      "incapacitatedAbilities": [
+        "Destroy a Device or Ongoing",
+        "Increase damage dealt by Heroes by 1",
+        "One hero may play a card now."
+      ]
+    },
+
+    {
+      "identifier": "LycanForm",
+      "title": "Lycan Form",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "feral"
+      ],
+      "body": [
+        "Switch to Fenrir's Wolf Form now. When this card leaves play, switch to Fenrir's Human form.",
+        "Increase damage dealt by Fenrir to Non-Hero targets by 1."
+      ],
+      "powers": "Destroy this card.",
+      "icons": [
+        "IncreaseDamageDealt"
+      ],
+      "flavorText": "The Power of Wolf Does not me Fright",
+      "flavorReference": "Fenrir's Mantra"
+    },
+    {
+      "identifier": "PaleMoonPendant",
+      "title": "The Pale Moon Pendant",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "activatableAbilities": [
+        {
+          "name": "human",
+          "text": "At the end of your turn, Fenrir regains 1 HP"
+        },
+        {
+          "name": "wolf",
+          "text": "Reduce the damage dealt to Fenrir by 1"
+        }
+      ],
+      "powers": [
+        "Fenrir deals 2 Infernal damage to 1 target. If Fenrir deals damage this way, you may play a card."
+      ],
+      "icons": [
+        "GainHP",
+        "ReduceDamageTaken",
+        "DealDamageInfernal",
+        "PlayCardNow"
+      ],
+      "flavorText": "By the Pale Moon's Light",
+      "flavorReference": "Inscription on Pale Moon's Pendant"
+    },
+    {
+      "identifier": "HungerOfTheWolf",
+      "title": "Hunger of The Wolf",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "feral",
+        "limited"
+      ],
+      "activatableAbilities": [
+        {
+          "name": "human",
+          "text": "At the start of your turn, Fenrir may deal himself 1 Psychic damaage. If he does, search for a copy of Lycan Form and put it in play"
+        },
+        {
+          "name": "wolf",
+          "text": "When Fenrir reduces a target to 0 HP, he regains 1 HP"
+        }
+      ],
+      "icons": [
+        "DealDamagePsychic",
+        "GainHP"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "Frenzy",
+      "title": "Frenzy",
+      "count": 1,
+      "activatableAbilities": [
+        {
+          "name": "human",
+          "text": "At the start of your turn, destroy this card."
+        },
+        {
+          "name": "wolf",
+          "text": "At the start of your turn, if there are no cards under this, destroy this card. Otherwise destroy a card under this one."
+        }
+      ],
+      "body": [
+        "Increase damage dealt by Fenrir by 2 for each card under this one.",
+        "When Fenrir destroys a target or a Decive, put it under this card."
+      ],
+      "icons": [
+        "DestroySelf",
+        "IncreaseDamageDealt"
+      ],
+      "flavorText": "Hun, Go Wild.",
+      "flavorReference": "Artificier, Moonlight #7"
+    },
+    {
+      "identifier": "Meditate",
+      "title": "Meditate",
+      "count": 1,
+      "activatableAbilities": [
+        {
+          "name": "human",
+          "text": "When you would draw a card, you may search for one instead.{BR}If Fenrir would deal or be dealt damage, destroy this card.{BR}At the start of your turn, destroy this card."
+        },
+        {
+          "name": "wolf",
+          "text": "At the end of your turn, destroy this card and draw a card."
+        }
+      ],
+      "icons": [
+        "Search",
+        "DestroySelf"
+      ],
+      "flavorText": ""
+    },
+
+    {
+      "identifier": "GeekAndSunder",
+      "title": "Geek And Sunder",
+      "count": 3,
+      "keywords": [
+        "one-shot",
+        "feral"
+      ],
+      "activatableAbilities": [
+        {
+          "name": "human",
+          "text": "Draw 2 cards"
+        },
+        {
+          "name": "wolf",
+          "text": "Destroy an Ongoing or Device card, then deal its owner 2 Melee damage."
+        }
+      ],
+      "icons": [
+        "DrawCardNow",
+        "DestroyOngoing",
+        "DestroyDevice",
+        "DealDamageMelee"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "FuriousStrikes",
+      "title": "Furious Strikes",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "feral"
+      ],
+      "body": [
+        "Deal 1 target 1 Melee damage"
+      ],
+      "activatableAbilities": [
+        {
+          "name": "wolf",
+          "text": "Deal 2 targets 2 Melee damage.{BR}If {Frenzy} is in play, Deal 2 targets 2 Melee Damage"
+        }
+      ],
+      "icons": [
+        "DealDamageMelee"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "NaturalWeapons",
+      "title": "Natural Weapons",
+      "count": 3,
+      "keywords": [
+        "equipment",
+        "feral",
+        "equipment"
+      ],
+      "powers": [
+        "Fenrir deals 1 target 1 Melee Damage. If Frenzy is in play, increase the damage by 2"
+      ]
+    },
+    {
+      "identifier": "UnleashYourself",
+      "title": "Unleash Yourself",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "feral"
+      ],
+      "activatableAbilities": [
+        {
+          "name": "human",
+          "text": "Search your deck or trash for a copy of Lycan Form and put it into play. Fenrir deals each Villain target 1 Psychic damage."
+        },
+        {
+          "name": "wolf",
+          "text",
+          "You may search your deck or trash for Frenzy and put it into play. If you do not, deal 1 target 3 Melee damage."
+        }
+      ],
+      "icons": [
+        "Search",
+        "DealDamagePsychic",
+        "DealDamageMelee"
+      ],
+      "flavorText": "Sometimes you just have to let loose.",
+      "flavorReference": "Fenrir, Bahamut's Dusk"
+    },
+
+    {
+      "identifier": "MaintainControl",
+      "title": "Maintain Control",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "activatableAbilities": [
+        {
+          "name": "human",
+          "text": "At the start of your turn, you may discard any number of Feral cards. You may draw as many cards as you discarded this way."
+        },
+        {
+          "name": "wolf",
+          "text": "The first time you play a Feral card each turn, you may play a non-Feral card."
+        }
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "Discard",
+        "DrawCardNow",
+        "PlayCardNow"
+      ],
+      "flavorText": "Just focus on your center, bring the two halves together",
+      "flavorReference": "Soulmaurai, New Moonlight #2"
+    },
+    {
+      "identifier": "MoonlightInvestigations",
+      "title": "Moonlight Investingations",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": "You may draw an extra card on your draw phase.",
+      "powers": "You may search your deck for a Non-Feral card and put it into your hand. You may destroy this card to play a card now."
+    },
+
+  ]
+}

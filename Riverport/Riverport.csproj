@@ -92,6 +92,8 @@
     <EmbeddedResource Include="DeckLists\DragontamerDeckList.json" />
     <EmbeddedResource Include="DeckLists\WeaverDeckList.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="DeckLists\FenrirDecklist.json" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
