@@ -33,8 +33,7 @@ namespace Riverport.Weaver
         {
             //Suits can only be played next to Hero Character Cards
             //If there are no cards next to this, it can have a suit
-            if (!c.IsHeroCharacterCard || c.IsIncapacitated || !c.NextToLocation.HasCards) return false;
-            return true;
+            return c.IsHeroCharacterCard && !c.IsIncapacitated;
         }
 
         public override IEnumerator DeterminePlayLocation(List<MoveCardDestination> storedResults, bool isPutIntoPlay, List<IDecision> decisionSources, Location overridePlayArea = null, LinqTurnTakerCriteria additionalTurnTakerCriteria = null)
@@ -46,18 +45,16 @@ namespace Riverport.Weaver
         public override IEnumerator Play()
         {
             // Move all but 1 Materials next to this Suit to Weaver's Hand
-            if (Equipped.NextToLocation.NumberOfCards > 1)
+
+            int suits = 0;
+            foreach (Card c in Equipped.NextToLocation.Cards)
             {
-                int suits = 0;
-                foreach (Card c in Equipped.NextToLocation.Cards)
-                {
-                    if (c.DoKeywordsContain("suit")) suits++;
-                }
-                if (suits > 1)
-                {
-                    var rtn = this.GameController.SelectCardsFromLocationAndMoveThem(HeroTurnTakerController, Equipped.NextToLocation, suits - 1, suits - 1, new LinqCardCriteria(c => c.DoKeywordsContain("material")), new List<MoveCardDestination>() { new MoveCardDestination(HeroTurnTaker.Hand) }, selectionType: SelectionType.MoveCardToHand, cardSource: GetCardSource());
-                    if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(rtn); } else { this.GameController.ExhaustCoroutine(rtn); }
-                }
+                if (c.DoKeywordsContain("suit")) suits++;
+            }
+            if (suits > 1)
+            {
+                var rtn = this.GameController.SelectCardsFromLocationAndMoveThem(HeroTurnTakerController, Equipped.NextToLocation, suits - 1, suits - 1, new LinqCardCriteria(c => c.DoKeywordsContain("material")), new List<MoveCardDestination>() { new MoveCardDestination(HeroTurnTaker.Hand) }, selectionType: SelectionType.MoveCardToHand, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(rtn); } else { this.GameController.ExhaustCoroutine(rtn); }
             }
         }
     }

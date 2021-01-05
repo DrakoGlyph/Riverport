@@ -23,8 +23,7 @@ namespace Riverport.Weaver
 
         protected bool DetermineEligibility(Card c)
         {
-            if (!c.IsInPlayAndNotUnderCard || !c.DoKeywordsContain("suit")) return false;
-            return true;
+            return c.IsInPlayAndNotUnderCard && c.DoKeywordsContain("suit");
         }
 
         public override void AddTriggers()

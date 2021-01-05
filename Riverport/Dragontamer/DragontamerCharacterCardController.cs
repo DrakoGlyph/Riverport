@@ -8,7 +8,7 @@ using Handelabra.Sentinels.Engine.Model;
 
 namespace Riverport.Dragontamer
 {
-    public class DragontamerCharacterCardController : CharacterCardController
+    public class DragontamerCharacterCardController : HeroCharacterCardController
     {
         public DragontamerCharacterCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {

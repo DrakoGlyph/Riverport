@@ -23,11 +23,18 @@ namespace Riverport.Dragontamer
 
         protected IEnumerator DestroyCardUnderThis(PhaseChangeAction arg = null)
         {
-            List<SelectCardDecision> chosen = new List<SelectCardDecision>();
-            var decide = this.GameController.SelectCardAndStoreResults(HeroTurnTakerController, SelectionType.DestroyCard, Card.UnderLocation.Cards, chosen, false, true, cardSource: GetCardSource());
-            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
-            var destroy = this.GameController.DestroyCard(HeroTurnTakerController, GetSelectedCard(chosen), cardSource: GetCardSource());
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+            if (NumberOfCardsUnder > 1)
+            {
+                List<SelectCardDecision> chosen = new List<SelectCardDecision>();
+                var decide = this.GameController.SelectCardAndStoreResults(HeroTurnTakerController, SelectionType.DestroyCard, Card.UnderLocation.Cards, chosen, false, true, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+                var destroy = this.GameController.DestroyCard(HeroTurnTakerController, GetSelectedCard(chosen), cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+            } else if(NumberOfCardsUnder == 1)
+            {
+                var dest = this.GameController.DestroyCard(HeroTurnTakerController, Card.UnderLocation.TopCard, cardSource: GetCardSource());
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(dest); } else { this.GameController.ExhaustCoroutine(dest); }
+            }
         }
 
         public int NumberOfCardsUnder
