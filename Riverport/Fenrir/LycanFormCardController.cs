@@ -25,7 +25,7 @@ namespace Riverport.Fenrir
         {
             if (!Human.IsInPlay)
             {
-                var swap = this.GameController.SwitchCards(Human, Wolf, true, false, false, GetCardSource());
+                var swap = this.GameController.SwitchCards(CharacterCardWithoutReplacements, Human, true, false, false, GetCardSource());
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(swap); } else { this.GameController.ExhaustCoroutine(swap); }
             }
             
@@ -36,7 +36,7 @@ namespace Riverport.Fenrir
             //Switch To Wolf Form
             if(!Wolf.IsInPlay)
             {
-                var swap = this.GameController.SwitchCards(Wolf, Human, true, false, false, GetCardSource());
+                var swap = this.GameController.SwitchCards(CharacterCardWithoutReplacements, Wolf, true, false, false, GetCardSource());
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(swap); } else { this.GameController.ExhaustCoroutine(swap); }
             }
         }
