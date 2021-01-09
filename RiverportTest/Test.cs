@@ -7,7 +7,7 @@ using System.Linq;
 using System.Collections;
 using Handelabra.Sentinels.UnitTest;
 
-namespace MyModTest
+namespace RiverportTest
 {
     [TestFixture()]
     public class Test : BaseTest
@@ -15,13 +15,15 @@ namespace MyModTest
         //protected TurnTakerController baddies { get { return FindVillain("TheBaddies"); } }
         //protected TurnTakerController hug { get { return FindVillain("TheHugMonsterTeam"); } }
         //protected HeroTurnTakerController migrant { get { return FindHero("MigrantCoder"); } }
-
+        protected HeroTurnTakerController dragontamer { get { return FindHero("Dragontamer"); } }
+        protected HeroTurnTakerController fenrir { get { return FindHero("Fenrir"); } }
+        protected HeroTurnTakerController weaver { get { return FindHero("Weaver"); } }
         [Test()]
         public void TestModWorks()
         {
             //SetupGameController("Workshopping.TheBaddies", "Workshopping.MigrantCoder", "Workshopping.DevStream");
-
             //Assert.AreEqual(3, this.GameController.TurnTakerControllers.Count());
+            SetupGameController("BaronBlade", "Riverport.Weaver", "Riverport.Dragontamer", "Riverport.Fenrir", "FreedomTower");
 
             //Assert.IsNotNull(baddies);
             //Assert.IsInstanceOf(typeof(TheBaddiesTurnTakerController), baddies);
@@ -30,7 +32,9 @@ namespace MyModTest
             //Assert.IsNotNull(migrant);
             //Assert.IsInstanceOf(typeof(MigrantCoderTurnTakerController), migrant);
             //Assert.IsInstanceOf(typeof(MigrantCoderCharacterCardController), migrant.CharacterCardController);
-
+            Assert.IsNotNull(dragontamer);
+            Assert.IsNotNull(weaver);
+            Assert.IsNotNull(fenrir);
             Assert.IsNotNull(env);
 
             //Assert.AreEqual(40, baddies.CharacterCard.HitPoints);
@@ -40,16 +44,47 @@ namespace MyModTest
             // Always deals 5 psychic!
             //PlayTopCard(baddies);
 
+
             //    QuickHPCheck(-5, -6); // Nemesis!
-
             //    PlayTopCard(env);
-
             //    // Deals 1 damage
             //    QuickHPCheck(-1, -1);
 
             //    // Heals 1 at the start of the environment turn
             //    GoToStartOfTurn(env);
             //    QuickHPCheck(1, 1);
+        }
+
+        [Test()]
+        public void TestLycanFormSwap()
+        {
+            SetupGameController("BaronBlade", "Riverport.Fenrir", "FreedomTower");
+            AssertIsInPlay("FenrirHumanCharacter");
+            PlayCard("LycanForm");
+            AssertIsInPlay("FenrirWolfCharacter");
+            DestroyCard("LycanForm");
+            AssertIsInPlay("FenrirHumanCharacter");
+        }
+
+        
+
+        [Test()]
+        public void TestPaleMoonPendantAbilities()
+        {
+            SetupGameController("BaronBlade", "Riverport.Fenrir", "FreedomTower");
+
+            QuickHPStorage(fenrir);
+            PlayCard("SlashAndBurn");
+            QuickHPCheck(-4);
+            PlayCard("PaleMoonPendant");
+            QuickHPStorage(fenrir);
+            GoToEndOfTurn(fenrir);
+            GoToNextTurn();
+            QuickHPCheck(1);
+            PlayCard("LycanForm");
+            QuickHPStorage(fenrir);
+            PlayCard("SlashAndBurn");
+            QuickHPCheck(-2);
         }
 
         //[Test()]

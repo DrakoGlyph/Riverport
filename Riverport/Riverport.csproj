@@ -64,6 +64,27 @@
     <Compile Include="Dragontamer\Treat\HealthyTreatCardController.cs" />
     <Compile Include="Dragontamer\Treat\ProteinSnackCardController.cs" />
     <Compile Include="Dragontamer\Treat\TreatCardController.cs" />
+    <Compile Include="Fenrir\ByPaleMoonlightCardController.cs" />
+    <Compile Include="Fenrir\FenrirBaseCardController.cs" />
+    <Compile Include="Fenrir\FenrirHumanCharacterCardController.cs" />
+    <Compile Include="Fenrir\FenrirTurnTakeController.cs" />
+    <Compile Include="Fenrir\FenrirWolfCharacterCardController.cs" />
+    <Compile Include="Fenrir\FrenzyCardController.cs" />
+    <Compile Include="Fenrir\FuriousStrikesCardController.cs" />
+    <Compile Include="Fenrir\GeekAndSunderCardController.cs" />
+    <Compile Include="Fenrir\GreatCleaveCardController.cs" />
+    <Compile Include="Fenrir\HungerOfTheWolfCardController.cs" />
+    <Compile Include="Fenrir\LycanFormCardController.cs" />
+    <Compile Include="Fenrir\MaintainControlCardController.cs" />
+    <Compile Include="Fenrir\MeditateCardController.cs" />
+    <Compile Include="Fenrir\MoonlightInvestigationsCardController.cs" />
+    <Compile Include="Fenrir\NaturalWeaponsCardController.cs" />
+    <Compile Include="Fenrir\OtherHandCardController.cs" />
+    <Compile Include="Fenrir\PaleMoonPendantCardController.cs" />
+    <Compile Include="Fenrir\TameYourselfCardController.cs" />
+    <Compile Include="Fenrir\TransformingHowlCardController.cs" />
+    <Compile Include="Fenrir\UnleashYourselfCardController.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weaver\AnansiCardController.cs" />
     <Compile Include="Weaver\Equipments\BookOfFateCardController.cs" />
@@ -93,7 +114,7 @@
     <EmbeddedResource Include="DeckLists\WeaverDeckList.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DeckLists\FenrirDecklist.json" />
+    <EmbeddedResource Include="DeckLists\FenrirDeckList.json" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

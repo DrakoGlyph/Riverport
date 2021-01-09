@@ -59,7 +59,7 @@ namespace Handelabra.MyModConsole // this has to be this way to work around an E
             //ModHelper.AddAssembly("Riverport", weaver);
 
             // Set up a game how you want, stack decks, etc.
-            game = new Game(new string[] { "Omnitron", "Riverport.Dragontamer", "Riverport.Weaver", "Ra", "PikeIndustrialComplex" }, advanced, promos, isChallenge: challenge);
+            game = new Game(new string[] { "Omnitron", "Riverport.Dragontamer", "Riverport.Weaver", "Riverport.Fenrir", "PikeIndustrialComplex" }, advanced, promos, isChallenge: challenge);
 
             return game;
         }
