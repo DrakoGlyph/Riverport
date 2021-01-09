@@ -54,7 +54,7 @@ namespace Riverport.Fenrir
         public override IEnumerator Play()
         {
             var destroy = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.HitPoints <= 3 || c.IsDevice), false, null, CharacterCard, GetCardSource());
-            if (UseUnityCoroutines) { this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
         }
     }
 }
