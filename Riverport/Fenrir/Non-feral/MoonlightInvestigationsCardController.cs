@@ -32,14 +32,14 @@ namespace Riverport.Fenrir
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(search); } else { this.GameController.ExhaustCoroutine(search); }
 
             List<YesNoCardDecision> temp = new List<YesNoCardDecision>();
-            var investigate = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.DestroySelf, Card, null, temp, null, GetCardSource());
+            var investigate = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.DestroySelf, Card, null, temp, new List<Card>() { Card }, GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(investigate); } else { this.GameController.ExhaustCoroutine(investigate); }
             if (DidPlayerAnswerYes(temp))
             {
-                var exhaust = this.GameController.DestroyCard(HeroTurnTakerController, Card, true, cardSource: GetCardSource());
+                var exhaust = this.GameController.DestroyCard(HeroTurnTakerController, Card, cardSource: GetCardSource());
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(exhaust); } else { this.GameController.ExhaustCoroutine(exhaust); }
 
-                var play = SelectAndPlayCardFromHand(HeroTurnTakerController);
+                var play = SelectAndPlayCardFromHand(HeroTurnTakerController, associateCardSource: true);
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(play); } else { this.GameController.ExhaustCoroutine(play); }
             }
         }

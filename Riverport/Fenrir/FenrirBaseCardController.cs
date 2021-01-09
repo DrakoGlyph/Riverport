@@ -52,11 +52,11 @@ namespace Riverport.Fenrir
             {
                 case "human":
                     {
-                        return !LycanForm.IsInPlay;
+                        return Human.IsInPlay;
                     }
                 case "wolf":
                     {
-                        return LycanForm.IsInPlay;
+                        return Wolf.IsInPlay;
                     }
             }
             return false;
