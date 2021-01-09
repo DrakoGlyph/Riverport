@@ -127,7 +127,8 @@
         "{human} At the start of your turn, destroy this card.",
         "{wolf} At the start of your turn, if there are no cards under this, destroy this card. Otherwise destroy a card under this one.",
         "Increase damage dealt by Fenrir by 1 for every 2 cards under this one.",
-        "When Fenrir destroys a target or a Decive, put it under this card."
+        "When this card enters play, destroy a target with 3HP or less or a Device."
+        "When Fenrir destroys a target or a Device, put it under this card."
       ],
       "icons": [
         "DestroySelf",
@@ -254,7 +255,7 @@
     },
     {
       "identifier": "MoonlightInvestigations",
-      "title": "Moonlight Investingations",
+      "title": "Moonlight Investigations",
       "count": 3,
       "keywords": [
         "ongoing",

@@ -18,14 +18,16 @@ namespace Riverport.Fenrir
         {
             AddStartOfTurnTrigger(tt => tt == TurnTaker, DestructionTriggers, TriggerType.DestroySelf);
             AddIncreaseDamageTrigger(dda => IsFenrir(dda.DamageSource.Card), dda => (int) Math.Floor(Card.UnderLocation.NumberOfCards / 2.0));
-            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => dca.CardToDestroy.Card.IsTarget || dca.CardToDestroy.Card.IsDevice, DoFrenzy, TriggerType.MoveCard, TriggerTiming.After);
+            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => dca.CardToDestroy.Card.IsTarget || dca.CardToDestroy.Card.IsDevice, DoFrenzy, TriggerType.Other, TriggerTiming.After);
 
         }
 
         private IEnumerator DoFrenzy(DestroyCardAction arg)
         {
-            var consume = this.GameController.MoveCard(TurnTakerController, arg.CardToDestroy.Card, Card.UnderLocation, cardSource: GetCardSource());
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(consume); } else { this.GameController.ExhaustCoroutine(consume); }
+            arg.SetPostDestroyDestination(Frenzy.UnderLocation);
+            return DoNothing();
+            //var consume = this.GameController.Change(TurnTakerController, arg.CardToDestroy.Card, Card.UnderLocation, cardSource: GetCardSource());
+            //if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(consume); } else { this.GameController.ExhaustCoroutine(consume); }
         }
 
         private IEnumerator DestructionTriggers(PhaseChangeAction arg)
@@ -47,6 +49,12 @@ namespace Riverport.Fenrir
                     if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(poof); } else { this.GameController.ExhaustCoroutine(poof); }
                 }
             }
+        }
+
+        public override IEnumerator Play()
+        {
+            var destroy = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.HitPoints <= 3 || c.IsDevice), false, null, CharacterCard, GetCardSource());
+            if (UseUnityCoroutines) { this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
         }
     }
 }

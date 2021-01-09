@@ -28,7 +28,7 @@ namespace Riverport.Fenrir
 
         public override IEnumerator UsePower(int index = 0)
         {
-            var search = SearchForCards(HeroTurnTakerController, true, false, 1, 1, new LinqCardCriteria(c => !c.DoKeywordsContain("feral")), false, true, false, true, shuffleAfterwards: true);
+            var search = SearchForCards(HeroTurnTakerController, true, false, 1, 1, new LinqCardCriteria(c => !c.DoKeywordsContain("feral")), false, true, false, false, shuffleAfterwards: true);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(search); } else { this.GameController.ExhaustCoroutine(search); }
 
             List<YesNoCardDecision> temp = new List<YesNoCardDecision>();
@@ -36,11 +36,13 @@ namespace Riverport.Fenrir
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(investigate); } else { this.GameController.ExhaustCoroutine(investigate); }
             if (DidPlayerAnswerYes(temp))
             {
+                var play = SelectAndPlayCardFromHand(HeroTurnTakerController, associateCardSource: true);
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(play); } else { this.GameController.ExhaustCoroutine(play); }
+
+
                 var exhaust = this.GameController.DestroyCard(HeroTurnTakerController, Card, cardSource: GetCardSource());
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(exhaust); } else { this.GameController.ExhaustCoroutine(exhaust); }
 
-                var play = SelectAndPlayCardFromHand(HeroTurnTakerController, associateCardSource: true);
-                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(play); } else { this.GameController.ExhaustCoroutine(play); }
             }
         }
 
