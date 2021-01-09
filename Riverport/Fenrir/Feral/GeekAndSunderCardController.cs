@@ -16,12 +16,12 @@ namespace Riverport.Fenrir
 
         public override IEnumerator Play()
         {
-            if(ShouldActivate("Human"))
+            if(ShouldActivate("human"))
             {
                 var geek = DrawCards(HeroTurnTakerController, 2);
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(geek); } else { this.GameController.ExhaustCoroutine(geek); }
             }
-            if(ShouldActivate("Wolf"))
+            if(ShouldActivate("wolf"))
             {
                 List<DestroyCardAction> storedResultsAction = new List<DestroyCardAction> { };
                 var sunder = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.IsOngoing || c.IsDevice), false, storedResultsAction, CharacterCard, GetCardSource());
