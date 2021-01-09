@@ -34,10 +34,11 @@ namespace Riverport.Fenrir
 
         private IEnumerator Meditate(DrawCardAction arg)
         {
-            var cancel = CancelAction(arg, false);
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(cancel); } else { this.GameController.ExhaustCoroutine(cancel); }
             var search = SearchForCards(HeroTurnTakerController, true, false, 1, 1, new LinqCardCriteria(c => true), false, true, false, shuffleAfterwards: true);
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(search); } else { this.GameController.ExhaustCoroutine(search); }
+            var cancel = CancelAction(arg, false);
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(cancel); } else { this.GameController.ExhaustCoroutine(cancel); }
+
         }
     }
 }
