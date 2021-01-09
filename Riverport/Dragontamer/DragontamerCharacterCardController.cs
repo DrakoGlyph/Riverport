@@ -31,7 +31,7 @@ namespace Riverport.Dragontamer
             IncreaseDamageStatusEffect idse = new IncreaseDamageStatusEffect(1);
             idse.SourceCriteria.HasAnyOfTheseKeywords = new List<string>() { "dragon" };
             idse.TargetCriteria.IsSpecificCard = arg.Target;
-            idse.UntilStartOfNextTurn(TurnTaker);
+            idse.UntilEndOfNextTurn(TurnTaker);
             var mark = AddStatusEffect(idse);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(mark); } else { this.GameController.ExhaustCoroutine(mark); }
         }
