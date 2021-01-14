@@ -64,12 +64,13 @@
     <Compile Include="Dragontamer\Treat\HealthyTreatCardController.cs" />
     <Compile Include="Dragontamer\Treat\ProteinSnackCardController.cs" />
     <Compile Include="Dragontamer\Treat\TreatCardController.cs" />
+    <Compile Include="Fenrir\FenrirBaseCharacterCardController.cs" />
     <Compile Include="Fenrir\Non-feral\ByPaleMoonlightCardController.cs" />
     <Compile Include="Fenrir\FenrirBaseCardController.cs" />
     <Compile Include="Fenrir\FenrirHumanCharacterCardController.cs" />
     <Compile Include="Fenrir\FenrirTurnTakeController.cs" />
     <Compile Include="Fenrir\FenrirWolfCharacterCardController.cs" />
-    <Compile Include="Fenrir\Feral\FrenzyCardController.cs" />
+    <Compile Include="Fenrir\Gimmick\FrenzyCardController.cs" />
     <Compile Include="Fenrir\Feral\FuriousStrikesCardController.cs" />
     <Compile Include="Fenrir\Feral\GeekAndSunderCardController.cs" />
     <Compile Include="Fenrir\Feral\GreatCleaveCardController.cs" />
@@ -86,6 +87,23 @@
     <Compile Include="Fenrir\Feral\UnleashYourselfCardController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScarletX\Ongoings\BetweenTheShotsCardController.cs" />
+    <Compile Include="ScarletX\Ongoings\AnticipateTheNeedCardController.cs" />
+    <Compile Include="ScarletX\Arrows\DebilitatingArrowCardController.cs" />
+    <Compile Include="ScarletX\Arrows\DetonationArrowCardController.cs" />
+    <Compile Include="ScarletX\OneShots\HunterInstinctCardController.cs" />
+    <Compile Include="ScarletX\OneShots\CallOnTheLightCardController.cs" />
+    <Compile Include="ScarletX\OneShots\QuickestDrawCardController.cs" />
+    <Compile Include="ScarletX\Relics\ArgentLightQuiverCardController.cs" />
+    <Compile Include="ScarletX\Arrows\ArrowBaseCardController.cs" />
+    <Compile Include="ScarletX\Relics\MoonbeamCardController.cs" />
+    <Compile Include="ScarletX\Relics\ScarletMantleCardController.cs" />
+    <Compile Include="ScarletX\Arrows\SappingArrowCardController.cs" />
+    <Compile Include="ScarletX\OneShots\RestockCardController.cs" />
+    <Compile Include="ScarletX\ScarletXCharacterCardController.cs" />
+    <Compile Include="ScarletX\Arrows\SilverArrowCardController.cs" />
+    <Compile Include="ScarletX\Ongoings\WasteNotWantNotCardController.cs" />
+    <Compile Include="ScarletX\Ongoings\ShootFirstCardController.cs" />
     <Compile Include="Weaver\AnansiCardController.cs" />
     <Compile Include="Weaver\Equipments\BookOfFateCardController.cs" />
     <Compile Include="Weaver\Equipments\DivineNeedlesCardController.cs" />
@@ -116,5 +134,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DeckLists\FenrirDeckList.json" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DeckLists\ScarletXDeckList.json" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

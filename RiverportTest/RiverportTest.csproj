@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ScarletXCharacterCardController.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="BaseTest.cs" />
     <Compile Include="Setup.cs" />
