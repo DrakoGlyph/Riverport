@@ -18,6 +18,7 @@ namespace RiverportTest
         protected HeroTurnTakerController dragontamer { get { return FindHero("Dragontamer"); } }
         protected HeroTurnTakerController fenrir { get { return FindHero("Fenrir"); } }
         protected HeroTurnTakerController weaver { get { return FindHero("Weaver"); } }
+        protected HeroTurnTakerController scarletX { get { return FindHero("ScarletX"); } }
         [Test()]
         public void TestModWorks()
         {

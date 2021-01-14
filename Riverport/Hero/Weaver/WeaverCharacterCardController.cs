@@ -19,7 +19,7 @@ namespace Riverport.Weaver
             //Weaver deals 1 Target 1 Projectile damage.
             //That target deals 1 less damage until the start of your turn
             
-            var needle = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, CharacterCard), 1, DamageType.Projectile, 1, false, 0, false, true, false, addStatusEffect: Needlepoint, cardSource: GetCardSource());
+            var needle = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, CharacterCard), 1, DamageType.Projectile, 1, false, 0, false, true, false, c=>!c.IsHero, addStatusEffect: Needlepoint, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(needle); } else { this.GameController.ExhaustCoroutine(needle); }
         }
 

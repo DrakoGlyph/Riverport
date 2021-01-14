@@ -17,7 +17,7 @@ namespace Riverport.Dragontamer
         public override void AddTriggers()
         {
             //When a dragon would be dealt damage, you may destroy a card under this one to prevent that damage
-            AddTrigger<DealDamageAction>((DealDamageAction dda) => HasCardsUnder && dda.Target.DoKeywordsContain("dragon"), Protect, TriggerType.DestroyCard, TriggerTiming.Before, orderMatters: true, priority: TriggerPriority.High);
+            AddTrigger<DealDamageAction>((DealDamageAction dda) => HasCardsUnder && dda.Target.DoKeywordsContain("dragon"), Protect, TriggerType.WouldBeDealtDamage, TriggerTiming.Before, orderMatters: true, priority: TriggerPriority.High);
         }
 
         private IEnumerator Protect(DealDamageAction arg)

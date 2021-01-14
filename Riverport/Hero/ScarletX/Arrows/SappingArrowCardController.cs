@@ -12,10 +12,9 @@ namespace Riverport.ScarletX
     {
         public SappingArrowCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
-            Type = new TriggerType[] { TriggerType.DestroyCard, TriggerType.DealDamage };
         }
 
-        protected override IEnumerator FireArrow(DestroyCardAction dca)
+        protected override IEnumerator FireArrow(GameAction gameAction = null)
         {
             List<DestroyCardAction> result = new List<DestroyCardAction>();
             var dest = this.GameController.SelectAndDestroyCard(DecisionMaker, new LinqCardCriteria(c => (c.IsOngoing || c.IsDevice) && IsVillain(c) && c.IsInPlayAndHasGameText), true, result, CharacterCard, GetCardSource());
@@ -23,7 +22,7 @@ namespace Riverport.ScarletX
             if(DidDestroyCard(result))
             {
                 DestroyCardAction sapped = result.FirstOrDefault();
-                var punish = DealDamage(CharacterCard, dca.CardToDestroy.TurnTaker.CharacterCard, 2, DamageType.Projectile, cardSource: GetCardSource());
+                var punish = DealDamage(CharacterCard, sapped.CardToDestroy.TurnTaker.CharacterCard, 2, DamageType.Projectile, cardSource: GetCardSource());
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(punish); } else { this.GameController.ExhaustCoroutine(punish); }
             }
         }

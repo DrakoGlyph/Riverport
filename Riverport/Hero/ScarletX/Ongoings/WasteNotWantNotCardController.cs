@@ -17,7 +17,7 @@ namespace Riverport.ScarletX
 
         public override void AddTriggers()
         {
-            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => dca.CardToDestroy.Card.IsTarget && dca.ResponsibleCard == CharacterCard, Reclaim, TriggerType.MoveCard, TriggerTiming.After);
+            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => dca.CardToDestroy.Card.IsTarget && dca.ResponsibleCard == CharacterCard, Reclaim, TriggerType.PutIntoPlay, TriggerTiming.After);
         }
 
         private IEnumerator Reclaim(DestroyCardAction arg)

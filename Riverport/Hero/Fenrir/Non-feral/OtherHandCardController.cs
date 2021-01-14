@@ -18,21 +18,20 @@ namespace Riverport.Fenrir
 
         public override void AddTriggers()
         {
-            AddStartOfTurnTrigger(tt => true, Reset, TriggerType.Other);
+            //AddStartOfTurnTrigger(tt => true, Reset, TriggerType.Other);
             AddTrigger<PlayCardAction>((PlayCardAction pca) => pca.IsSuccessful && !pca.CardToPlay.DoKeywordsContain("feral") && IsFirstTimeCardPlayedThisTurn(pca.CardToPlay, c => !c.DoKeywordsContain("feral"), TriggerTiming.After), OtherHumanHand, TriggerType.PlayCard, TriggerTiming.After);
-            AddTrigger<DealDamageAction>((DealDamageAction dda) => dda.DidDealDamage && dda.DamageType == DamageType.Melee && IsFenrir(dda.DamageSource.Card), OtherWolfHand, TriggerType.DealDamage, TriggerTiming.After);
+            AddTrigger<DealDamageAction>((DealDamageAction dda) => !IsPropertyTrue("OtherHand") && dda.DidDealDamage && dda.DamageType == DamageType.Melee && IsFenrir(dda.DamageSource.Card), OtherWolfHand, TriggerType.DealDamage, TriggerTiming.After);
+            AddAfterLeavesPlayAction((GameAction ga) => ResetFlagAfterLeavesPlay("OtherHand"), TriggerType.Hidden);
         }
 
         private IEnumerator OtherWolfHand(DealDamageAction arg)
         {
-            if(ShouldActivate("wolf"))
+            if (ShouldActivate("wolf"))
             {
-                if(!GetCardPropertyJournalEntryBoolean("OtherHand").GetValueOrDefault())
-                {
-                    SetCardProperty("OtherHand", true);
-                    var fear = DealDamage(CharacterCard, arg.Target, 1, DamageType.Psychic, cardSource: GetCardSource());
-                    if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(fear); } else { this.GameController.ExhaustCoroutine(fear); }
-                }
+                SetCardPropertyToTrueIfRealAction("OtherHand");
+                var fear = DealDamage(CharacterCard, arg.Target, 1, DamageType.Psychic, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(fear); } else { this.GameController.ExhaustCoroutine(fear); }
+
             }
         }
 

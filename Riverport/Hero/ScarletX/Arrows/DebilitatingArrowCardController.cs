@@ -12,10 +12,9 @@ namespace Riverport.ScarletX
     {
         public DebilitatingArrowCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
-            Type = new TriggerType[] { TriggerType.DealDamage, TriggerType.ReduceDamage };
         }
 
-        protected override IEnumerator FireArrow(DestroyCardAction dca)
+        protected override IEnumerator FireArrow(GameAction gameAction = null)
         {
             var damage = this.GameController.SelectTargetsAndDealDamage(DecisionMaker, new DamageSource(GameController, CharacterCard), 1, DamageType.Projectile, 1, false, 0, false, false, false, c => !c.IsHero, addStatusEffect: Debilitate, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(damage); } else { this.GameController.ExhaustCoroutine(damage); }
