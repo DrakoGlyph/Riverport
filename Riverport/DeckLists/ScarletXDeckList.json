@@ -1,0 +1,317 @@
+{
+  "name": "Scarlet X",
+  "kind": "Hero",
+  "initialCardIdentifiers": [
+    "ScarletXCharacter"
+  ],
+
+  "cards": [
+    {
+      "identifier": "ScarletXCharacter",
+      "character": true,
+      "title": "Scarlet X",
+      "backgroundColor": "8b160e",
+      "count": 1,
+      "hitpoints": 27,
+      "nemesisIdentifiers": "ScarletX",
+      "body": "Let Loose",
+      "powers": [
+        "Destroy an Arrow card"
+      ],
+      "icons": [
+        "Destroy"
+      ],
+      "incapacitatedAbilities": [
+        "One hero may use a power now",
+        "Destroy a Hero Equipment. That Hero deals 1 Villain target 2 Projectile damage.",
+        "One Hero may draw a card now"
+      ],
+      "flippedIcons": [
+        "UsePowerNow"
+      ],
+      "openingLines": {
+        "default": "Time to hunt some Monsters",
+        "RedHoodCharacter": "I cast aside the name! [b]You[/b] are the real monster here!"
+      },
+      "complexity": 1
+    },
+
+    {
+      "identifier": "Moonbeam",
+      "title": "Moonbeam",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "Increase damage dealt by Scarlet X by 1"
+      ],
+      "powers": [
+        "Destroy all [i]Arrow[/i] cards in play."
+      ],
+      "icons": [
+        "IncreaseDamageDealt",
+        "Destroy"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "ScarletX",
+          "text": "The Moon shines, even in the dark."
+        }
+      ],
+      "flavorReference": "Scarlet X, Bot and Souled #1"
+    },
+    {
+      "identifier": "ArgentLightQuiver",
+      "title": "Argent Light Quiver",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "At the Start of your turn, you may move an Arrow from your trash into play"
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "Manipulate"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "ScarletX",
+          "text": "A drop of Moonlight to vanquish evil"
+        }
+      ],
+      "flavorReference": "Scarlet X, Bot and Souled #3"
+    },
+    {
+      "identifier": "ScarletMantle",
+      "title": "The Scarlet Mantle",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "Reduce damage dealt to Scarlet X by 1"
+      ],
+      "icons": [
+        "ReduceDamageTaken"
+      ],
+      "flavorText": ""
+    },
+
+    {
+      "identifier": "SilverArrow",
+      "title": "Silver Arrow",
+      "count": 4,
+      "keywords": [
+        "equipment",
+        "arrow"
+      ],
+      "body": [
+        "When this card is destroyed by Scarlet X, she deals 1 target 3 Projectile damage."
+      ],
+      "icons": [
+        "DealDamageProjectile"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "DebilitatingArrow",
+      "title": "Debilitating Arrow",
+      "count": 4,
+      "keywords": [
+        "equipment",
+        "arrow"
+      ],
+      "body": [
+        "When this card is destroyed by Scarlet X, she deals 1 target 1 Projectile damage.",
+        "Reduce damage dealt by that target by 1 until the start of Scarlet X's next turn"
+      ],
+      "icons": [
+        "DealDamageProjectile",
+        "ReduceDamageDealt"
+      ]
+    },
+    {
+      "identifier": "SappingArrow",
+      "title": "Sapping Arrow",
+      "count": 3,
+      "keywords": [
+        "equipment",
+        "arrow"
+      ],
+      "body": [
+        "When this card is destroyed by Scarlet X, destroy a Villain Ongoing or Device card, then Scarlet X deals the owner of that card 2 Projectile damage."
+      ],
+      "icons": [
+        "DestroyOngoing",
+        "DestroyDevice",
+        "DealDamageProjectile"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "DetonationArrow",
+      "title": "Detonation Arrow",
+      "count": 4,
+      "keywords": [
+        "equipment",
+        "arrow"
+      ],
+      "body": [
+        "When this card is destroyed by Scarlet X, she deals 1 target 2 Projectile damage, then she may deal up to 3 targets 1 Fire damage each."
+      ],
+      "icons": [
+        "DealDamageProjectile",
+        "DealDamageFire"
+      ],
+      "flavorText": ""
+    },
+
+    {
+      "identifier": "CallOnTheLight",
+      "title": "Call On The Light",
+      "count": 4,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "You may search your Deck or Trash for {Moonbeam} and put it into play.",
+        "You may play an Arrow card now."
+      ],
+      "icons": [
+        "Search",
+        "PlayCardNow"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "QuickestDraw",
+      "title": "Quickest Draw",
+      "count": 3,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Reveal the top 3 cards of your deck. Put any revealed Arrows into play, and put the rest into your hand."
+      ],
+      "icons": [
+        "Manipulate"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "Restock",
+      "title": "Restock",
+      "count": 3,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Shuffle your trash into your deck, then reveal cards until you reveal 2 Arrows. Put the Arrows into play, shuffle the remaining cards back into your deck."
+      ],
+      "icons": [
+        "Manipulate"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "HunterInstinct",
+      "title": "Hunter's Instinct",
+      "count": 4,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Reveal cards from the top of your deck until you reveal a One-Shot and put it into your hand.",
+        "You may play a One-Shot now."
+      ],
+      "icons": [
+        "Manipulate",
+        "PlayCardNow"
+      ],
+      "flavorText": ""
+    },
+
+    {
+      "identifier": "AnticipateTheNeed",
+      "title": "Anticipate the Need",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": [
+        "At the Start of your turn, you may draw a card.",
+        "At the End of your turn, you may destroy this card to draw a card."
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "EndOfTurnAction",
+        "DrawCardNow",
+        "DestroySelf"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "BetweenTheShots",
+      "title": "Between the Shots",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": [
+        "At the End of Scarlet X's turn, if there were no cards destroyed this turn, she regains 2 HP"
+      ],
+      "icons": [
+        "EndOfTurnAction",
+        "GainHP"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "WasteNotWantNot",
+      "title": "Waste Not, Want Not",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": [
+        "When Scarlet X destroys a target, you may search the trash for an Arrow and put it into play."
+      ],
+      "icons": [
+        "Search"
+      ],
+      "flavorText": ""
+    },
+    {
+      "identifier": "ShootFirst",
+      "title": "Shoot First",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": [
+        "The first time each turn an Arrow would be destroyed by anything other than Scarlet X, she may destroy it first."
+      ],
+      "icons": [
+        "Destroy"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "ArkHive",
+          "text": "So is this when we ask questions now?"
+        }
+      ],
+      "flavorReference": "Ark-Hive, Silver Arrow #5"
+    }
+
+  ]
+
+}
