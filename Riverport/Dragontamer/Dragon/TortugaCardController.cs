@@ -17,7 +17,7 @@ namespace Riverport.Dragontamer
         public override void AddTriggers()
         {
             //When a dragon would be dealt damage, you may destroy a card under this one to prevent that damage
-            AddTrigger<DealDamageAction>((DealDamageAction dda) => HasCardsUnder && dda.Target.DoKeywordsContain("dragon"), Protect, TriggerType.DestroyCard, TriggerTiming.Before);
+            AddTrigger<DealDamageAction>((DealDamageAction dda) => HasCardsUnder && dda.Target.DoKeywordsContain("dragon"), Protect, TriggerType.DestroyCard, TriggerTiming.Before, orderMatters: true, priority: TriggerPriority.High);
         }
 
         private IEnumerator Protect(DealDamageAction arg)
@@ -27,7 +27,9 @@ namespace Riverport.Dragontamer
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
             if (DidPlayerAnswerYes(doIt))
             {
-                var protect = MoveUnderCardToTrashToPreventDamage(Card, arg);
+                var pay = DestroyCardUnderThis();
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(pay); } else { this.GameController.ExhaustCoroutine(pay); }
+                var protect = CancelAction(arg);
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(protect); } else { this.GameController.ExhaustCoroutine(protect); }
             }
         }
