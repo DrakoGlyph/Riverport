@@ -14,7 +14,7 @@ namespace Riverport.ScarletX
         {
         }
 
-        protected override IEnumerator FireArrow(GameAction gameAction = null)
+        protected override IEnumerator FireArrow(GameAction ga = null)
         {
             var damage = this.GameController.SelectTargetsAndDealDamage(DecisionMaker, new DamageSource(GameController, CharacterCard), 3, DamageType.Projectile, 1, false, 0, false, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(damage); } else { this.GameController.ExhaustCoroutine(damage); }

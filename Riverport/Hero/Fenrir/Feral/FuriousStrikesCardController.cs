@@ -22,7 +22,8 @@ namespace Riverport.Fenrir
             strike = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, Fenrir, 2, DamageType.Melee, 2, false, 0, cardSource: GetCardSource());
             if(ShouldActivate("wolf"))
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(strike); } else { this.GameController.ExhaustCoroutine(strike); }
-            if(Frenzy.IsInPlayAndHasGameText)
+            strike = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, Fenrir, 2, DamageType.Melee, 2, false, 0, cardSource: GetCardSource());
+            if (Frenzy.IsInPlayAndHasGameText)
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(strike); } else { this.GameController.ExhaustCoroutine(strike); }
         }
 

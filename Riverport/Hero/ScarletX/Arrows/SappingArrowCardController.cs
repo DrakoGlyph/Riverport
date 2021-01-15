@@ -14,7 +14,7 @@ namespace Riverport.ScarletX
         {
         }
 
-        protected override IEnumerator FireArrow(GameAction gameAction = null)
+        protected override IEnumerator FireArrow(GameAction ga = null)
         {
             List<DestroyCardAction> result = new List<DestroyCardAction>();
             var dest = this.GameController.SelectAndDestroyCard(DecisionMaker, new LinqCardCriteria(c => (c.IsOngoing || c.IsDevice) && IsVillain(c) && c.IsInPlayAndHasGameText), true, result, CharacterCard, GetCardSource());

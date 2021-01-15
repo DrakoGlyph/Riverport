@@ -111,7 +111,7 @@
         "arrow"
       ],
       "body": [
-        "When this card is destroyed by Scarlet X, she deals 1 target 3 Projectile damage."
+        "When this card is destroyed, {ScarletX} deals 1 target 3 Projectile damage."
       ],
       "icons": [
         "DealDamageProjectile"
@@ -127,7 +127,7 @@
         "arrow"
       ],
       "body": [
-        "When this card is destroyed by Scarlet X, she deals 1 target 1 Projectile damage.",
+        "When this card is destroyed, Scarlet X deals 1 target 1 Projectile damage.",
         "Reduce damage dealt by that target by 1 until the start of Scarlet X's next turn"
       ],
       "icons": [
@@ -144,7 +144,7 @@
         "arrow"
       ],
       "body": [
-        "When this card is destroyed by Scarlet X, destroy a Villain Ongoing or Device card, then Scarlet X deals the owner of that card 2 Projectile damage."
+        "When this card is destroyed, destroy a Villain Ongoing or Device card, then Scarlet X deals the owner of that card 2 Projectile damage."
       ],
       "icons": [
         "DestroyOngoing",
@@ -162,7 +162,7 @@
         "arrow"
       ],
       "body": [
-        "When this card is destroyed by Scarlet X, she deals 1 target 2 Projectile damage, then she may deal up to 3 targets 1 Fire damage each."
+        "When this card is destroyed, Scarlet X deals 1 target 2 Projectile damage, then she may deal up to 3 targets 1 Fire damage each."
       ],
       "icons": [
         "DealDamageProjectile",

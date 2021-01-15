@@ -12,6 +12,7 @@ namespace Riverport.Fenrir
     {
         public MeditateCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
+            AllowFastCoroutinesDuringPretend = false;
         }
 
         public override void AddTriggers()
@@ -25,10 +26,10 @@ namespace Riverport.Fenrir
         {
             if(ShouldActivate("wolf"))
             {
-                var poof = this.GameController.DestroyCard(HeroTurnTakerController, Card, cardSource: GetCardSource());
-                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(poof); } else { this.GameController.ExhaustCoroutine(poof); }
                 var draw = DrawCard();
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(draw); } else { this.GameController.ExhaustCoroutine(draw); }
+                var poof = this.GameController.DestroyCard(HeroTurnTakerController, Card, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(poof); } else { this.GameController.ExhaustCoroutine(poof); }
             }
         }
 
