@@ -290,26 +290,26 @@
       "flavorText": ""
     },
     {
-      "identifier": "ShootFirst",
-      "title": "Shoot First",
+      "identifier": "SkilledMarkswoman",
+      "title": "Skilled Markswoman",
       "count": 2,
       "keywords": [
         "ongoing",
         "limited"
       ],
       "body": [
-        "The first time each turn an Arrow would be destroyed by anything other than Scarlet X, she may destroy it first."
+        "You may play an additonal card on your play phase."
       ],
       "icons": [
-        "Destroy"
+        "PlayCardNow"
       ],
       "flavorQuotes": [
         {
-          "identifier": "ArkHive",
-          "text": "So is this when we ask questions now?"
+          "identifier": "Artificier",
+          "text": "Now she's just showing off"
         }
       ],
-      "flavorReference": "Ark-Hive, Silver Arrow #5"
+      "flavorReference": "Artificier, Silver Arrow #5"
     }
 
   ]

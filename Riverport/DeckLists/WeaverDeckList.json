@@ -13,6 +13,7 @@
       "title": "Weaver",
       "count": 1,
       "hitpoints": 21,
+      "backgroundColor": "442eb2",
       "nemesisIdentifiers": "Weaver",
       "body": "Needlepoint",
       "powers": "{Weaver} deals 1 target 1 Projectile damage. That target deals 1 less damage until the start of Weaver's next turn.",
@@ -26,7 +27,7 @@
         "Reduce the damage dealt to Hero character by 1 until the start of your next turn"
       ],
       "openingLines": {
-        "default": "A Stitch in Time saves Lives!"
+        "default": "The Threads all end here! You [i]must[/i] be stopped!"
       },
       "complexity": 2
     },
@@ -268,7 +269,7 @@
         "At the start if your turn, destroy this card."
       ],
       "icons": [
-        "StartOfTurnEffect",
+        "StartOfTurnAction",
         "DestroySelf"
       ],
       "flavorText": "By reading the Seams of the Universe{BR}I can influence the future.",

@@ -9,7 +9,7 @@ namespace Riverport.ScarletX
     {
         protected ArrowBaseCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
-            AllowFastCoroutinesDuringPretend = false;
+            //AllowFastCoroutinesDuringPretend = false;
         }
 
         

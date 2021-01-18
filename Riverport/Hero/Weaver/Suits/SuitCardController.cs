@@ -53,7 +53,7 @@ namespace Riverport.Weaver
             }
             if (suits > 1)
             {
-                var rtn = this.GameController.SelectCardsFromLocationAndMoveThem(HeroTurnTakerController, Equipped.NextToLocation, suits - 1, suits - 1, new LinqCardCriteria(c => c.DoKeywordsContain("material")), new List<MoveCardDestination>() { new MoveCardDestination(HeroTurnTaker.Hand) }, selectionType: SelectionType.MoveCardToHand, cardSource: GetCardSource());
+                var rtn = this.GameController.SelectCardsFromLocationAndMoveThem(HeroTurnTakerController, Equipped.NextToLocation, suits - 1, suits - 1, new LinqCardCriteria(c => c.DoKeywordsContain("suit")), new List<MoveCardDestination>() { new MoveCardDestination(HeroTurnTaker.Hand) }, selectionType: SelectionType.MoveCardToHand, cardSource: GetCardSource());
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(rtn); } else { this.GameController.ExhaustCoroutine(rtn); }
             }
         }

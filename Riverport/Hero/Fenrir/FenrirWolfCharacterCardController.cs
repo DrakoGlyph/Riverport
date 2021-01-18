@@ -27,7 +27,7 @@ namespace Riverport.Fenrir
 
         public override IEnumerator UsePower(int index = 0)
         {
-            var howl = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, Card), 1, DamageType.Sonic, 3, false, 0, false, false, false, IsVillainTarget, cardSource: GetCardSource());
+            var howl = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, Card), 1, DamageType.Sonic, 3, false, 0, false, false, false, c => !c.IsHero, cardSource: GetCardSource());
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(howl); } else { this.GameController.ExhaustCoroutine(howl); }
         }
 

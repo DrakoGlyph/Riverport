@@ -27,6 +27,7 @@ namespace Riverport.Fenrir
                 int under = 0;
                 if (Frenzy.IsInPlayAndHasGameText)
                 {
+                    
                     var clearFrenzy = this.GameController.DestroyCards(HeroTurnTakerController, new LinqCardCriteria(c => c.Location == Frenzy.UnderLocation), true, destroyed, false, cardSource: GetCardSource());
                     if(UseUnityCoroutines) { this.GameController.StartCoroutine(clearFrenzy); } else { this.GameController.ExhaustCoroutine(clearFrenzy); }
                     under += GetNumberOfCardsDestroyed(destroyed);
