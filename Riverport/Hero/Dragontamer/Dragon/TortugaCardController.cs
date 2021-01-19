@@ -17,20 +17,23 @@ namespace Riverport.Dragontamer
         public override void AddTriggers()
         {
             //When a dragon would be dealt damage, you may destroy a card under this one to prevent that damage
-            AddTrigger<DealDamageAction>((DealDamageAction dda) => HasCardsUnder && dda.Target.DoKeywordsContain("dragon") && dda.DidDealDamage, Protect, TriggerType.WouldBeDealtDamage, TriggerTiming.Before, orderMatters: true, priority: TriggerPriority.High);
+            AddTrigger<DealDamageAction>((DealDamageAction dda) => HasCardsUnder && dda.Target.DoKeywordsContain("dragon"), Protect, TriggerType.WouldBeDealtDamage, TriggerTiming.Before, orderMatters: true, priority: TriggerPriority.High);
         }
 
         private IEnumerator Protect(DealDamageAction arg)
         {
-            List<YesNoCardDecision> doIt = new List<YesNoCardDecision>();
-            var decide = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.PreventDamage, Card, arg, doIt, null, GetCardSource());
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
-            if (DidPlayerAnswerYes(doIt))
+            if (arg.Amount > 0)
             {
-                var pay = DestroyCardUnderThis();
-                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(pay); } else { this.GameController.ExhaustCoroutine(pay); }
-                var protect = CancelAction(arg);
-                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(protect); } else { this.GameController.ExhaustCoroutine(protect); }
+                List<YesNoCardDecision> doIt = new List<YesNoCardDecision>();
+                var decide = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.PreventDamage, Card, arg, doIt, null, GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+                if (DidPlayerAnswerYes(doIt))
+                {
+                    var pay = DestroyCardUnderThis();
+                    if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(pay); } else { this.GameController.ExhaustCoroutine(pay); }
+                    var protect = CancelAction(arg);
+                    if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(protect); } else { this.GameController.ExhaustCoroutine(protect); }
+                }
             }
         }
 
