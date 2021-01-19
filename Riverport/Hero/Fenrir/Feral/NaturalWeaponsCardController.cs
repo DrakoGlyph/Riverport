@@ -12,7 +12,7 @@ namespace Riverport.Fenrir
     {
         public NaturalWeaponsCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
-            AllowFastCoroutinesDuringPretend = false;
+            //AllowFastCoroutinesDuringPretend = false;
         }
 
         public override void AddTriggers()
