@@ -321,7 +321,9 @@
         "one-shot"
       ],
       "body": [
-        "Reveal cards from your deck until you reveal 2 Command cards. Put them in your hand and shuffle the rest back into your deck."
+        "Reveal cards from your deck until you reveal 2 Command cards. Put them in your hand.",
+        "If you revealed any dragons doing this, put one into play.",
+        "and shuffle the rest back into your deck"
       ],
       "icons": [
         "Manipulate"
