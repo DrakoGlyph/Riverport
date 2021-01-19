@@ -123,12 +123,10 @@
         "feral"
       ],
       "body": [
-
         "{human} At the start of your turn, destroy this card.",
         "{wolf} At the start of your turn, if there are no cards under this, destroy this card. Otherwise destroy a card under this one.",
-        "Increase damage dealt by Fenrir by 1 for every 2 cards under this one.",
-        "When this card enters play, destroy a target with 3HP or less or a Device.",
-        "When Fenrir destroys a target or a Device, put it under this card."
+        "When Fenrir destroys a target or a device, put it under this card. Increase damage dealt by Fenrir by 1 for every 2 cards under this one.",
+        "When this card enters play, destroy a target with 3HP or less or a Device."
       ],
       "icons": [
         "DestroySelf",
@@ -220,8 +218,8 @@
         "feral"
       ],
       "body": [
-          "{human} Search for Lycan Form and put it into play. Fenrir deals each Villain target 1 Psychic damage.",
-          "{wolf} You may search your deck or trash for Frenzy and put it into play. If you do not, deal 1 target 3 Melee damage."
+          "{human} Search for Lycan Form and put it into play. You may use Fenrir's innate power now.",
+          "{wolf} You may search your deck or trash for Frenzy and put it into play. It Frenzy does not enter play, deal 1 target 3 Melee damage."
       ],
       "icons": [
         "Search",
@@ -279,11 +277,11 @@
         "limited"
       ],
       "body": [
-        "{human} The first time you play a non-Feral card each turn, you may play another non-Feral card.",
+        "{human} You may play an additional card on your play phase.",
         "{wolf} The first time Fenrir deals Melee damage each turn, he then deals that target 1 Psychic damage."
       ],
       "icons": [
-        "PlayCardNow",
+        "PlayCardExtra",
         "DealDamagePsychic"
       ],
       "flavorText": ""

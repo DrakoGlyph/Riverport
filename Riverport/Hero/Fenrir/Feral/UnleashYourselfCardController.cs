@@ -22,8 +22,14 @@ namespace Riverport.Fenrir
             {
                 var search = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(c => c == LycanForm), true, false, false, shuffleAfterwards: true);
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(search); } else { this.GameController.ExhaustCoroutine(search); }
-                var fear = DealDamage(CharacterCard, IsVillainTarget, 1, DamageType.Psychic);
-                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(fear); } else { this.GameController.ExhaustCoroutine(fear); }
+                List<YesNoCardDecision> doHowl = new List<YesNoCardDecision>();
+                var decide = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.UsePowerOnCard, CharacterCard, null, doHowl, null, GetCardSource());
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+                if (DidPlayerAnswerYes(doHowl))
+                {
+                    var howl = UsePowerOnOtherCard(CharacterCard, 0);
+                    if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(howl); } else { this.GameController.ExhaustCoroutine(howl); }
+                }
             }
             if(ShouldActivate("wolf"))
             {

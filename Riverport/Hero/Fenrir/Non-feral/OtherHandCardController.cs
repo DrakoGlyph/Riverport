@@ -12,16 +12,37 @@ namespace Riverport.Fenrir
     {
         public OtherHandCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
-            SpecialString ss = SpecialStringMaker.ShowHasBeenUsedThisTurn("OtherHand", "Fenrir has dealt Other Hand damage this turn.", "Fenrir can deal Other hand damage this turn");
-            ss.Condition = ShouldActivateWolf;
+            SpecialStringMaker.ShowSpecialString(OtherHandString);
+
+            AddThisCardControllerToList(CardControllerListType.IncreasePhaseActionCount);
+        }
+
+        private string OtherHandString()
+        {
+            if(ShouldActivateWolf())
+            {
+                if(HasBeenSetToTrueThisTurn("OtherHand"))
+                {
+                    return "Fenrir has dealt Other Hand damage this turn.";
+                } else
+                {
+                    return "Fenrir can deal Other Hand damage this turn.";
+                }
+            }
+            return null;
         }
 
         public override void AddTriggers()
         {
             //AddStartOfTurnTrigger(tt => true, Reset, TriggerType.Other);
-            AddTrigger<PlayCardAction>((PlayCardAction pca) => pca.IsSuccessful && !pca.CardToPlay.DoKeywordsContain("feral") && IsFirstTimeCardPlayedThisTurn(pca.CardToPlay, c => !c.DoKeywordsContain("feral"), TriggerTiming.After), OtherHumanHand, TriggerType.PlayCard, TriggerTiming.After);
+            AddAdditionalPhaseActionTrigger(tt => ShouldActivate("human") && tt == TurnTaker, Phase.PlayCard, 1);
             AddTrigger<DealDamageAction>((DealDamageAction dda) => !IsPropertyTrue("OtherHand") && dda.DidDealDamage && dda.DamageType == DamageType.Melee && IsFenrir(dda.DamageSource.Card), OtherWolfHand, TriggerType.DealDamage, TriggerTiming.After);
             AddAfterLeavesPlayAction((GameAction ga) => ResetFlagAfterLeavesPlay("OtherHand"), TriggerType.Hidden);
+        }
+
+        public override bool AskIfIncreasingCurrentPhaseActionCount()
+        {
+            return this.GameController.ActiveTurnPhase.IsPlayCard && ShouldActivate("human") && this.GameController.ActiveTurnTaker == TurnTaker;
         }
 
         private IEnumerator OtherWolfHand(DealDamageAction arg)
@@ -35,14 +56,13 @@ namespace Riverport.Fenrir
             }
         }
 
-        private IEnumerator OtherHumanHand(PlayCardAction arg)
+        public override IEnumerator Play()
         {
             if(ShouldActivate("human"))
             {
-                var play = SelectAndPlayCardFromHand(HeroTurnTakerController, true, null, new LinqCardCriteria(c => !c.DoKeywordsContain("feral")));
-                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(play); } else { this.GameController.ExhaustCoroutine(play); }
+                var plus = IncreasePhaseActionCountIfInPhase(tt => tt == TurnTaker, Phase.PlayCard, 1);
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(plus); } else { this.GameController.ExhaustCoroutine(plus); }
             }
-
         }
 
         private IEnumerator Reset(PhaseChangeAction arg)
