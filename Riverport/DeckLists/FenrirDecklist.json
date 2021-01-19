@@ -79,7 +79,7 @@
         "equipment",
         "relic"
       ],
-      "body": [ 
+      "body": [
         "{human} At the end of your turn, Fenrir regains 1 HP",
         "{wolf} Reduce the damage dealt to Fenrir by 1"
       ],
@@ -112,7 +112,13 @@
         "DealDamagePsychic",
         "GainHP"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "Fenrir",
+          "text": "Sometimes, I can't hold the wolf in."
+        }
+      ],
+      "flavorReference": "Fenrir, Blood Moon #11"
     },
     {
       "identifier": "Frenzy",
@@ -123,8 +129,7 @@
         "feral"
       ],
       "body": [
-        "{human} At the start of your turn, destroy this card.",
-        "{wolf} At the start of your turn, if there are no cards under this, destroy this card. Otherwise destroy a card under this one.",
+        "At the start of your turn, if Fenrir is not in Wolf Form, or if there are no cards under this, destroy this card. Otherwise destroy a card under this one.",
         "When Fenrir destroys a target or a device, put it under this card. Increase damage dealt by Fenrir by 1 for every 2 cards under this one.",
         "When this card enters play, destroy a target with 3HP or less or a Device."
       ],
@@ -132,8 +137,13 @@
         "DestroySelf",
         "IncreaseDamageDealt"
       ],
-      "flavorText": "Hun, Go Wild.",
-      "flavorReference": "Artificier, Moonlight #7"
+      "flavorQuotes": [
+        {
+          "text": "Hun, Go Wild.",
+          "identifier": "Artificier"
+        }
+      ],
+      "flavorReference": "Artificier, Blood Moon #11"
     },
     {
       "identifier": "Meditate",
@@ -143,13 +153,19 @@
       "body": [
         "{human} When you would draw a card, search for one instead. At the start of your turn, destroy this card.",
         "{wolf} At the end of your turn, destroy this card and draw a card.",
-        "If Fenrir would deal or be dealt damage, destroy this card." 
+        "If Fenrir would deal or be dealt damage, destroy this card."
       ],
       "icons": [
         "Search",
         "DestroySelf"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "Soulmaurai",
+          "text": "A deep mindstate and{BR}you might yet reach him."
+        }
+      ],
+      "flavorReference": "Soulmaurai, Bot and Souled #3"
     },
 
     {
@@ -161,8 +177,8 @@
         "feral"
       ],
       "body": [
-          "{human} Draw 2 cards",
-          "{wolf} Destroy an Ongoing or Device card, then deal its owner 2 Melee damage."
+        "{human} Draw 2 cards",
+        "{wolf} Destroy an Ongoing or Device card, then deal its owner 2 Melee damage."
       ],
       "icons": [
         "DrawCardNow",
@@ -170,7 +186,13 @@
         "DestroyDevice",
         "DealDamageMelee"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "A beautiful mind, razor sharp claws.{BR}What's not to love."
+        }
+      ],
+      "flavorReference": "Artificier, Moonbeams and Dragon Heartstrings"
     },
     {
       "identifier": "FuriousStrikes",
@@ -187,7 +209,13 @@
       "icons": [
         "DealDamageMelee"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "You have me surrounded?{BR}I doubt you've met my husband."
+        }
+      ],
+      "flavorReference": "Moonlight #13"
     },
     {
       "identifier": "NaturalWeapons",
@@ -207,7 +235,14 @@
         "DrawCardNow",
         "DealDamageMelee",
         "DealDamagePsychic"
-      ]
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Fenrir",
+          "text": "I shall rend you all in twain{BR}should you hurt him!"
+        }
+      ],
+      "flavorReference": "Fenrir, Ark-Hive: Hunted"
     },
     {
       "identifier": "UnleashYourself",
@@ -218,15 +253,20 @@
         "feral"
       ],
       "body": [
-          "{human} Search for Lycan Form and put it into play. You may use Fenrir's innate power now.",
-          "{wolf} You may search your deck or trash for Frenzy and put it into play. It Frenzy does not enter play, deal 1 target 3 Melee damage."
+        "{human} Search for Lycan Form and put it into play. You may use Fenrir's innate power now.",
+        "{wolf} You may search your deck or trash for Frenzy and put it into play. It Frenzy does not enter play, deal 1 target 3 Melee damage."
       ],
       "icons": [
         "Search",
         "DealDamagePsychic",
         "DealDamageMelee"
       ],
-      "flavorText": "Sometimes you just have to let loose.",
+      "flavorQuotes": [
+        {
+          "text": "Sometimes you just have to let loose.",
+          "identifier": "Fenrir"
+        }
+      ],
       "flavorReference": "Fenrir, Bahamut's Dusk"
     },
 
@@ -248,7 +288,12 @@
         "DrawCardNow",
         "PlayCardNow"
       ],
-      "flavorText": "Just focus on your center, bring the two halves together",
+      "flavorQuotes": [
+        {
+          "identifier": "Soulmaurai",
+          "text": "Just focus on your center,{BR}bring the two halves together"
+        }
+      ],
       "flavorReference": "Soulmaurai, New Moonlight #2"
     },
     {
@@ -266,7 +311,9 @@
         "Search",
         "DestroySelf",
         "PlayCardNow"
-      ]
+      ],
+      "flavorText": "We take the cases no one else will",
+      "flavorReference": "Moonlight Investigations Slogan"
     },
     {
       "identifier": "OtherHand",
@@ -284,7 +331,17 @@
         "PlayCardExtra",
         "DealDamagePsychic"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "RedHood",
+          "text": "I'm not afraid of you!"
+        },
+        {
+          "identifier": "Fenrir",
+          "text": "You [b]should[/b]"
+        }
+      ],
+      "flavorReference": "Blood Moon #13"
     },
 
     {
@@ -303,7 +360,13 @@
         "DestroyCard",
         "RegainHP"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "text": "No. [b]I[/b] am in control.",
+          "identifier": "Fenrir"
+        }
+      ],
+      "flavorReference": "Fenrir, Bot and Souled #12"
     },
     {
       "identifier": "ByPaleMoonlight",
@@ -322,7 +385,17 @@
         "GainHP",
         "IncreaseDamageDealt"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "Fenrir",
+          "text": "The Moon is the only light."
+        },
+        {
+          "identifier": "ScarletX",
+          "text": "That's why I like it."
+        }
+      ],
+      "flavorReference": "Silver Moonlight"
     },
     {
       "identifier": "GreatCleave",
@@ -340,7 +413,13 @@
         "Manipulate",
         "DealDamageMelee"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "Nothing will stop him until he finds me."
+        }
+      ],
+      "flavorReference": "Artificer, Moonbeams and Dragon Heartstrings"
     },
     {
       "identifier": "TransformingHowl",
@@ -358,7 +437,7 @@
         "Search",
         "DealDamageSonic"
       ],
-      "flavorText": "A howl that instills fear to all who threaten Riverport.",
+      "flavorText": "A howl that instills fear to all{BR}who threaten Riverport.",
       "flavorReference": "Artificier, Moonlight #1"
     }
   ]

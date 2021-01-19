@@ -171,7 +171,12 @@
         "DealDamageMelee",
         "DealDamageFire"
       ],
-      "flavorText": "\"You just need to earn their respect.\"",
+      "flavorQuotes": [
+        {
+          "identifer": "Dragontamer",
+          "text": "You just need to earn their respect."
+        }
+      ],
       "flavorReference": "Dragontamer, Here Be Dragons #2"
     },
     {
@@ -189,7 +194,12 @@
       "icons": [
         "DealDamageMelee"
       ],
-      "flavorText": "\"Sharp Teeth, check.\"",
+      "flavorQuotes": [
+        {
+          "text": "Sharp Teeth, check.",
+          "identifier": "Dragontamer"
+        }
+      ],
       "flavorReference": "Dragontamer, Here Be Dragons #2"
     },
     {
@@ -207,7 +217,12 @@
       "icons": [
         "DealDamageFire"
       ],
-      "flavorText": "\"Flame Breath. Dangerous, but check.\"",
+      "flavorQuotes": [
+        {
+          "text": "Flame Breath. Dangerous, but check.",
+          "identifier": "Dragontamer"
+        }
+      ],
       "flavorReference": "Dragontamer, Here Be Dragons #3"
     },
     {
@@ -225,7 +240,12 @@
       "icons": [
         "UsePowerNow"
       ],
-      "flavorText": "\"They're incredibly well synchronized.\"",
+      "flavorQuotes": [
+        {
+          "identifier": "Fenrir",
+          "text": "They're incredibly well synchronized."
+        }
+      ],
       "flavorReference": "Fenrir, Moonbeams and Dragon Heartstrings"
     },
 
@@ -243,7 +263,12 @@
       "icons": [
         "GainHP"
       ],
-      "flavorText": "\"Someone once said an army marches on{BR}its stomach.{BR}I find it helps with dragons too.\"",
+      "flavorQuotes": [
+        {
+          "identifier": "Dragontamer",
+          "text": "Someone once said an army{BR}marches on its stomach.{BR}I find it helps with dragons too."
+        }
+      ],
       "flavorReference": "Dragontamer, Here Be Dragons #10"
     },
     {
@@ -261,7 +286,12 @@
       "icons": [
         "IncreaseDamageDealt"
       ],
-      "flavorText": "\"No, stop eating the training carcass!\"",
+      "flavorQuotes": [
+        {
+          "identifier": "Dragontamer",
+          "text": "No! Stop eating the training carcass!"
+        }
+      ],
       "flavorReference": "Dragontamer, Here Be Dragons #22"
     },
 
@@ -310,7 +340,12 @@
         "Manipulate",
         "PlayCardNow"
       ],
-      "flavorText": "\"We'll just have to make something up!\"",
+      "flavorQuotes": [
+        {
+          "identifier": "Dragontamer",
+          "text": "We'll just have to make something up!"
+        }
+      ],
       "flavorReference": "Dragontamer, Bahamut's Dawn"
     },
     {
@@ -328,7 +363,12 @@
       "icons": [
         "Manipulate"
       ],
-      "flavorText": "\"So here's the plan...\"",
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "So here's the plan, are you listening Drako?"
+        }
+      ],
       "flavorReference": "Artificier, Bahamut's Dusk"
     },
 
@@ -347,7 +387,12 @@
         "Search",
         "DestroySelf"
       ],
-      "flavorText": "\"I have a few backup plans, especially after Bahamut\"",
+      "flavorQuotes": [
+        {
+          "identifier": "Dragontamer",
+          "text": "I have a few backup plans,{BR}especially after Bahamut"
+        }
+      ],
       "flavorReference": "Dragontamer, Dragons Amongst Gods"
     },
     {
@@ -366,7 +411,12 @@
         "DrawCardExtra",
         "StartOfTurnAction"
       ],
-      "flavorText": "\"Come on, you can do it!\"",
+      "flavorQuotes": [
+        {
+          "identifier": "Dragontamer",
+          "text": "Come on, you can do it!"
+        }
+      ],
       "flavorReference": "Dragontamer, Moonbeams and Dragon Heartstrings"
     },
 
@@ -389,7 +439,12 @@
         "DealDamageProjectile",
         "DealDamageMelee"
       ],
-      "flavorText": "\"What once propogated Replic-8{BR}will now help stop it\"",
+      "flavorQuotes": [
+        {
+          "identifier": "Dragontamer",
+          "text": "What once propogated Replic-8{BR}will now help stop it"
+        }
+      ],
       "flavorReference": "Dragontamer, Bahamut's Dawn"
     }
 

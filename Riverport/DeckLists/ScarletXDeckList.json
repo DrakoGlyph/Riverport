@@ -99,7 +99,13 @@
       "icons": [
         "ReduceDamageTaken"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "ScarletX",
+          "text": "It was then I decided I could{BR}bear the hood no more."
+        }
+      ],
+      "flavorReference": "Scarlet X, Blood Moon #12"
     },
 
     {
@@ -116,7 +122,8 @@
       "icons": [
         "DealDamageProjectile"
       ],
-      "flavorText": ""
+      "flavorText": "Primed for raw damage",
+      "flavorReference": "New Silver Arrow Guide"
     },
     {
       "identifier": "DebilitatingArrow",
@@ -133,7 +140,9 @@
       "icons": [
         "DealDamageProjectile",
         "ReduceDamageDealt"
-      ]
+      ],
+      "flavorText": "Lessen the Danger",
+      "flavorReference": "New Silver Arrow Guide"
     },
     {
       "identifier": "SappingArrow",
@@ -151,7 +160,8 @@
         "DestroyDevice",
         "DealDamageProjectile"
       ],
-      "flavorText": ""
+      "flavorText": "Technology can be a monster too",
+      "flavorReference": "New Silver Arrow Guide"
     },
     {
       "identifier": "DetonationArrow",
@@ -168,7 +178,8 @@
         "DealDamageProjectile",
         "DealDamageFire"
       ],
-      "flavorText": ""
+      "flavorText": "Explosives deal well with crowds",
+      "flavorReference": "New Silver Arrow Guide"
     },
 
     {
@@ -186,7 +197,13 @@
         "Search",
         "PlayCardNow"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "ScarletX",
+          "text": "As the moon is the only light{BR}So too will I stand in the night"
+        }
+      ],
+      "flavorReference": "Scarlet X, Blood Moon #12"
     },
     {
       "identifier": "QuickestDraw",
@@ -201,7 +218,13 @@
       "icons": [
         "Manipulate"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "Where did that arrow come from?{BR}Where did [i]you[/i] come from?"
+        }
+      ],
+      "flavorReference": "Artificier, Blood Moon #1"
     },
     {
       "identifier": "Restock",
@@ -216,7 +239,13 @@
       "icons": [
         "Manipulate"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "ScarletX",
+          "text": "Just need a moment to fabricate{BR}some more arrows."
+        }
+      ],
+      "flavorReference": "Scarlet X, Blood Moon #3"
     },
     {
       "identifier": "HunterInstinct",
@@ -233,7 +262,8 @@
         "Manipulate",
         "PlayCardNow"
       ],
-      "flavorText": ""
+      "flavorText": "Trust your instincts.",
+      "flavorReference": "New Silver Arrow Guide"
     },
 
     {
@@ -254,7 +284,13 @@
         "DrawCardNow",
         "DestroySelf"
       ],
-      "flavorText": ""
+      "flavorQuotes": [
+        {
+          "identifier": "Dragontamer",
+          "text": "Where is... oh... thank you, Marion."
+        }
+      ],
+      "flavorReference": "Dragontamer, Here Be Dragons #51"
     },
     {
       "identifier": "BetweenTheShots",
@@ -271,7 +307,8 @@
         "EndOfTurnAction",
         "GainHP"
       ],
-      "flavorText": ""
+      "flavorText": "Make time to breathe",
+      "flavorReference": "New Silver Arrow Guide"
     },
     {
       "identifier": "WasteNotWantNot",
@@ -287,7 +324,8 @@
       "icons": [
         "Search"
       ],
-      "flavorText": ""
+      "flavorText": "Like any hunter, make{BR}efficient use of your ammunition",
+      "flavorReference": "New Silver Arrow Guide"
     },
     {
       "identifier": "SkilledMarkswoman",

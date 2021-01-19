@@ -51,7 +51,7 @@
         "IncreaseDamageDealt"
       ],
       "flavorText": "To Keep You Fighting",
-      "FlavorReference": "Memo from Weaver to Fenrir"
+      "flavorReference": "Memo from Weaver to Fenrir"
     },
     {
       "identifier": "KevlarShellSuit",
@@ -62,7 +62,7 @@
         "suit"
       ],
       "body": [
-        "Play next to a Hero Character card.",  
+        "Play next to a Hero Character card.",
         "A Hero may only have one Suit next to them at a time. If another suit would be put in play, return all but 1 suit to Weaver's hand.",
         "If the equipped hero takes 5 or more damage in one blow, destroy this suit.",
         "Reduce damage dealt to this hero by 1"
@@ -192,7 +192,12 @@
         "DrawCardNow",
         "Discard"
       ],
-      "flavorText": "I need my finest thread, Sixty-Three!",
+      "flavorQuotes": [
+        {
+          "identifier": "Weaver",
+          "text": "I need my finest thread, Sixty-Three!"
+        }
+      ],
       "flavorReference": "Weaver, Weaver #12"
     },
     {
@@ -211,7 +216,12 @@
         "Manipulate",
         "PlayCardNow"
       ],
-      "flavorText": "I know it was in here somewhere!",
+      "flavorQuotes": [
+        {
+          "identifier": "Weaver",
+          "text": "I know it was in here somewhere!"
+        }
+      ],
       "flavorReference": "Weaver, Lost Weave"
     },
     {
@@ -233,7 +243,12 @@
         "HasPower",
         "Search"
       ],
-      "flavorText": "This should be a quick patch",
+      "flavorQuotes": [
+        {
+          "identifier": "Weaver",
+          "text": "This should be a quick patch"
+        }
+      ],
       "flavorReference": "Weaver, Moonlight #5"
     },
     {
@@ -252,7 +267,12 @@
       "icons": [
         "PlayCardNow"
       ],
-      "flavorText": "I made it ahead of time.",
+      "flavorQuotes": [
+        {
+          "identifier": "Weaver",
+          "text": "I made it ahead of time."
+        }
+      ],
       "flavorReference": "Weaver, Weaver #12"
     },
     {
@@ -272,7 +292,12 @@
         "StartOfTurnAction",
         "DestroySelf"
       ],
-      "flavorText": "By reading the Seams of the Universe{BR}I can influence the future.",
+      "flavorQuotes": [
+        {
+          "identifier": "Weaver",
+          "text": "By reading the Seams of the Universe{BR}I can influence the future."
+        }
+      ],
       "flavorReference": "Weaver, Ark-Hive Hunted"
     },
 
@@ -317,7 +342,12 @@
       "icons": [
         "DrawCardNow"
       ],
-      "flavorText": "Some things are salvagable.",
+      "flavorQuotes": [
+        {
+          "identifier": "Weaver",
+          "text": "Some things are salvagable."
+        }
+      ],
       "flavorReference": "Weaver, Bahamut's Dawn"
     },
 
@@ -341,7 +371,12 @@
         "HasPower",
         "Manipulate"
       ],
-      "flavorText": "More than samples, dear,{BR}It's the story of us.",
+      "flavorQuotes": [
+        {
+          "identifier": "Weaver",
+          "text": "More than samples, dear,{BR}It's the story of [i]us[/i]."
+        }
+      ],
       "flavorReference": "Weaver, Unravelled"
     },
     {
@@ -363,7 +398,12 @@
         "HasPower",
         "PlayCardNow"
       ],
-      "flavorText": "That loom can rewrite fate itself!",
+      "flavorQuotes": [
+        {
+          "identifier": "Skoll",
+          "text": "That loom can rewrite fate itself!"
+        }
+      ],
       "flavorReference": "Skoll, Moonlight #12"
     },
     {
@@ -386,7 +426,12 @@
         "MakeDamageIrreducible",
         "ReduceDamageDealt"
       ],
-      "flavorText": "Careful, they can rip the universe",
+      "flavorQuotes": [
+        {
+          "identifier": "Weaver",
+          "text": "Careful, they can rip the universe"
+        }
+      ],
       "flavorReference": "Weaver, Adam and Weave"
     },
 
@@ -411,7 +456,7 @@
         "HasPower",
         "Search"
       ],
-      "flavorText": "Trickster God or Helpful Arthropod",
+      "flavorText": "Trickster God or Helpful Arthropod?",
       "flavorReference": "Artificier's Notes"
     }
   ]
