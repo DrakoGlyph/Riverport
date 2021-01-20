@@ -41,8 +41,15 @@ namespace Riverport.Dragontamer
         {
             //When Tortuga enters play, you may put up to 3 cards from your hand under him
             List<MoveCardDestination> under = new List<MoveCardDestination>() { new MoveCardDestination(Card.UnderLocation) };
-            var empower = this.GameController.SelectCardsFromLocationAndMoveThem(HeroTurnTakerController, HeroTurnTaker.Hand, 0, 3, new LinqCardCriteria(c => true), under, cardSource: GetCardSource());
+            List<MoveCardAction> result = new List<MoveCardAction>();
+            var empower = this.GameController.SelectCardsFromLocationAndMoveThem(HeroTurnTakerController, HeroTurnTaker.Hand, 0, 3, new LinqCardCriteria(c => true), under, storedResultsMove: result, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(empower); } else { this.GameController.ExhaustCoroutine(empower); }
+            int count = GetNumberOfCardsMoved(result);
+            if(count > 0)
+            {
+                var draw = DrawCards(HeroTurnTakerController, count);
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(draw); } else { this.GameController.ExhaustCoroutine(draw); }
+            }
         }
 
         public override IEnumerator UsePower(int index = 0)

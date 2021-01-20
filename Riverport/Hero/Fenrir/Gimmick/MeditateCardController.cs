@@ -17,6 +17,7 @@ namespace Riverport.Fenrir
 
         public override void AddTriggers()
         {
+            AddStartOfTurnTrigger(tt => tt == TurnTaker, DestroyThisCardResponse, TriggerType.DestroySelf);
             AddTrigger<DrawCardAction>((DrawCardAction dca) => dca.HeroTurnTaker == HeroTurnTaker, Meditate, TriggerType.CancelAction, TriggerTiming.Before);
             AddTrigger<DealDamageAction>((DealDamageAction dda) => IsFenrir(dda.Target) || IsFenrir(dda.DamageSource.Card), DestroyThisCardResponse, TriggerType.DestroySelf, TriggerTiming.After);
             AddEndOfTurnTrigger(tt => tt == TurnTaker, Unfocus, TriggerType.DestroySelf);

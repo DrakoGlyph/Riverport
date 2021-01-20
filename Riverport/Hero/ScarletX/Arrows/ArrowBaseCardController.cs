@@ -13,13 +13,13 @@ namespace Riverport.ScarletX
         }
 
         
-        protected abstract IEnumerator FireArrow(GameAction ga = null);
+        protected abstract IEnumerator FireArrow(DestroyCardAction dca = null);
 
        
 
         public override void AddTriggers()
         {
-            AddBeforeDestroyAction(FireArrow);
+            AddWhenDestroyedTrigger(FireArrow, TriggerType.ActivateTriggers);
         }
 
     }

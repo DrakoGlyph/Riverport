@@ -20,8 +20,12 @@ namespace Riverport.Dragontamer
             List<RevealCardsAction> reveal = new List<RevealCardsAction>();
             var plan = this.GameController.RevealCards(TurnTakerController, TurnTaker.Deck, c => c.DoKeywordsContain("command"), 2, reveal, RevealedCardDisplay.ShowMatchingCards, GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(plan); } else { this.GameController.ExhaustCoroutine(plan); }
-            var move = BulkMoveCard(TurnTakerController, reveal.FirstOrDefault().MatchingCards, HeroTurnTaker.Hand, false, false, TurnTakerController, false);
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(move); } else { this.GameController.ExhaustCoroutine(move); }
+            RevealCardsAction rca = reveal.FirstOrDefault();
+            if (rca.FoundMatchingCards)
+            {
+                var move = BulkMoveCard(TurnTakerController, rca.MatchingCards, HeroTurnTaker.Hand, false, false, TurnTakerController, false);
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(move); } else { this.GameController.ExhaustCoroutine(move); }
+            }
             List<Card> observe = new List<Card>();
             foreach(Card card in reveal.FirstOrDefault().NonMatchingCards)
             {

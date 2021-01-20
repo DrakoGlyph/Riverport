@@ -18,7 +18,7 @@ namespace Riverport.Fenrir
         {
             AddStartOfTurnTrigger(tt => tt == TurnTaker, DestructionTriggers, TriggerType.DestroySelf);
             AddIncreaseDamageTrigger(dda => IsFenrir(dda.DamageSource.Card), dda => (int) Math.Floor(Card.UnderLocation.NumberOfCards / 2.0));
-            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => dca.CardToDestroy.Card.IsTarget || dca.CardToDestroy.Card.IsDevice, DoFrenzy, TriggerType.Other, TriggerTiming.After);
+            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => (dca.CardToDestroy.Card.IsTarget || dca.CardToDestroy.Card.IsDevice) && IsFenrir(dca.ResponsibleCard), DoFrenzy, TriggerType.Other, TriggerTiming.After);
 
         }
 

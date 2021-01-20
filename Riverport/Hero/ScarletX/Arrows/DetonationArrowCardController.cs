@@ -14,11 +14,11 @@ namespace Riverport.ScarletX
         {
         }
 
-        protected override IEnumerator FireArrow(GameAction ga = null)
+        protected override IEnumerator FireArrow(DestroyCardAction dca = null)
         {
-            var stick = this.GameController.SelectTargetsAndDealDamage(DecisionMaker, new DamageSource(GameController, CharacterCard), 2, DamageType.Projectile, 1, false, 0, false, true, cardSource: GetCardSource());
+            var stick = this.GameController.SelectTargetsAndDealDamage(DecisionMaker, new DamageSource(GameController, CharacterCard), 2, DamageType.Projectile, 1, false, 0, false, true, false, c=>!c.IsHero, cardSource: GetCardSource());
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(stick); } else { this.GameController.ExhaustCoroutine(stick); }
-            var detonate = this.GameController.SelectTargetsAndDealDamage(DecisionMaker, new DamageSource(GameController, CharacterCard), 1, DamageType.Fire, 3, false, 0, cardSource: GetCardSource());
+            var detonate = this.GameController.SelectTargetsAndDealDamage(DecisionMaker, new DamageSource(GameController, CharacterCard), 1, DamageType.Fire, 3, false, 0, false, false, false, c=>!c.IsHero, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(detonate); } else { this.GameController.ExhaustCoroutine(detonate); }
         }
     }

@@ -26,8 +26,12 @@ namespace Riverport.Fenrir
                 List<DestroyCardAction> storedResultsAction = new List<DestroyCardAction> { };
                 var sunder = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.IsOngoing || c.IsDevice), false, storedResultsAction, CharacterCard, GetCardSource());
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(sunder); } else { this.GameController.ExhaustCoroutine(sunder); }
-                var rend = this.GameController.DealDamageToTarget(new DamageSource(GameController, CharacterCard), GetDestroyedCards(storedResultsAction).FirstOrDefault(), 2, DamageType.Melee, cardSource: GetCardSource());
-                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(rend); } else { this.GameController.ExhaustCoroutine(rend); }
+                if (DidDestroyCards(storedResultsAction))
+                {
+                    Card target = GetDestroyedCards(storedResultsAction).FirstOrDefault().Owner.CharacterCard;
+                    var rend = this.GameController.DealDamageToTarget(new DamageSource(GameController, CharacterCard), target, 2, DamageType.Melee, cardSource: GetCardSource());
+                    if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(rend); } else { this.GameController.ExhaustCoroutine(rend); }
+                }
             }
         }
     }
