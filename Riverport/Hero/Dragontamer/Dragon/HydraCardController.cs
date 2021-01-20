@@ -16,28 +16,34 @@ namespace Riverport.Dragontamer
 
         public override void AddTriggers()
         {
-            // If there is are cards under this one, destroy one and Hydra regains 1 HP
-            AddStartOfTurnTrigger(tt => (Card.MaximumHitPoints > Card.HitPoints) && HasCardsUnder && tt == TurnTaker, Regen, TriggerType.GainHP);
+            //AddStartOfTurnTrigger(tt => (Card.MaximumHitPoints > Card.HitPoints) && HasCardsUnder && tt == TurnTaker, Regen, TriggerType.GainHP);
             //When Hydra deals Melee damage, she also deals that target 1 Fire Damage
-            AddTrigger<DealDamageAction>((DealDamageAction dda) => dda.DamageSource.IsSameCard(Card) && dda.DamageType == DamageType.Melee && dda.DidDealDamage, Burn, TriggerType.DealDamage, TriggerTiming.After);
+            AddTrigger<DealDamageAction>((DealDamageAction dda) => HasCardsUnder && dda.DamageSource.IsSameCard(Card) && dda.DamageType == DamageType.Melee && dda.DidDealDamage, Burn, TriggerType.DealDamage, TriggerTiming.After);
 
         }
 
         private IEnumerator Burn(DealDamageAction arg)
         {
-            var burn = DealDamage(Card, arg.Target, 1, DamageType.Fire, cardSource: GetCardSource());
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(burn); } else { this.GameController.ExhaustCoroutine(burn); }
+            List<YesNoCardDecision> cardDecisions = new List<YesNoCardDecision>();
+            var doIt = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.MoveCardFromUnderCard, Card, arg, cardDecisions, null, GetCardSource());
+            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(doIt); } else { this.GameController.ExhaustCoroutine(doIt); }
+            if(DidPlayerAnswerYes(cardDecisions)) {
+                var burn = DealDamage(Card, arg.Target, 1, DamageType.Fire, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(burn); } else { this.GameController.ExhaustCoroutine(burn); }
+                var cost = DestroyCardUnderThis();
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(cost); } else { this.GameController.ExhaustCoroutine(cost); }
+            }
         }
 
-        private IEnumerator Regen(PhaseChangeAction arg)
-        {
-            //Destroy a card under this one
-            var pay = DestroyCardUnderThis();
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(pay); } else { this.GameController.ExhaustCoroutine(pay); }
-            //Hydra regains 1 HP
-            var heal = this.GameController.GainHP(Card, 1);
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(heal); } else { this.GameController.ExhaustCoroutine(heal); }
-        }
+        //private IEnumerator Regen(PhaseChangeAction arg)
+        //{
+        //    //Destroy a card under this one
+        //    var pay = DestroyCardUnderThis();
+        //    if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(pay); } else { this.GameController.ExhaustCoroutine(pay); }
+        //    //Hydra regains 1 HP
+        //    var heal = this.GameController.GainHP(Card, 1);
+        //    if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(heal); } else { this.GameController.ExhaustCoroutine(heal); }
+        //}
 
         public override IEnumerator UsePower(int index = 0)
         {

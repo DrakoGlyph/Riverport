@@ -90,8 +90,7 @@
         "dragon"
       ],
       "body": [
-        "At the start of your turn, if there are cards under this one, destroy one and Hydra regains 1 HP.",
-        "Whenever Hydra deal Melee damage, she then deals that target 1 Fire Damage."
+        "Whenever Hydra deal Melee damage, you may destroy a card under this. If you do, Hydra deals that target 1 Fire Damage."
       ],
       "powers": [
         "Hydra deals up to 3 targets 1 Melee damage."
