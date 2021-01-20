@@ -69,7 +69,7 @@
       ],
       "powers": [
         "Elgor deals 1 target 1 Fire damage.",
-        "Destroy a card under Elgor."
+        "Destroy a card under Elgor. If you do, draw a card."
       ],
       "icons": [
         "DestroyOngoing",
@@ -257,7 +257,8 @@
         "treat"
       ],
       "body": [
-        "A dragon in play regains 2 HP, then put this card under it."
+        "A dragon in play regains 2 HP, then put this card under it.",
+        "If there are no Dragons in play, you may search your trash for a Dragon and put it into play."
       ],
       "icons": [
         "GainHP"
@@ -280,7 +281,8 @@
       ],
       "body": [
         "Choose a Dragon.",
-        "Increase the next damage dealt by that dragon by 1, then put this card under it."
+        "Increase the next damage dealt by that dragon by 1, then put this card under it.",
+        "IF there are no dragons in play, you may search your trash for a Dragon and put it into play."
       ],
       "icons": [
         "IncreaseDamageDealt"
@@ -356,8 +358,8 @@
       ],
       "body": [
         "Reveal cards from your deck until you reveal 2 Command cards. Put them in your hand.",
-        "If you revealed any dragons doing this, put one into play.",
-        "and shuffle the rest back into your deck"
+        "If you revealed any dragons doing this, put one into your hand.",
+        "Shuffle the rest back into your deck"
       ],
       "icons": [
         "Manipulate"
@@ -365,7 +367,7 @@
       "flavorQuotes": [
         {
           "identifier": "Artificier",
-          "text": "So here's the plan, are you listening Drako?"
+          "text": "So here's the plan,{BR}are you listening Drako?"
         }
       ],
       "flavorReference": "Artificier, Bahamut's Dusk"

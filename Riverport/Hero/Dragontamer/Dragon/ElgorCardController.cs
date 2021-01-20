@@ -49,8 +49,13 @@ namespace Riverport.Dragontamer
                 case 1:
                     {
                         // Destroy a card under Elgor
-                        var destroy = DestroyCardUnderThis();
-                        if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+                        if (HasCardsUnder)
+                        {
+                            var destroy = DestroyCardUnderThis();
+                            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+                            var draw = DrawCard();
+                            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(draw); } else { this.GameController.ExhaustCoroutine(draw); }
+                        }
                         break;
                     }
             }
