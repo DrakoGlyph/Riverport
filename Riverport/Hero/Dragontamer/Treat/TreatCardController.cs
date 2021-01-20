@@ -20,12 +20,20 @@ namespace Riverport.Dragontamer
 
         public override IEnumerator Play()
         {
-            List<SelectCardDecision> storedResults = new List<SelectCardDecision>();
-            var select = this.GameController.SelectCardsAndDoAction(HeroTurnTakerController, new LinqCardCriteria(card => card.DoKeywordsContain("dragon") && card.IsInPlayAndNotUnderCard), EffectType, Effect, 1, false, 1, storedResults, cardSource: GetCardSource());
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(select); } else { this.GameController.ExhaustCoroutine(select); }
-            Card c = GetSelectedCard(storedResults);
-            var move = this.GameController.MoveCard(TurnTakerController, Card, c.UnderLocation, doesNotEnterPlay: true, cardSource: GetCardSource());
-            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(move); } else { this.GameController.ExhaustCoroutine(move); }
+            if (FindCardsWhere(card => card.DoKeywordsContain("dragon") && card.IsInPlayAndHasGameText).Any())
+            {
+                List<SelectCardDecision> storedResults = new List<SelectCardDecision>();
+                var select = this.GameController.SelectCardsAndDoAction(HeroTurnTakerController, new LinqCardCriteria(card => card.DoKeywordsContain("dragon") && card.IsInPlayAndNotUnderCard), EffectType, Effect, 1, false, 1, storedResults, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(select); } else { this.GameController.ExhaustCoroutine(select); }
+                Card c = GetSelectedCard(storedResults);
+                var move = this.GameController.MoveCard(TurnTakerController, Card, c.UnderLocation, doesNotEnterPlay: true, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(move); } else { this.GameController.ExhaustCoroutine(move); }
+            }
+            else
+            {
+                var revive = this.GameController.SelectCardsFromLocationAndMoveThem(DecisionMaker, TurnTaker.Trash, 0, 1, new LinqCardCriteria(c => c.DoKeywordsContain("dragon")), new List<MoveCardDestination>() { new MoveCardDestination(TurnTaker.PlayArea) }, true, false, selectionType: SelectionType.PutIntoPlay, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(revive); } else { this.GameController.ExhaustCoroutine(revive); }
+            }
         }
     }
 }
