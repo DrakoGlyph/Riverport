@@ -12,7 +12,29 @@ namespace Riverport.Weaver
     {
         protected MaterialCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
-            SpecialStringMaker.ShowListOfCards(new LinqCardCriteria(DetermineEligibility));
+            SpecialStringMaker.ShowSpecialString(Inventory);
+        }
+
+        private string Inventory()
+        {
+            string rtn = "Suits in play:\n";
+            foreach(HeroTurnTaker character in GameController.AllHeroes)
+            {
+                Card c = FindSuit(character);
+                if (c == null) rtn += character.ShortName + " does not have a suit equipepd.";
+                else rtn += character.ShortName + " has " + c.Title + " equipped.";
+                rtn += "{BR}";
+            }
+            return rtn;
+        }
+
+        private Card FindSuit(HeroTurnTaker character)
+        {
+            foreach(Card c in character.CharacterCard.NextToLocation.Cards)
+            {
+                if (c.DoKeywordsContain("suit")) return c;
+            }
+            return null;
         }
 
         public override IEnumerator DeterminePlayLocation(List<MoveCardDestination> storedResults, bool isPutIntoPlay, List<IDecision> decisionSources, Location overridePlayArea = null, LinqTurnTakerCriteria additionalTurnTakerCriteria = null)
