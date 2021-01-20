@@ -12,14 +12,15 @@ namespace Riverport.ScarletX
             //AllowFastCoroutinesDuringPretend = false;
         }
 
-        
+        protected TriggerType Trigger;
+
         protected abstract IEnumerator FireArrow(DestroyCardAction dca = null);
 
        
 
         public override void AddTriggers()
         {
-            AddWhenDestroyedTrigger(FireArrow, TriggerType.ActivateTriggers);
+            AddWhenDestroyedTrigger(FireArrow, Trigger);
         }
 
     }

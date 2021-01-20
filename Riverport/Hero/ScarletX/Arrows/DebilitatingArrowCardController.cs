@@ -12,6 +12,7 @@ namespace Riverport.ScarletX
     {
         public DebilitatingArrowCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
+            Trigger = TriggerType.DealDamage;
         }
 
         protected override IEnumerator FireArrow(DestroyCardAction dca = null)
