@@ -39,6 +39,7 @@
       "character": true,
       "sharedIdentifier": "FenrirCharacter",
       "title": "Fenrir",
+      "backgroundColor": "AFAFAF",
       "count": 1,
       "hitpoints": 32,
       "gameplay": "You may activate {wolf} text.",
@@ -215,7 +216,7 @@
           "text": "You have me surrounded?{BR}I doubt you've met my husband."
         }
       ],
-      "flavorReference": "Moonlight #13"
+      "flavorReference": "Artificier, Moonbeams and Dragon Heartstrings"
     },
     {
       "identifier": "NaturalWeapons",
@@ -338,7 +339,7 @@
         },
         {
           "identifier": "Fenrir",
-          "text": "You [b]should[/b]"
+          "text": "You [b]should[/b] be"
         }
       ],
       "flavorReference": "Blood Moon #13"
