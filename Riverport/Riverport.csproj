@@ -87,6 +87,15 @@
     <Compile Include="Hero\Fenrir\Feral\UnleashYourselfCardController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Hero\ScarletX\Ongoings\SkilledMarkswomanCardController.cs" />
+    <Compile Include="Environment\OnceAgainLabs\Misc\DestroyTheEvidenceCardController.cs" />
+    <Compile Include="Environment\OnceAgainLabs\Dragon\ChameleonCardController.cs" />
+    <Compile Include="Environment\OnceAgainLabs\Dragon\RaptorCardController.cs" />
+    <Compile Include="Environment\OnceAgainLabs\Dragon\DrKlawsCardController.cs" />
+    <Compile Include="Environment\OnceAgainLabs\Scientist\DrKlausCardController.cs" />
+    <Compile Include="Environment\OnceAgainLabs\Scientist\DrFaunaCardController.cs" />
+    <Compile Include="Environment\OnceAgainLabs\Misc\Replic8VatCardController.cs" />
+    <Compile Include="Environment\OnceAgainLabs\Scientist\ResearchHandlerCardController.cs" />
+    <Compile Include="Environment\OnceAgainLabs\Misc\SpecimenContainmentCardController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Hero\ScarletX\Ongoings\BetweenTheShotsCardController.cs" />
     <Compile Include="Hero\ScarletX\Ongoings\AnticipateTheNeedCardController.cs" />
@@ -137,6 +146,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DeckLists\ScarletXDeckList.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DeckLists\OnceAgainLabsDeckList.json" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

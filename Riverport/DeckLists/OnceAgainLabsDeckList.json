@@ -1,0 +1,168 @@
+{
+  "name": "OnceAgain Labs",
+  "kind": "Environment",
+  "initialCardIdentifiers": [],
+  "difficulty": 2,
+  "isPlural": true,
+  "cards": [
+    {
+      "identifier": "Replic8Vat",
+      "title": "Replic-8 Vat",
+      "count": 3,
+      "body": [
+        "When a Scientist is destroyed, reveal cards from the top of the Environment deck until a Dragon is put into play, and discard the rest, then destroy this card."
+      ],
+      "icons": [
+        "CancelledDamageGreen"
+      ],
+      "flavorText": "And there it was, Replic-8, glowing like{BR}a nightlight in the dark room.{BR}{Dragontamer} shuddered as she{BR}the CEO falling in."
+    },
+
+    {
+      "identifier": "Chameleon",
+      "title": "The Chameleon",
+      "count": 1,
+      "hitpoints": 7,
+      "keywords": [
+        "dragon"
+      ],
+      "body": [
+        "{Chameleon} is immune to damage during the Environment turn.",
+        "At the end of the Environment turn, this card deals the non-Dragon target with the highest HP 3 Melee damage."
+      ],
+      "icons": [
+        "ImmuneToDamage",
+        "EndOfTurnAction",
+        "DealDamageMelee"
+      ],
+      "flavorText": "Experiment Replic-4:{BR}Chameleon DNA"
+    },
+    {
+      "identifier": "Raptor",
+      "title": "The Raptor",
+      "count": 2,
+      "hitpoints": 3,
+      "keywords": [
+        "dragon"
+      ],
+      "body": [
+        "At the start of the Environment turn, this card deals the non-Dragon target with the lowest HP X Melee damage, where X is the number of Dragons in play."
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "DealDamageMelee"
+      ],
+      "flavorText": "Experiment Replic-1:{BR}Raptor DNA"
+    },
+    {
+      "identifier": "DrKlaws",
+      "title": "Dr. Klaws",
+      "count": 1,
+      "hitpoints": 7,
+      "keywords": [
+        "dragon"
+      ],
+      "body": [
+        "At the start of the Environment turn, this card deals each non-Environment target 1 Sonic damage"
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "DealDamageSonic"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "DrKlaus",
+          "text": "He's kept me sane down here"
+        }
+      ],
+      "flavorText": "“He's kept me sane down here,” said Dr.{BR}Klaus, petting the larger raptor sitting{BR}next to him."
+    },
+
+    {
+      "identifier": "ResearchHandler",
+      "title": "Research Handler",
+      "count": 2,
+      "hitpoints": 5,
+      "keywords": [
+        "scientist"
+      ],
+      "body": [
+        "At the End of the Environment turn, this card deals the Dragon with the lowest HP 1 Lightning damage.",
+        "Targets dealt damage by {ResearchHandler} way cannot deal damage until the way cannot deal damage until the start of the next Environment turn."
+      ],
+      "icons": [
+        "EndOfTurnAction",
+        "DealDamageElectric",
+        "CannotDealDamage"
+      ],
+      "flavorText": "The scientists advanced slowly on the{BR}escaped dragon, the loud taser crackles{BR}scaring him backword."
+    },
+    {
+      "identifier": "DrFauna",
+      "title": "Dr. Fauna",
+      "count": 1,
+      "hitpoints": 7,
+      "keywords": [
+        "scientist"
+      ],
+      "body": [
+        "At the start of the Environment turn, Dr. Fauna deals the Non-Scientist target with the lowest HP 2 Psychic damage."
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "DealDamagePhychic"
+      ],
+      "flavorText": "She had a formidible presence, clearly{BR}the reason OnceAgain was still a problem"
+    },
+    {
+      "identifier": "DrKlaus",
+      "title": "Dr. Klaus",
+      "count": 1,
+      "hitpoints": 7,
+      "keywords": [
+        "scientist"
+      ],
+      "body": [
+        "Increase damage dealt to Villain targets by Environment targets by 1.",
+        "Decrease damage dealt to Hero targets by Environment targets by 1",
+        "At the end of the Environment Turn, both Dr. Klaus and Dr. Klaws, if he is in play, regain 1 HP"
+      ],
+      "icons": [
+        "IncreaseDamageDealt",
+        "ReduceDamageTaken",
+        "EndOfTurnAction",
+        "RegainHP"
+      ],
+      "flavorText": "He was quiet, perhaps a bit shy. Clearly{BR}he was the reason it took OnceAgain this{BR}long to be a problem."
+    },
+
+    {
+      "identifier": "SpecimenContainment",
+      "title": "Specimen Container",
+      "count": 2,
+      "hitpoints": 5,
+      "body": [
+        "When this card enters play, put the non-Character target other than a Specimen Containment under this card.",
+        "If there is no target to put under this, destroy it and play the top card of the Environment deck.",
+        "When this card is destroyed, put any cards under it back in play."
+      ],
+      "icons": [
+        "PlayCardNow"
+      ],
+      "flavorText": "Warning: Contents may kill"
+    },
+    {
+      "identifier": "DestroyTheEvidence",
+      "title": "Destroy the Evidence",
+      "count": 2,
+      "body": [
+        "Destroy all copies of Replic-8 Vat. This card deals each target X Fire damage where X equals 2 plus the number of cards destroyed this way."
+      ],
+      "icons": [
+        "DestroyEnvironment",
+        "DealDamageFire"
+      ],
+      "flavorText": "Soon it was all on fire, every vat{BR}ignited, the paperwork all char."
+    }
+  ]
+}

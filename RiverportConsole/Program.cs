@@ -53,13 +53,11 @@ namespace Handelabra.MyModConsole // this has to be this way to work around an E
             bool challenge = false;
             Dictionary<string, string> promos = new Dictionary<string, string>();
 
-            var dragontamer = Assembly.GetAssembly(typeof(DragontamerTurnTakerController));
-            ModHelper.AddAssembly("Riverport", dragontamer);
-            //var weaver = Assembly.GetAssembly(typeof(WeaverTurnTakerController));
-            //ModHelper.AddAssembly("Riverport", weaver);
-
+            var Riverport = Assembly.GetAssembly(typeof(DragontamerTurnTakerController));
+            ModHelper.AddAssembly("Riverport", Riverport);
+            
             // Set up a game how you want, stack decks, etc.
-            game = new Game(new string[] { "TheMatriarch", "Riverport.Dragontamer", "Riverport.Weaver", "Riverport.Fenrir", "Riverport.ScarletX", "PikeIndustrialComplex" }, advanced, promos, isChallenge: challenge);
+            game = new Game(new string[] { "TheMatriarch", "Riverport.Dragontamer", "Riverport.Weaver", "Riverport.Fenrir", "Riverport.ScarletX", "Riverport.OnceAgainLabs" }, advanced, promos, isChallenge: challenge);
 
             return game;
         }
