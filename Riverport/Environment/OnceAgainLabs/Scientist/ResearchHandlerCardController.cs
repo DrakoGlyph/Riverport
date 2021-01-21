@@ -23,9 +23,9 @@ namespace Riverport.OnceAgainLabs
 
         private IEnumerator Inhibit(DealDamageAction arg)
         {
-            ReduceDamageStatusEffect rdse = new ReduceDamageStatusEffect(1);
+            CannotDealDamageStatusEffect rdse = new CannotDealDamageStatusEffect();
             rdse.UntilStartOfNextTurn(TurnTaker);
-            rdse.TargetCriteria.IsSpecificCard = arg.Target;
+            rdse.SourceCriteria.IsSpecificCard = arg.Target;
             var status = AddStatusEffect(rdse);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(status); } else { this.GameController.ExhaustCoroutine(status); }
         }
