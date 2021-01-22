@@ -27,8 +27,11 @@ namespace Riverport.Dragontamer
             List<YesNoCardDecision> results = new List<YesNoCardDecision>();
             var doIt = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.MoveCard, Card, storedResults: results, cardSource: GetCardSource());
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(doIt); } else { this.GameController.ExhaustCoroutine(doIt); }
-            var select = this.GameController.SelectCardsAndDoAction(HeroTurnTakerController, new LinqCardCriteria(c => c.DoKeywordsContain("dragon") && c.IsInPlayAndNotUnderCard), SelectionType.MoveCardBelowCard, Move, 1, false, 1, cardSource: GetCardSource());
-            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(select); } else { this.GameController.ExhaustCoroutine(select); }
+            if (DidPlayerAnswerYes(results))
+            {
+                var select = this.GameController.SelectCardsAndDoAction(HeroTurnTakerController, new LinqCardCriteria(c => c.DoKeywordsContain("dragon") && c.IsInPlayAndNotUnderCard), SelectionType.MoveCardBelowCard, Move, 1, false, 1, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(select); } else { this.GameController.ExhaustCoroutine(select); }
+            }
         }
 
         private IEnumerator Move(Card c)
