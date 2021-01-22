@@ -1,6 +1,8 @@
 {
   "name": "Scarlet X",
   "kind": "Hero",
+  "expansionIdentifier": "RiverportOrigins",
+
   "initialCardIdentifiers": [
     "ScarletXCharacter"
   ],
@@ -221,7 +223,7 @@
       "flavorQuotes": [
         {
           "identifier": "Artificier",
-          "text": "Where did that arrow come from?{BR}Where did [i]you[/i] come from?"
+          "text": "Where did that arrow come from?{BR}Where did [b]you[/b] come from?"
         }
       ],
       "flavorReference": "Artificier, Blood Moon #1"

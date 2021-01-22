@@ -1,6 +1,7 @@
 {
   "name": "OnceAgain Labs",
   "kind": "Environment",
+  "expansionIdentifier": "RiverportOrigins",
   "initialCardIdentifiers": [],
   "difficulty": 2,
   "isPlural": true,

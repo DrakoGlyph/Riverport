@@ -1,6 +1,7 @@
 {
   "name": "Fenrir",
   "kind": "Hero",
+  "expansionIdentifier": "RiverportOrigins",
   "initialCardIdentifiers": [
     "FenrirHumanCharacter"
   ],

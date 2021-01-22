@@ -1,6 +1,7 @@
 {
   "name": "Weaver",
   "kind": "Hero",
+  "expansionIdentifier": "RiverportOrigins",
   "initialCardIdentifiers": [
     "WeaverCharacter"
   ],

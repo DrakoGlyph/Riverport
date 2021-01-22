@@ -1,6 +1,7 @@
 {
   "name": "Dragontamer",
   "kind": "Hero",
+  "expansionIdentifier": "RiverportOrigins",
   "initialCardIdentifiers": [
     "DragontamerCharacter"
   ],
@@ -26,7 +27,8 @@
         "Increase the damage dealt by Heroes by 1 until the start of your next turn"
       ],
       "openingLines": {
-        "default": "Here Be Dragons!"
+        "default": "Here Be Dragons!",
+        "BahamutCharacter": "You can't just mutate people! I'm here to stop you!"
       },
       "complexity": 2
     },
