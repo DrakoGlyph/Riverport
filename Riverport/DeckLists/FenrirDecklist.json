@@ -255,7 +255,7 @@
       ],
       "body": [
         "{human} Search for Lycan Form and put it into play. You may use Fenrir's innate power now.",
-        "{wolf} You may search your deck or trash for Frenzy and put it into play. It Frenzy does not enter play, deal 1 target 3 Melee damage."
+        "{wolf} You may search for Frenzy and put it into play. If you do not, deal 1 target 3 Melee damage."
       ],
       "icons": [
         "Search",
@@ -353,7 +353,7 @@
         "one-shot"
       ],
       "body": [
-        "{human} You may search your deck or trash for Meditate and put it into play.",
+        "{human} Search for Meditate and put it into play.",
         "{wolf} Destroy all cards under Frenzy, then destroy Frenzy. For each card destroyed this way, Fenrir regains 1 HP. If no cards are destroyed this way, destroy Lycan Form."
       ],
       "icons": [

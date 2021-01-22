@@ -20,7 +20,8 @@ namespace Riverport.Fenrir
         {
             if(ShouldActivate("human"))
             {
-                var search = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(c => c == LycanForm), true, false, false, shuffleAfterwards: true);
+                //var search = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(c => c == LycanForm), true, false, false, shuffleAfterwards: true);
+                var search = this.GameController.PlayCard(TurnTakerController, LycanForm, true, associateCardSource: true, cardSource: GetCardSource());
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(search); } else { this.GameController.ExhaustCoroutine(search); }
                 List<YesNoCardDecision> doHowl = new List<YesNoCardDecision>();
                 var decide = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.UsePowerOnCard, CharacterCard, null, doHowl, null, GetCardSource());
@@ -33,11 +34,15 @@ namespace Riverport.Fenrir
             }
             if(ShouldActivate("wolf"))
             {
-                List<SelectCardDecision> results = new List<SelectCardDecision>();
-                
-                var frenzy = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(c => c == Frenzy), true, false, false, false, storedResults: results, shuffleAfterwards: true);
-                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(frenzy); } else { this.GameController.ExhaustCoroutine(frenzy); }
-                if(!DidSelectCards(results))
+                List<YesNoCardDecision> doFrenzy = new List<YesNoCardDecision>();
+                var decide = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.PlayCard, Frenzy, null, doFrenzy, null, GetCardSource());
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+                if (DidPlayerAnswerYes(doFrenzy))
+                {
+                    var frenzy = this.GameController.PlayCard(TurnTakerController, Frenzy, true, associateCardSource: true, cardSource: GetCardSource());
+                    if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(frenzy); } else { this.GameController.ExhaustCoroutine(frenzy); }
+                }
+                else
                 {
                     var rend = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, Fenrir, 3, DamageType.Melee, 1, false, 0, false, false, false, c => !c.IsHero, cardSource: GetCardSource());
                     if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(rend); } else { this.GameController.ExhaustCoroutine(rend); }

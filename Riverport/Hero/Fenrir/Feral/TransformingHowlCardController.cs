@@ -19,7 +19,8 @@ namespace Riverport.Fenrir
         {
             if(ShouldActivate("human"))
             {
-                var play = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(LycanForm), true, false, false);
+                //var play = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(LycanForm), true, false, false);
+                var play = this.GameController.PlayCard(TurnTakerController, LycanForm, true, null, associateCardSource: true, cardSource: GetCardSource());
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(play); } else { this.GameController.ExhaustCoroutine(play); }
             }
             if(ShouldActivate("wolf"))

@@ -16,7 +16,8 @@ namespace Riverport.ScarletX
 
         public override IEnumerator Play()
         {
-            var moon = SearchForCards(DecisionMaker, true, true, 1, 1, new LinqCardCriteria(FindCard("Moonbeam")), true, false, false);
+            var moon = this.GameController.PlayCard(TurnTakerController, FindCard("Moonbeam"), true, associateCardSource: true, cardSource: GetCardSource());
+            //var moon = SearchForCards(DecisionMaker, true, true, 1, 1, new LinqCardCriteria(FindCard("Moonbeam")), true, false, false);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(moon); } else { this.GameController.ExhaustCoroutine(moon); }
             var arrow = SelectAndPlayCardFromHand(DecisionMaker, true, null, new LinqCardCriteria(c => c.DoKeywordsContain("arrow")), false, true);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(arrow); } else { this.GameController.ExhaustCoroutine(arrow); }

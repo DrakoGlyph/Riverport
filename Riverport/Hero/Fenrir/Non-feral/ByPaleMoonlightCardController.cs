@@ -18,7 +18,8 @@ namespace Riverport.Fenrir
         {
             if(!FindCard("PaleMoonPendant").IsInPlay)
             {
-                var search = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(FindCard("PaleMoonPendant")), true, false, false);
+                var search = this.GameController.PlayCard(TurnTakerController, FindCard("PaleMoonPendant"), true, null, false, evenIfAlreadyInPlay: false, associateCardSource: true, cardSource: GetCardSource());
+                //var search = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(FindCard("PaleMoonPendant")), true, false, false);
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(search); } else { this.GameController.ExhaustCoroutine(search); }
             }
             if(ShouldActivate("human"))
