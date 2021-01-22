@@ -18,7 +18,7 @@ namespace Riverport.OnceAgainLabs
 
         public override void AddTriggers()
         {
-            AddDealDamageAtStartOfTurnTrigger(TurnTaker, Card, NonDragon.Criteria, TargetType.LowestHP, FindCardsWhere(c => c.DoKeywordsContain("dragon")).Count(), DamageType.Melee);
+            AddDealDamageAtStartOfTurnTrigger(TurnTaker, Card, NonDragon.Criteria, TargetType.LowestHP, FindCardsWhere(c => c.DoKeywordsContain("dragon") && c.IsInPlayAndHasGameText).Count(), DamageType.Melee);
         }
     }
 }
