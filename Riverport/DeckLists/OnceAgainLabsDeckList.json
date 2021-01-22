@@ -13,7 +13,7 @@
         "When a Scientist is destroyed, reveal cards from the top of the Environment deck until a Dragon is put into play, and discard the rest, then destroy this card."
       ],
       "icons": [
-        "CancelledDamageGreen"
+        "PlayCardNow"
       ],
       "flavorText": "And there it was, Replic-8, glowing like{BR}a nightlight in the dark room.{BR}{Dragontamer} shuddered as she{BR}the CEO falling in."
     },
@@ -88,7 +88,7 @@
       ],
       "body": [
         "At the End of the Environment turn, this card deals the Dragon with the lowest HP 1 Lightning damage.",
-        "Targets dealt damage by {ResearchHandler} way cannot deal damage until the way cannot deal damage until the start of the next Environment turn."
+        "Targets dealt damage by {ResearchHandler} cannot deal damage until the start of the next Environment turn."
       ],
       "icons": [
         "EndOfTurnAction",
