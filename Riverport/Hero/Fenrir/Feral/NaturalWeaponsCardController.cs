@@ -25,7 +25,6 @@ namespace Riverport.Fenrir
         {
             ReduceDamageStatusEffect rdse = new ReduceDamageStatusEffect(1);
 
-            rdse.Identifier = "Fear";
             rdse.SourceCriteria.IsSpecificCard = arg.Target;
             rdse.UntilStartOfNextTurn(TurnTaker);
             var fear = AddStatusEffect(rdse);
@@ -36,7 +35,7 @@ namespace Riverport.Fenrir
         {
             if (ShouldActivate("human")) {
                 var draw = this.GameController.SelectHeroToDrawCard(HeroTurnTakerController, cardSource: GetCardSource());
-                if(UseUnityCoroutines) { this.GameController.StartCoroutine(draw); } else { this.GameController.ExhaustCoroutine(draw); }
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(draw); } else { this.GameController.ExhaustCoroutine(draw); }
             }
             if (ShouldActivate("wolf")) {
                 List<DealDamageAction> damage = new List<DealDamageAction> {
