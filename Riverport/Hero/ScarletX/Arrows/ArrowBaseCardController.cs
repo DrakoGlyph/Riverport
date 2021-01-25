@@ -12,7 +12,10 @@ namespace Riverport.ScarletX
             //AllowFastCoroutinesDuringPretend = false;
         }
 
-        protected TriggerType Trigger;
+        protected virtual TriggerType Trigger
+        {
+            get;
+        }
 
         protected abstract IEnumerator FireArrow(DestroyCardAction dca = null);
 
