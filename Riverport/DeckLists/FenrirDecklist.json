@@ -133,7 +133,7 @@
       "body": [
         "At the start of your turn, if Fenrir is not in Wolf Form, or if there are no cards under this, destroy this card. Otherwise destroy a card under this one.",
         "When Fenrir destroys a target or a device, put it under this card. Increase damage dealt by Fenrir by 1 for every 2 cards under this one.",
-        "When this card enters play, destroy a target with 3HP or less or a Device."
+        "When this card enters play, destroy a non-character target with 3HP or less or a Device."
       ],
       "icons": [
         "DestroySelf",
