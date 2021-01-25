@@ -18,6 +18,7 @@
       "body": "Sic 'em",
       "powers": "{Dragontamer} deals 1 target 1 Projectile damage. Increase damage dealt by Dragons to that target by 1 until the end of your next turn.",
       "icons": [
+        "HasPower",
         "DealDamageProjectile",
         "IncreaseDamageDealt"
       ],
