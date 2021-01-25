@@ -16,10 +16,9 @@ namespace Riverport.Dragontamer
 
         public override IEnumerator Play()
         {
-            for(int i = 0; i < CommandPresence; i++) {
                 var command = SelectAndUsePower(this, true, p => p.CardController is DragonCardController);
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(command); } else { this.GameController.ExhaustCoroutine(command); }
-            }
+            
             var empower = SelectDragonToMoveUnder();
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(empower); } else { this.GameController.ExhaustCoroutine(empower); }
         }

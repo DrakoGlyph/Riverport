@@ -17,7 +17,6 @@ namespace Riverport.Dragontamer
         public override void AddTriggers()
         {
             //AddStartOfTurnTrigger(tt => (Card.MaximumHitPoints > Card.HitPoints) && HasCardsUnder && tt == TurnTaker, Regen, TriggerType.GainHP);
-            //When Hydra deals Melee damage, she also deals that target 1 Fire Damage
             AddTrigger<DealDamageAction>((DealDamageAction dda) => HasCardsUnder && dda.DamageSource.IsSameCard(Card) && dda.DamageType == DamageType.Melee && dda.DidDealDamage, Burn, TriggerType.DealDamage, TriggerTiming.After);
 
         }

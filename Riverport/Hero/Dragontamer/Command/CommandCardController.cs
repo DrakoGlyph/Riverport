@@ -12,28 +12,13 @@ namespace Riverport.Dragontamer
     {
         public CommandCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
-            SpecialStringMaker.ShowSpecialString(CommandPresenceString);
         }
 
-        public int CommandPresence
-        {
-            get
-            {
-                return 1 + (FindCardsWhere(c => c.Title.Contains("Command Presence") && c.IsInPlayAndNotUnderCard)as List<Card>).Count;
-            }
-        }
 
-        private string CommandPresenceString()
-        {
-            string rtn = "You can control ";
-            rtn += CommandPresence;
-            rtn += " dragon" + (CommandPresence == 1 ? "." : "s.");
-            return rtn;
-        }
 
         protected IEnumerator SelectDragonsAndDoThing(Func<Card, IEnumerator> thing)
         {
-            var command = this.GameController.SelectCardsAndDoAction(HeroTurnTakerController, new LinqCardCriteria(c => c.DoKeywordsContain("dragon") && c.IsInPlayAndNotUnderCard), SelectionType.DealDamage, thing, CommandPresence, false, 0, cardSource: GetCardSource());
+            var command = this.GameController.SelectCardsAndDoAction(HeroTurnTakerController, new LinqCardCriteria(c => c.DoKeywordsContain("dragon") && c.IsInPlayAndNotUnderCard), SelectionType.DealDamage, thing, 1, false, 0, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(command); } else { this.GameController.ExhaustCoroutine(command); }
         }
 

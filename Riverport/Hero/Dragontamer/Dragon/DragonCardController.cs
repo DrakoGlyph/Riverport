@@ -14,12 +14,7 @@ namespace Riverport.Dragontamer
         {
             SpecialStringMaker.ShowNumberOfCardsUnderCard(card);
         }
-
-        public override void AddTriggers()
-        {
-            
-        }
-
+        
 
         protected IEnumerator DestroyCardUnderThis(PhaseChangeAction arg = null)
         {

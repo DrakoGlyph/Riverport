@@ -18,8 +18,8 @@ namespace Riverport.Dragontamer
 
         public override void AddTriggers()
         {
-            AddAdditionalPhaseActionTrigger(tt=> tt==TurnTaker, Phase.DrawCard, 1);
-            AddStartOfTurnTrigger(tt => tt == TurnTaker, Empower, TriggerType.MoveCard);
+            AddAdditionalPhaseActionTrigger(tt=> tt==TurnTaker, Phase.UsePower, 1);
+            AddStartOfTurnTrigger(tt => tt == TurnTaker && FindCardsWhere(c=>c.DoKeywordsContain("dragon") && c.IsInPlayAndHasGameText).Count()>0, Empower, TriggerType.MoveCard);
         }
 
         private IEnumerator Empower(PhaseChangeAction arg)
@@ -42,12 +42,12 @@ namespace Riverport.Dragontamer
 
         public override bool AskIfIncreasingCurrentPhaseActionCount()
         {
-            return this.GameController.ActiveTurnPhase.IsDrawCard && this.GameController.ActiveTurnTaker == TurnTaker;
+            return this.GameController.ActiveTurnPhase.IsUsePower && this.GameController.ActiveTurnTaker == TurnTaker;
         }
 
         public override IEnumerator Play()
         {
-            var drawExtra = IncreasePhaseActionCountIfInPhase(tt => tt == TurnTaker, Phase.DrawCard, 1);
+            var drawExtra = IncreasePhaseActionCountIfInPhase(tt => tt == TurnTaker, Phase.UsePower, 1);
             if(UseUnityCoroutines) {yield return this.GameController.StartCoroutine(drawExtra);} else {this.GameController.ExhaustCoroutine(drawExtra);}
         }
     }

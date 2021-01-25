@@ -45,7 +45,6 @@
     <Compile Include="Hero\Dragontamer\Command\BiteCommandCardController.cs" />
     <Compile Include="Hero\Dragontamer\Command\BurnCommandCardController.cs" />
     <Compile Include="Hero\Dragontamer\Command\CommandCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Command\CommandPresenceCardController.cs" />
     <Compile Include="Hero\Dragontamer\DragontamerTurnTakerController.cs" />
     <Compile Include="Hero\Dragontamer\Command\WeFightAsOneCardController.cs" />
     <Compile Include="Hero\Dragontamer\Dragon\DragonCardController.cs" />
@@ -56,6 +55,8 @@
     <Compile Include="Hero\Dragontamer\Dragon\TortugaCardController.cs" />
     <Compile Include="Hero\Dragontamer\DragontamerCharacterCardController.cs" />
     <Compile Include="Hero\Dragontamer\Equipment\SerumApplicatorCardController.cs" />
+    <Compile Include="Hero\Dragontamer\FullyEvolvedDragontamerCharacterCardController.cs" />
+    <Compile Include="Hero\Dragontamer\LearningExperienceCardController.cs" />
     <Compile Include="Hero\Dragontamer\One-Shot\HereBeDragonsCardController.cs" />
     <Compile Include="Hero\Dragontamer\One-Shot\OnTheFlyCardController.cs" />
     <Compile Include="Hero\Dragontamer\One-Shot\StrategizeCardController.cs" />

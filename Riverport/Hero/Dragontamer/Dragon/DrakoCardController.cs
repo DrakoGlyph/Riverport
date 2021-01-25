@@ -17,17 +17,25 @@ namespace Riverport.Dragontamer
 
         public override void AddTriggers()
         {
-            // At the start of your turn, destroy a card under this one (if there is one)
-            AddStartOfTurnTrigger(tt => HasCardsUnder && tt == TurnTaker, DestroyCardUnderThis, TriggerType.DestroyCard);
-            // Increase damage by 1 if cards under
-            AddIncreaseDamageTrigger(dda => HasCardsUnder && dda.DamageSource.IsSameCard(Card), 1);
-            // If Drako reduces a target to 0 HP
-            AddTrigger<DealDamageAction>((DealDamageAction dda)=>dda.DamageSource.IsSameCard(Card) && dda.TargetHitPointsAfterBeingDealtDamage <= 0, Consume, TriggerType.MoveCard, TriggerTiming.After);
+            AddStartOfTurnTrigger(tt => tt == TurnTaker && HasCardsUnder, Consume, TriggerType.DestroyCard);
         }
 
-        private IEnumerator Consume(DealDamageAction dda) {
-            var eat = this.GameController.MoveCard(TurnTakerController, dda.Target, Card.UnderLocation, doesNotEnterPlay:true, cardSource: GetCardSource());
-            if(UseUnityCoroutines) {yield return this.GameController.StartCoroutine(eat);} else {this.GameController.ExhaustCoroutine(eat);}
+        private IEnumerator Consume(PhaseChangeAction arg)
+        {
+            // Destroy a card under this to increase damage by Drako until the start of your next turn
+            List<YesNoCardDecision> decision = new List<YesNoCardDecision>();
+            var decide = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.MoveCardFromUnderCard, Card, null, decision, null, GetCardSource());
+            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+            if(DidPlayerAnswerYes(decision))
+            {
+                var pay = DestroyCardUnderThis(arg);
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(pay); } else { this.GameController.ExhaustCoroutine(pay); }
+                IncreaseDamageStatusEffect idse = new IncreaseDamageStatusEffect(1);
+                idse.SourceCriteria.IsSpecificCard = Card;
+                idse.UntilStartOfNextTurn(TurnTaker);
+                var boost = AddStatusEffect(idse);
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(boost); } else { this.GameController.ExhaustCoroutine(boost); }
+            }
         }
 
         public override IEnumerator UsePower(int index = 0)

@@ -16,49 +16,28 @@ namespace Riverport.Dragontamer
 
         public override void AddTriggers()
         {
-            // If Elgor deals damage to a Character, he may take an ongoing or device and put it under him
-            AddTrigger<DealDamageAction>((DealDamageAction dda) => dda.DamageSource.IsSameCard(Card) && dda.Target.IsCharacter, Steal, TriggerType.MoveCard, TriggerTiming.After, isConditional: true, requireActionSuccess: true);
-            // Reduce damage dealt by Elgor by 1 for each card under him.
-            AddReduceDamageTrigger((DealDamageAction dda) => dda.DamageSource.IsSameCard(Card), dda => NumberOfCardsUnder);
+            AddTrigger<DealDamageAction>((DealDamageAction dda) => HasCardsUnder &&  dda.DidDealDamage && dda.Target.IsCharacter && dda.DamageSource.IsSameCard(Card), Sap, TriggerType.DestroyCard, TriggerTiming.After, requireActionSuccess: true);
         }
 
-        private IEnumerator Steal(DealDamageAction arg)
+        private IEnumerator Sap(DealDamageAction arg)
         {
-            if (arg.DidDealDamage)
+            List<YesNoCardDecision> decision = new List<YesNoCardDecision>();
+            var decide = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.MoveCardFromUnderCard, Card, null, decision, null, GetCardSource());
+            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+            if(DidPlayerAnswerYes(decision))
             {
-                // Put a Device or Ongoing under Elgor
-                var steal = this.GameController.SelectAndMoveCard(HeroTurnTakerController, c => c.IsInPlayAndNotUnderCard && (c.IsOngoing || c.IsDevice) && c.Owner == arg.Target.Owner && !c.IsCharacter, Card.UnderLocation, cardSource: GetCardSource());
-                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(steal); } else { this.GameController.ExhaustCoroutine(steal); }
-
+                TurnTaker owner = arg.Target.Owner;
+                var destroy = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => (c.IsOngoing || c.IsDevice) && !(c.IsCharacter) && c.Location == owner.PlayArea), false, null, Card, GetCardSource());
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
             }
         }
 
         public override IEnumerator UsePower(int index = 0)
         {
-            switch (index)
-            {
-                case 0:
-                    {
-                        var a = GetPowerNumeral(0, 1);
-                        var b = GetPowerNumeral(1, 1);
-                        // Deal 1 target 1 Fire damage
-                        var burn = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, Card), b, DamageType.Fire, a, false, 0, false, true, cardSource: GetCardSource());
-                        if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(burn); } else { this.GameController.ExhaustCoroutine(burn); }
-                        break;
-                    }
-                case 1:
-                    {
-                        // Destroy a card under Elgor
-                        if (HasCardsUnder)
-                        {
-                            var destroy = DestroyCardUnderThis();
-                            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
-                            var draw = DrawCard();
-                            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(draw); } else { this.GameController.ExhaustCoroutine(draw); }
-                        }
-                        break;
-                    }
-            }
+            int targets = GetPowerNumeral(0, 1);
+            int damage = GetPowerNumeral(1, 2);
+            var burn = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, Card), damage, DamageType.Fire, targets, false, 0, additionalCriteria: c => !c.IsHero, cardSource: GetCardSource());
+            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(burn); } else { this.GameController.ExhaustCoroutine(burn); }
         }
     }
 }

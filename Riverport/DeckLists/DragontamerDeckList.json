@@ -42,8 +42,7 @@
         "dragon"
       ],
       "body": [
-        "At the start of your turn, if there are cards under Drako, destroy one. If Drako reduces a target to 0 HP, put it under him",
-        "If there are cards under Drako, increase damage dealt by Drako by 1"
+        "At the start of your turn, you may destroy a card under this. If you do, increase damage dealt by Drako until the start of your next turn."
       ],
       "powers": [
         "Drako deals 1 non-Hero target 2 Melee damage then 2 Fire damage."
@@ -66,20 +65,17 @@
         "dragon"
       ],
       "body": [
-        "When {Elgor} deals damage to a Character card, he may take an Ongoing or Device card from their play area and put it under him.",
-        "Reduce damage dealt by {Elgor} by 1 for each card under him."
+        "When {Elgor} deals damage to a Character card, he may destroy a card under him. If he does, he may destroy an Ongoing or Device in their play area."
       ],
       "powers": [
-        "Elgor deals 1 target 1 Fire damage.",
-        "Destroy a card under Elgor. If you do, draw a card."
+        "Elgor deals 1 target 2 Fire damage."
       ],
       "icons": [
         "DestroyOngoing",
+        "DestroyDevice",
         "HasPower",
-        "DealDamageFire",
-        "DestroyCard"
+        "DealDamageFire"
       ],
-      "extraConfirmationIndices": [ 1 ],
       "flavorText": "Experiment Replic-2:{BR}Gecko DNA",
       "flavorReference": "Label on Elgor's Cage, Here Be Dragons #1"
     },
@@ -115,15 +111,16 @@
         "dragon"
       ],
       "body": [
-        "When Tortuga enters play, you may put up to 3 cards from the your hand under him. Draw as many cards as you moved this way.",
-        "When {Dragontamer} or a Dragon would be dealt damage, you may destroy a card under Tortuga to prevent that damage."
+        "When {Dragontamer} or a Dragon in play would be dealt damage, you may destroy a card under Tortuga to redirect that damage to Tortuga.",
+        "Reduce Damage dealt to Tortuga by 1."
       ],
       "powers": [
-        "Put the top card of your deck under Tortuga."
+        "Reduce the damage dealt to Dragontamer and Dragons you control by 1 until the start of your next turn."
       ],
       "icons": [
         "DrawCardNow",
-        "CancelledDamageGreen",
+        "ReduceDamageTaken",
+        "RedirectDamage",
         "HasPower"
       ],
       "flavorText": "Experiment Replic-5:{BR}Turtle DNA",
@@ -137,49 +134,18 @@
       "keywords": [
         "dragon"
       ],
-      "body": [
-        "When this card enters play, you may destroy an Environment Card. Put that card under Jorgumander."
-      ],
       "powers": [
-        "Destroy a card under this one. If you do, Destroy an Environment card. You may put that Environment card under this one, or deal 2 Fire damage to a Villain target."
+        "Deal 1 target 2 Fire damage. If there are cards under this, you may destroy one and destroy an Environment card."
       ],
       "icons": [
-        "DestroyEnvironment",
-        "HasPower"
+        "HasPower",
+        "DealDamageFire",
+        "DestroyEnvironment"
       ],
       "flavorText": "Experiment Replic-3:{BR}Snake DNA",
       "flavorReference": "Label on Jorg's Cage, Here Be Dragons #1"
     },
 
-    {
-      "identifier": "CommandPresence",
-      "title": "Command Presence",
-      "count": 2,
-      "keywords": [
-        "ongoing",
-        "command"
-      ],
-      "body": [
-        "Command cards affect an additional Dragon.",
-        "X on this card equals 1 plus the number of copies of Command Presence in play."
-      ],
-      "powers": [
-        "Up to X Dragons deals 1 target 2 Melee damage.",
-        "Up to X Dragons deals up to 3 targets 1 Fire damage."
-      ],
-      "icons": [
-        "HasPower",
-        "DealDamageMelee",
-        "DealDamageFire"
-      ],
-      "flavorQuotes": [
-        {
-          "identifer": "Dragontamer",
-          "text": "You just need to earn their respect."
-        }
-      ],
-      "flavorReference": "Dragontamer, Here Be Dragons #2"
-    },
     {
       "identifier": "BiteCommand",
       "title": "Bite!",
@@ -189,7 +155,7 @@
         "command"
       ],
       "body": [
-        "Up to X Dragons deals 1 target 2 Melee Damage, where X is 1 plus the number of copies of Command Presence in play.",
+        "One Dragon deals 1 target 2 Melee Damage.",
         "You may put this card under a dragon in play."
       ],
       "icons": [
@@ -212,7 +178,7 @@
         "command"
       ],
       "body": [
-        "Up to X Dragons deal up to 3 targets 1 Fire damage each, where X is 1 plus the number of copies of Command Presence in play.",
+        "One Dragon deals up to 3 targets 1 Fire damage each.",
         "You may put this card under a dragon in play."
       ],
       "icons": [
@@ -235,7 +201,7 @@
         "command"
       ],
       "body": [
-        "Use up to X powers on Dragons, where X is 1 plus the number of copies of Command Presence in play.",
+        "Use a power on a Dragon now.",
         "You may put this card under a dragon in play."
       ],
       "icons": [
@@ -407,7 +373,7 @@
         "limited"
       ],
       "body": [
-        "You may draw an additional card on your draw phase.",
+        "You may use an additional Power on your Power phase.",
         "At the start of your turn, you may put the top card of your deck under a Dragon in play."
       ],
       "icons": [
@@ -421,6 +387,29 @@
         }
       ],
       "flavorReference": "Dragontamer, Moonbeams and Dragon Heartstrings"
+    },
+    {
+      "identifier": "LearningExperience",
+      "title": "Learning Experience",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": [
+        "When you destroy a card under a Dragon, you may draw a card.",
+        "Once per turn, when you draw a card, you may put a card in your hand under a Dragon."
+      ],
+      "icons": [
+        "DrawCard"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Dr. Klaus",
+          "text": "You have to learn from every failure{BR}to overcome any obstacle"
+        }
+      ],
+      "flavorReference": "Dr. Klaus, Bahamut's Dawn"
     },
 
     {
@@ -451,5 +440,42 @@
       "flavorReference": "Dragontamer, Bahamut's Dawn"
     }
 
+  ],
+  "promoCards": [
+    {
+      "identifier": "DragontamerCharacter",
+      "promoIdentifier": "FullyEvolvedDragontamerCharacter",
+      "count": 1,
+      "title": "Dragontamer, Fully Evolved",
+      "hitpoints": 29,
+      "nemesisIdentifiers": ["Dragontamer"],
+      "shortPromoTitle": "Dragontamer FE",
+      "body": "Slash",
+      "backgroundColor": "9B28F0",
+      "character": true,
+      "keywords": "dragon",
+      "powers": "Dragontamer deals 1 target X Melee damage, where X equals 2 plus the number of cards under this. Destroy all cards under Dragontamer.",
+      "icons": [
+        "HasPower",
+        "DealDamageMelee"
+
+      ],
+      "incapacitatedAbilities": [
+        "One Hero may use a Power now",
+        "One Hero may draw a card now",
+        "Destroy a Villain Ongoing now"
+      ],
+      "flippedIcons": [
+        "UsePowerNow",
+        "DrawCardNow",
+        "DestroyOngoing"
+      ],
+      "openingLines": {
+        "default": "I'll take you down with my own claws if I have to!",
+        "BahamutCharacter": "The very things you abandoned will stop you!",
+        "ExWeaverCharacter": "I won't let everything we've built come undone!"
+      },
+      "complexity": 2
+    }
   ]
 }

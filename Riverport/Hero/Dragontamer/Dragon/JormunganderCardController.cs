@@ -14,53 +14,33 @@ namespace Riverport.Dragontamer
         {
         }
 
-        public override IEnumerator Play()
-        {
-            // Destroy an environment card and put it under Jormungander
-            List<DestroyCardAction> destroyed = new List<DestroyCardAction>();
-            var destroy = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.IsEnvironment), true, destroyed, Card, GetCardSource());
-            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
-            var move = this.GameController.MoveCard(TurnTakerController, GetDestroyedCards(destroyed).FirstOrDefault(), Card.UnderLocation, doesNotEnterPlay: true, cardSource: GetCardSource());
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(move); } else { this.GameController.ExhaustCoroutine(move); }
-        }
-
-
-        private List<DestroyCardAction> destroyed = new List<DestroyCardAction>();
-
         public override IEnumerator UsePower(int index = 0)
         {
-            //Destroy a card under this one, if you do, Destroy an environment card. 
-            //You can put it under Jormungander or deal 2 Fire damage to a Villain Turn
-            
-            var destroy = DestroyCardUnderThis();
-            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
-
-            var raze = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.IsEnvironment), true, destroyed, Card, GetCardSource());
-            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(raze); } else { this.GameController.ExhaustCoroutine(raze); }
+            int targets = GetPowerNumeral(0, 1);
+            int damage = GetPowerNumeral(1, 2);
+            var burn = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, Card), damage, DamageType.Fire, targets, false, 0, additionalCriteria: c => !c.IsHero, cardSource: GetCardSource());
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(burn); } else { this.GameController.ExhaustCoroutine(burn); }
 
 
-            Function move = new Function(HeroTurnTakerController, "Move card under Jormungander", SelectionType.MoveCard, Move);
-            Function damage = new Function(HeroTurnTakerController, "Deal 2 Fire damage to 1 target", SelectionType.DealDamage, Damage);
-            var select = SelectAndPerformFunction(HeroTurnTakerController, new List<Function>() { move, damage }, false);
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(select); } else { this.GameController.ExhaustCoroutine(select); }
+            if (HasCardsUnder)
+            {
+                List<YesNoCardDecision> decision = new List<YesNoCardDecision>();
+                var decide = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.MoveCardFromUnderCard, Card, null, decision, null, GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+                if (DidPlayerAnswerYes(decision))
+                {
 
-            
+
+                    var destroy = DestroyCardUnderThis();
+                    if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+
+                    var raze = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.IsEnvironment && c.IsInPlayAndNotUnderCard), true, null, Card, GetCardSource());
+                    if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(raze); } else { this.GameController.ExhaustCoroutine(raze); }
+
+
+                }
+            }
         }
 
-        private IEnumerator Move()
-        {
-            //destroyed should be updated
-            Card feed = GetDestroyedCards(destroyed).FirstOrDefault();
-            var move = this.GameController.MoveCard(TurnTakerController, feed, Card.UnderLocation, doesNotEnterPlay: true, cardSource: GetCardSource());
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(move); } else { this.GameController.ExhaustCoroutine(move); }
-        }
-
-        private IEnumerator Damage()
-        {
-            var a = GetPowerNumeral(0, 1);
-            var b = GetPowerNumeral(1, 2);
-            var damage = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, Card), b, DamageType.Fire, a, false, 0, cardSource: GetCardSource());
-            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(damage); } else { this.GameController.ExhaustCoroutine(damage); }
-        }
     }
 }
