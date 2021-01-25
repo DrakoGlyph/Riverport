@@ -31,9 +31,9 @@ namespace Riverport.Weaver
         public override IEnumerator UsePower(int index = 0)
         {
             List<SelectLocationDecision> storedResults = new List<SelectLocationDecision>();
-            var pick = SelectDecks(HeroTurnTakerController, 1, SelectionType.RevealCardsFromDeck, l => true, storedResults);
+            var pick = SelectDecks(HeroTurnTakerController, 1, SelectionType.RevealCardsFromDeck, l => l == l.OwnerTurnTaker.Deck, storedResults);
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(pick); } else { this.GameController.ExhaustCoroutine(pick); }
-            var read = RevealCardsFromTopOfDeck_PutOnTopAndOnBottom(HeroTurnTakerController, TurnTakerController, GetSelectedLocation(storedResults), 3, 3, 0);
+            var read = RevealTheTopCardsOfDeck_MoveInAnyOrder(HeroTurnTakerController, TurnTakerController, GetSelectedLocation(storedResults).OwnerTurnTaker, 3);
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(read); } else { this.GameController.ExhaustCoroutine(read); }
         }
     }

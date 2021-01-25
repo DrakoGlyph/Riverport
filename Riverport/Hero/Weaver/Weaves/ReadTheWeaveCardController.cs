@@ -25,8 +25,10 @@ namespace Riverport.Weaver
         {
             int sight = 2;
             if (FindCard("BookOfFate").IsInPlayAndNotUnderCard) sight += 2;
-            var read = RevealCardsFromTopOfDeck_PutOnTopAndOnBottom(HeroTurnTakerController, TurnTakerController, arg.ToPhase.TurnTaker.Deck, sight, sight, 0);
+            List<RevealCardsAction> weave = new List<RevealCardsAction>();
+            var read = RevealTheTopCardsOfDeck_MoveInAnyOrder(DecisionMaker, TurnTakerController, arg.ToPhase.TurnTaker, sight);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(read); } else { this.GameController.ExhaustCoroutine(read); }
+            
         }
     }
 }
