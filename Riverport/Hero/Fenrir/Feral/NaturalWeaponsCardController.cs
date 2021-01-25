@@ -17,7 +17,7 @@ namespace Riverport.Fenrir
 
         public override void AddTriggers()
         {
-            AddTrigger<DealDamageAction>((DealDamageAction dda) => dda.DamageType == DamageType.Psychic && IsFenrir(dda.DamageSource.Card), Fear, TriggerType.CreateStatusEffect, TriggerTiming.After);
+            AddTrigger<DealDamageAction>((DealDamageAction dda) => dda.DidDealDamage && dda.DamageType == DamageType.Psychic && IsFenrir(dda.DamageSource.Card), Fear, TriggerType.CreateStatusEffect, TriggerTiming.After);
 
         }
 
