@@ -17,7 +17,7 @@ namespace Riverport.Dragontamer
         public override void AddTriggers()
         {
             AddTrigger<DestroyCardAction>(FilterDestroy, dca => DrawCard(), TriggerType.DrawCard, TriggerTiming.After);
-            AddTrigger<DrawCardAction>((DrawCardAction dca) => !HasBeenSetToTrueThisTurn("LearningExperience"), Learn, TriggerType.MoveCard, TriggerTiming.After);
+            AddTrigger<DrawCardAction>((DrawCardAction dca) => dca.HeroTurnTaker == HeroTurnTaker && !HasBeenSetToTrueThisTurn("LearningExperience"), Learn, TriggerType.HiddenLast, TriggerTiming.After);
         }
 
         private IEnumerator Learn(DrawCardAction arg)
@@ -40,12 +40,15 @@ namespace Riverport.Dragontamer
 
         private bool FilterDestroy(DestroyCardAction arg)
         {
-            CardController destroyed = arg.CardToDestroy;
-            if(destroyed.Card.IsUnderCard)
+            if (DidDestroyCard(arg))
             {
-                foreach(Card dragon in FindCardsWhere(c=>c.DoKeywordsContain("dragon") && c.IsInPlayAndHasGameText))
+                Card destroyed = arg.CardToDestroy.Card;
+                if (destroyed.IsUnderCard)
                 {
-                    if(destroyed.Card.Location == dragon.UnderLocation) return true;
+                    foreach (Card dragon in FindCardsWhere(c => c.DoKeywordsContain("dragon") && c.UnderLocation.HasCards && c.IsInPlayAndHasGameText))
+                    {
+                        if (destroyed.Location == dragon.UnderLocation) return true;
+                    }
                 }
             }
             return false;
