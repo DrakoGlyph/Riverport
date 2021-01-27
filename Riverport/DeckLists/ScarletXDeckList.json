@@ -29,7 +29,10 @@
         "One Hero may draw a card now"
       ],
       "flippedIcons": [
-        "UsePowerNow"
+        "UsePowerNow",
+        "DestroyEquipment",
+        "DealDamageProjectile",
+        "DrawCardNow"
       ],
       "openingLines": {
         "default": "Time to hunt some Monsters",
