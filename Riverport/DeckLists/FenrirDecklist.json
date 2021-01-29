@@ -64,11 +64,15 @@
       ],
       "body": [
         "Switch to Fenrir's Wolf Form now. When this card leaves play, switch to Fenrir's Human form.",
+        "At the start of your turn, Fenrir deals himself 1 Infernal damage. If he does not, destroy this card.",
         "Increase damage dealt by Fenrir to Non-Hero targets by 1."
       ],
-      "powers": "Destroy this card.",
+      "powers": "Deal 1 Target 2 Melee Damage.",
       "icons": [
-        "IncreaseDamageDealt"
+        "DestroySelf",
+        "IncreaseDamageDealt",
+        "HasPower",
+        "DealDamageMelee"
       ],
       "flavorText": "The Power of Wolf Does not me Fright",
       "flavorReference": "Fenrir's Mantra"
@@ -225,7 +229,6 @@
       "count": 2,
       "keywords": [
         "equipment",
-        "feral",
         "limited"
       ],
       "body": "{wolf} When Fenrir deals Psychic damage to a target, reduce damage dealt by that target until the start of your next turn.",
