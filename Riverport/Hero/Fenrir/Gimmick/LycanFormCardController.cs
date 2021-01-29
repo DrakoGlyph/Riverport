@@ -17,8 +17,20 @@ namespace Riverport.Fenrir
         public override void AddTriggers()
         {
             AddBeforeDestroyAction(Detransform);
-            AddStartOfTurnTrigger(tt => tt == TurnTaker, pca => DealDamageOrDestroyThisCardResponse(pca, CharacterCard, CharacterCard, 1, DamageType.Infernal), TriggerType.DealDamage);
+            AddStartOfTurnTrigger(tt => tt == TurnTaker, PayTheCost, TriggerType.DealDamage);
             AddIncreaseDamageTrigger(dda => !dda.Target.IsHero && IsFenrir(dda.DamageSource.Card), 1);
+        }
+
+        private IEnumerator PayTheCost(PhaseChangeAction arg)
+        {
+            List<DiscardCardAction> result = new List<DiscardCardAction>();
+            var discard = SelectAndDiscardCards(DecisionMaker, 1, false, 0, result, false, null, () => "Select a card to feed the wolf.");
+            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(discard); } else { this.GameController.ExhaustCoroutine(discard); }
+            if (!DidDiscardCards(result))
+            {
+                var destroy = this.GameController.DestroyCard(DecisionMaker, LycanForm, cardSource: GetCardSource());
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+            }
         }
 
         private IEnumerator Detransform(GameAction arg)

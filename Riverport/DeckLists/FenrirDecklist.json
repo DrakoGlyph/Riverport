@@ -64,7 +64,7 @@
       ],
       "body": [
         "Switch to Fenrir's Wolf Form now. When this card leaves play, switch to Fenrir's Human form.",
-        "At the start of your turn, Fenrir deals himself 1 Infernal damage. If he does not, destroy this card.",
+        "At the start of your turn, Fenrir discards a card. If he does not, destroy this card.",
         "Increase damage dealt by Fenrir to Non-Hero targets by 1."
       ],
       "powers": "Deal 1 Target 2 Melee Damage.",
