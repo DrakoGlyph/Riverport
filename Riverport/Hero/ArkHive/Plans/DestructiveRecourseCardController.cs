@@ -17,7 +17,7 @@ namespace Riverport.ArkHive
 
         public override void AddTriggers()
         {
-            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => dca.ResponsibleCard.IsVillainCharacterCard && dca.CardToDestroy.Card.IsHero && (dca.CardToDestroy.Card.DoKeywordsContain("ongoing") || dca.CardToDestroy.Card.DoKeywordsContain("equipment")) && dca.CardToDestroy.Card != Card, EnactTrigger, TriggerType.ActivateTriggers, TriggerTiming.After);
+            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => dca.ResponsibleCard.IsVillain && dca.CardToDestroy.Card.IsHero && (dca.CardToDestroy.Card.DoKeywordsContain("ongoing") || dca.CardToDestroy.Card.DoKeywordsContain("equipment")) && dca.CardToDestroy.Card != Card, EnactTrigger, TriggerType.ActivateTriggers, TriggerTiming.After);
         }
 
         public override IEnumerator ActivateAbility(string abilityKey)

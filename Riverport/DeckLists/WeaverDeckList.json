@@ -138,7 +138,7 @@
       ],
       "body": [
         "Play next to a Hero Character.",
-        "At the start of the Equipped Hero's turn, they may destroy this patch to draw an additional card this turn."
+        "At the start of the Equipped Hero's turn, they may destroy this patch to draw an additional card during their draw phase this turn."
       ],
       "icons": [
         "Destroy",

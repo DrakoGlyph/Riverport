@@ -18,7 +18,7 @@ namespace Riverport.Artificier
         {
             base.AddTriggers();
 
-            AddCounterDamageTrigger(dda => dda.Target == Enchanted && dda.DamageSource.IsSameCard(CharacterCard), () => Enchanted, () => Enchanted, false, 2, DamageType.Energy);
+            AddCounterDamageTrigger(dda => dda.Target == Enchanted && !dda.DamageSource.IsHero, () => Enchanted, () => Enchanted, false, 2, DamageType.Energy);
         }
 
         protected override TriggerType TriggerType

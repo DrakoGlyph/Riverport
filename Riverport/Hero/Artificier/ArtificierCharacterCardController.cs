@@ -25,13 +25,8 @@ namespace Riverport.Artificier
             if (revealed != null)
             {
                 Location moveTo = HeroTurnTaker.Hand;
-                if(revealed.DoKeywordsContain("relic"))
-                {
-                    List<YesNoCardDecision> decisions = new List<YesNoCardDecision>();
-                    var decide = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.PlayCard, revealed, null, decisions, null, GetCardSource());
-                    if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
-                    if (DidPlayerAnswerYes(decisions)) moveTo = TurnTaker.PlayArea;
-                }
+                if(revealed.DoKeywordsContain("relic")) moveTo = TurnTaker.PlayArea;
+                
                 var move = this.GameController.MoveCard(TurnTakerController, revealed, moveTo, false, showMessage: true, cardSource: GetCardSource());
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(move); } else { this.GameController.ExhaustCoroutine(move); }
             }

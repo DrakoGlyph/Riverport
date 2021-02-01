@@ -23,7 +23,7 @@
       ],
       "body": "Seek",
       "powers": [
-        "Reveal the top card of your deck. If it is a Relic, you may put it into play, otherwise put it into your hand."
+        "Reveal the top card of your deck. If it is a Relic, put it into play, otherwise put it into your hand."
       ],
       "icons": [
         "DrawCardNow"

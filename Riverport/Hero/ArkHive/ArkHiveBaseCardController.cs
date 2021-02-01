@@ -57,7 +57,7 @@ namespace Riverport.ArkHive
         {
             get
             {
-                return FindCardsWhere(c => c.IsInPlayAndHasGameText && c.Identifier == "SpareNanobot");
+                return FindCardsWhere(c => c.IsInPlayAndHasGameText && c.DoKeywordsContain("nanobot"));
             }
         }
 

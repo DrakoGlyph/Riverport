@@ -58,7 +58,7 @@
         "You may activate {wolf} text.",
         "At the start of your turn, discard a card or switch to Fenrir's Human character card."
       ],
-      "body": "Howl",
+      "body": "Slash",
       "powers": "{Fenrir} deals 1 target 2 Melee damage.",
       "icons": "DealDamageSonic",
       "incapacitatedAbilities": [

@@ -199,7 +199,7 @@
         "plan"
       ],
       "body": [
-        "When the Villain destroys a Hero Ongoing or Equipment other than this card, activate the Enact text of a Plan in play, then destroy this card."
+        "When a Villain source destroys a Hero Ongoing or Equipment other than this card, activate the Enact text of a Plan in play, then destroy this card."
       ],
       "activatableAbilities": [
         {
