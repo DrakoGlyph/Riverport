@@ -1,0 +1,497 @@
+{
+  "name": "ArkHive",
+  "kind": "Hero",
+  "expansionIdentifier": "RiverportOrigins",
+  "initialCardIdentifiers": [
+    "ArkHiveCharacter"
+  ],
+
+  "cards": [
+    {
+      "identifier": "ArkHiveCharacter",
+      "title": "Ark-Hive",
+      "character": true,
+      "count": 1,
+      "backgroundColor": "4287f5",
+      "hitpoints": 22,
+      "nemesisIdentifiers": "ArkHive",
+      "body": "Calculate",
+      "powers": [
+        "Reveal the top card of a Villain deck. You may play a Plan or Enact a plan in play."
+      ],
+      "icons": [
+        "HasPower",
+        "Manipulate",
+        "PlayCardNow"
+      ],
+      "incapacitatedAbilities": [
+        "One Hero may use a power now",
+        "Discard the top card of a Villain deck",
+        "One Hero may play a card now"
+      ],
+      "flippedIcons": [
+        "UsePowerNow",
+        "Manipulate",
+        "PlayCardNow"
+      ],
+      "openingLines": {
+        "default": "I have calculated you will not win.",
+        "ExileCharacter": "I will never succumb to the worst parts of myself.",
+        "ExWeaverCharacter": "Our mission was to [i]collect[/i] all the knowledge in the universe, not destroy it!"
+      },
+      "complexity": 2
+    },
+
+    {
+      "identifier": "TerminalDanger",
+      "title": "Terminal Danger",
+      "count": 1,
+      "keywords": [
+        "ongoing",
+        "plan"
+      ],
+      "body": [
+        "When a Hero Character would be reduced to 5 or fewer HP, activate the Enact text of your Plan in play, then destroy this card."
+      ],
+      "activatableAbilities": [
+        {
+          "name": "enact",
+          "text": "You may destroy a target with 5 or Fewer HP"
+        }
+      ],
+      "icons": [
+        "DestroyTarget"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "ArkHive",
+          "text": "We almost certainly face death if we are not successful."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Unwoven"
+    },
+    {
+      "identifier": "AnticipatedCombat",
+      "title": "Anticipated Combat",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "plan"
+      ],
+      "body": [
+        "At the start of the next Villain turn, activate the Enact text of a Plan in play, then destroy this card."
+      ],
+      "activatableAbilities": [
+        {
+          "name": "enact",
+          "text": "Reduce damage dealt to {ArkHive} and Heroes next to {SpareNanobot} by 2 until the start of your next turn."
+        }
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "ReduceDamageTaken"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "Combat will be mandatory soon."
+        },
+        {
+          "identifier": "Fenrir",
+          "text": "Good, the Wolf was getting bored."
+        }
+      ],
+      "flavorReference": "Ark-Hive: Hunted"
+    },
+    {
+      "identifier": "HastenedAction",
+      "title": "Hastened Action",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "plan"
+      ],
+      "body": [
+        "If the Villain puts more than one card into play during their turn, activate the Enact texts a Plan in play, then destroy this card."
+
+      ],
+      "activatableAbilities": [
+        {
+          "name": "enact",
+          "text": "{Ark-Hive} or a Hero next to a {SpareNanobot} may play a card now."
+        }
+      ],
+      "icons": [
+        "PlayCardNow"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "We must work quickly if we are to stop the spread of doom."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Unwoven"
+    },
+    {
+      "identifier": "UnforseenEmpowerment",
+      "title": "Unforseen Empowerment",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "plan"
+      ],
+      "body": [
+        "If a damage dealt by a Hero would be reduced to 0 or prevented, activate the Enact text of a Plan in play, then destroy this card."
+      ],
+      "activatableAbilities": [
+        {
+          "name": "enact",
+          "text": "Ark-Hive or a Hero next to a {SpareNanobot} may use a Power now."
+        }
+      ],
+      "icons": [
+        "IncreaseDamageDealt"
+      ]
+    },
+    {
+      "identifier": "KnowledgeAndPower",
+      "title": "Knowledge and Power",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "plan"
+      ],
+      "body": [
+        "When a Hero discards a card, activate the enact text of a Plan in play, then destroy this card."
+      ],
+      "activatableAbilities": [
+        {
+          "name": "enact",
+          "text": "Ark-Hive, and each Hero next to a {SpareNanobot}, may draw a card now."
+        }
+      ],
+      "icons": "DrawCardNow",
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "There's a saying, Knowledge is Power."
+        },
+        {
+          "identifier": "Ark-Hive",
+          "text": "Then the Babylons are the most powerful things in the universe."
+        }
+      ],
+      "flavorReference": "Ark-Hive at the Archives"
+    },
+    {
+      "identifier": "DestructiveRecourse",
+      "title": "Destructive Recourse",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "plan"
+      ],
+      "body": [
+        "When the Villain destroys a Hero Ongoing or Equipment other than this card, activate the Enact text of a Plan in play, then destroy this card."
+      ],
+      "activatableAbilities": [
+        {
+          "name": "enact",
+          "text": "Destroy a Villain Ongoing or Device."
+        }
+      ],
+      "icons": [
+        "DestroyOngoing",
+        "Destroy"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "Now is the time to destroy things."
+        },
+        {
+          "identifier": "Sundancer",
+          "text": "[b]That[/b] I'm good at.'"
+        }
+      ],
+      "flavorReference": "Redemption"
+    },
+    {
+      "identifier": "ExcessiveForce",
+      "title": "Excessive Force",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "plan"
+      ],
+      "body": [
+        "When a Hero would take 5 or more damage from a single blow, activate the Enact text of a Plan in play, then destroy this card."
+      ],
+      "activatableAbilities": [
+        {
+          "name": "enact",
+          "text": "Choose either Ark-Hive, or a Hero next to a {SpareNanobot}. Increase the next damage dealt by that hero by 2."
+        }
+      ],
+      "icons": "IncreaseDamageDealt",
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "Ark-Hive said wait for the signal."
+        },
+        {
+          "identifier": "Transition",
+          "text": "Do you think the giant fiery explosion [i]might[/i] be a signal?"
+        }
+      ],
+      "flavorReference": "Ragnarok"
+    },
+    {
+      "identifier": "RegenerativeOption",
+      "title": "Regenerative Option",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "plan"
+      ],
+      "body": [
+        "When a Villain Character card would regain HP, activate the Enact text of a Plan in play, then destroy this card."
+      ],
+      "activatableAbilities": [
+        {
+          "name": "enact",
+          "text": "Ark-Hive and each hero next to a Spare Nanobot each regain 2 HP."
+        }
+      ],
+      "icons": "GainHP",
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "We can rest here a moment and catch our breath."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Bot and Souled"
+    },
+
+    {
+      "identifier": "NovasteelChassis",
+      "title": "Novasteel Chassis",
+      "count": 1,
+      "keywords": [
+        "equipment"
+      ],
+      "body": [
+        "At the end of your turn, if there is a copy of Spare Nanobot in your trash, you may move it to your hand.",
+        "Reduce damage dealt to Ark-Hive by 1"
+      ],
+      "icons": "ReduceDamageTaken",
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "The chassis is premium Novasteel, forged in a star.{BR}The Babylonians say it will with stand anything short of a Supernova."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Ark-Hive: Hunted"
+    },
+    {
+      "identifier": "SpareNanobot",
+      "title": "Spare Nanobot",
+      "count": 4,
+      "keywords": [
+        "equipment",
+        "nanobot"
+      ],
+      "body": [
+        "Play next to a Hero Character card other than Ark-Hive.",
+        "At the start of this Hero's turn, they may play a card, draw a card, or use a power."
+      ],
+      "icons": [
+        "EndOfTurnAction",
+        "PlayCardNow",
+        "DrawCardNow",
+        "UsePowerNow"
+      ],
+      "flavorText": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "After fighting Exile, I learned a few tricks."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Moonlight #29"
+    },
+    {
+      "identifier": "PreprocessorCore",
+      "title": "Preprocessor Core",
+      "count": 1,
+      "keywords": [
+        "equipment"
+      ],
+      "body": [
+        "You may draw an additional card during your Draw Phase"
+      ],
+      "icons": [
+        "DrawCardExtra"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "So the chassis has its own processing center too?"
+        }
+      ],
+      "flavorReference": "Artificier, Ark-Hive: Hunted"
+    },
+    {
+      "identifier": "FabricationUnit",
+      "title": "Fabrication Unit",
+      "count": 1,
+      "keywords": [
+        "equipment"
+      ],
+      "powers": [
+        "Search your deck for an Equipment card and put it into play."
+      ],
+      "icons": [
+        "HasPower",
+        "Search"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "I fail to understand why it is so shocking I have this. It's like you having a First Aid kit.'"
+        }
+      ],
+      "flavorReference": "Ark-Hive, Ark-Hive: Hunted"
+    },
+    {
+      "identifier": "RedundantArray",
+      "title": "Redundant Array",
+      "count": 1,
+      "keywords": [
+        "equipment"
+      ],
+      "body": [
+        "Once per turn, when a Plan is destroyed, you may play a Plan."
+      ],
+      "icons": [
+        "PlayCardNow"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "Please tell me you have backups!"
+        }
+      ],
+      "flavorReference": "Artificier, Ark-Hive: Hunted"
+    },
+
+    {
+      "identifier": "PreemptiveAction",
+      "title": "Preemptive Action",
+      "count": 3,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "You may play a Plan.",
+        "You may activate the Enact text of a Plan in play now, then destroy that card."
+      ],
+      "icons": [
+        "Destroy"
+      ],
+      "flavorQuote": [
+        {
+          "identifier": "Sunchaser",
+          "text": "We can't just sit around waiting for him!"
+        },
+        {
+          "identifier": "Ark-Hive",
+          "text": "Agreed."
+        }
+      ],
+      "flavorReference": "Ragnarok"
+    },
+    {
+      "identifier": "ArchiveAccess",
+      "title": "Archive Access",
+      "count": "4",
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Draw 3 cards"
+      ],
+      "icons": "DrawCardNow",
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "Accessing Babylon Archives..."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Archive Hunter"
+    },
+    {
+      "identifier": "RecycledIdeas",
+      "title": "Recycled Ideas",
+      "count": 2,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "You may put up to X Plans from from your trash into your hand, where X is 1 plus the number of Spare Nanobots in play."
+      ],
+      "icons": "PlayCardNow",
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "Why not use the idea from Greater Than Comics #23?"
+        }
+      ],
+      "flavorReference": "Ark-Hive, Moonlight #32"
+    },
+    {
+      "identifier": "RecallSpares",
+      "title": "Recall Spares",
+      "count": 2,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "You may return any number of Spare Nanobots from play to your hand.",
+        "For each Nanobot returned this way, Ark-Hive regains 2 HP."
+      ],
+      "icons": [
+        "GainHP"
+      ],
+      "flavorQuote": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "I need a moment to [i]recollect[/i] myself."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Bot and Souled"
+    },
+    {
+      "identifier": "DeploySpares",
+      "title": "Deploy Spares",
+      "count": 4,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Search your deck for up to {H-1} copies of Spare Nanobot and put them into play.",
+        "{ArkHive} deals himself 2 Energy Damage for each card played this way."
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "We need a new plan here, Ark-Hive!"
+        },
+        {
+          "identifier": "Ark-Hive",
+          "text": "Recalculating..."
+        }
+      ],
+      "flavorReference": "Ark-Hive at the Archives"
+    }
+  ]
+}
