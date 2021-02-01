@@ -18,8 +18,7 @@ namespace Riverport.Fenrir
         {
             if(ShouldActivate("human"))
             {
-                var search = this.GameController.PlayCard(TurnTakerController, FindCard("Meditate"), true, associateCardSource: true, cardSource: GetCardSource());
-                //var search = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(c => c == FindCard("Meditate")), true, false, false, true);
+                var search = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(c => c == FindCard("Meditate")), true, false, false, true);
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(search); } else { this.GameController.ExhaustCoroutine(search); }
             }
             if(ShouldActivate("wolf"))
@@ -43,7 +42,7 @@ namespace Riverport.Fenrir
                     if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(heal); } else { this.GameController.ExhaustCoroutine(heal); }
                 } else
                 {
-                    var des = this.GameController.DestroyCard(HeroTurnTakerController, LycanForm, false, null, "The Wolf is tamed.", true, cardSource: GetCardSource());
+                    var des = Detransform();
                     if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(des); } else { this.GameController.ExhaustCoroutine(des); }
                 }
 

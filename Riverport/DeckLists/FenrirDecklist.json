@@ -19,7 +19,14 @@
       "count": 1,
       "hitpoints": 32,
       "nemesisIdentifiers": "Fenrir",
-      "gameplay": "You may activate {human} text.",
+      "gameplay": [
+        "When a card says to Transform, switch to Fenrir's Wolf Form.",
+        "You may activate {human} text.",
+        ""
+      ],
+      "keywords": [
+        "human"
+      ],
       "body": "Inquire",
       "powers": "Draw a card",
       "icons": "DrawCardNow",
@@ -43,9 +50,16 @@
       "backgroundColor": "AFAFAF",
       "count": 1,
       "hitpoints": 32,
-      "gameplay": "You may activate {wolf} text.",
+      "keywords": [
+        "wolf"
+      ],
+      "gameplay": [
+        "When a card says Detransform, switch to Fenrir's Human Form.",
+        "You may activate {wolf} text.",
+        "At the start of your turn, discard a card or switch to Fenrir's Human character card."
+      ],
       "body": "Howl",
-      "powers": "{Fenrir} deals up to 3 targets 1 Sonic damage.",
+      "powers": "{Fenrir} deals 1 target 2 Melee damage.",
       "icons": "DealDamageSonic",
       "incapacitatedAbilities": [
         "Destroy a Device or Ongoing",
@@ -54,29 +68,7 @@
       ]
     },
 
-    {
-      "identifier": "LycanForm",
-      "title": "Lycan Form",
-      "count": 1,
-      "keywords": [
-        "ongoing",
-        "feral"
-      ],
-      "body": [
-        "Switch to Fenrir's Wolf Form now. When this card leaves play, switch to Fenrir's Human form.",
-        "At the start of your turn, Fenrir discards a card. If he does not, destroy this card.",
-        "Increase damage dealt by Fenrir to Non-Hero targets by 1."
-      ],
-      "powers": "Deal 1 Target 2 Melee Damage.",
-      "icons": [
-        "DestroySelf",
-        "IncreaseDamageDealt",
-        "HasPower",
-        "DealDamageMelee"
-      ],
-      "flavorText": "The Power of Wolf Does not me Fright",
-      "flavorReference": "Fenrir's Mantra"
-    },
+    
     {
       "identifier": "PaleMoonPendant",
       "title": "The Pale Moon Pendant",
@@ -104,14 +96,14 @@
     {
       "identifier": "HungerOfTheWolf",
       "title": "Hunger of The Wolf",
-      "count": 1,
+      "count": 2,
       "keywords": [
         "ongoing",
         "feral",
         "limited"
       ],
       "body": [
-        "{human} At the start of your turn, Fenrir may deal himself 1 Psychic damaage. If he does, put Lycan Form in play.",
+        "{human} At the start of your turn, Fenrir may deal himself 1 Psychic damaage. If he does, Transform.",
         "{wolf} When Fenrir reduces a target to 0 HP, he regains 1 HP"
       ],
       "icons": [
@@ -136,7 +128,7 @@
       ],
       "body": [
         "At the start of your turn, if Fenrir is not in Wolf Form, or if there are no cards under this, destroy this card. Otherwise destroy a card under this one.",
-        "When Fenrir destroys a target or a device, put it under this card. Increase damage dealt by Fenrir by 1 for every 2 cards under this one.",
+        "{wolf} When Fenrir destroys a target, put it under this card. Increase damage dealt by Fenrir by 1 for every 2 cards under this one.",
         "When this card enters play, destroy a non-character target with 3HP or less or a Device."
       ],
       "icons": [
@@ -157,7 +149,7 @@
       "count": 1,
       "keywords": "ongoing",
       "body": [
-        "{human} When you would draw a card, search for one instead. At the start of your turn, destroy this card.",
+        "{human} When you would draw a card, instead search your deck for a card and put it in your hand. At the start of your turn, destroy this card.",
         "{wolf} At the end of your turn, destroy this card and draw a card.",
         "If Fenrir would deal or be dealt damage, destroy this card."
       ],
@@ -184,7 +176,7 @@
       ],
       "body": [
         "{human} Draw 2 cards",
-        "{wolf} Destroy an Ongoing or Device card, then deal its owner 2 Melee damage."
+        "{wolf} Destroy an Ongoing card, then deal its owner 2 Melee damage."
       ],
       "icons": [
         "DrawCardNow",
@@ -258,8 +250,8 @@
         "feral"
       ],
       "body": [
-        "{human} Search for Lycan Form and put it into play. You may use Fenrir's innate power now.",
-        "{wolf} You may search for Frenzy and put it into play. If you do not, deal 1 target 3 Melee damage."
+        "{human} Transform. You may use Fenrir's innate power now.",
+        "{wolf} You may search your deck for Frenzy and put it into hand. You may play a card or deal 1 target 3 Melee damage."
       ],
       "icons": [
         "Search",
@@ -357,8 +349,8 @@
         "one-shot"
       ],
       "body": [
-        "{human} Search for Meditate and put it into play.",
-        "{wolf} Destroy all cards under Frenzy, then destroy Frenzy. For each card destroyed this way, Fenrir regains 1 HP. If no cards are destroyed this way, destroy Lycan Form."
+        "{human} Search your deck or trash for Meditate and put it into play.",
+        "{wolf} Destroy all cards under Frenzy, then destroy Frenzy. For each card destroyed this way, Fenrir regains 1 HP. If no cards are destroyed this way, Detransform."
       ],
       "icons": [
         "Search",
@@ -435,7 +427,7 @@
         "feral"
       ],
       "body": [
-        "{human} Search for Lycan Form and put it into play.",
+        "{human} Transform.",
         "{wolf} {Fenrir} deals each Non-Hero target 1 Sonic damage."
       ],
       "icons": [

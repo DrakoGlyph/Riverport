@@ -24,7 +24,7 @@ namespace Riverport.Fenrir
             if(ShouldActivate("wolf"))
             {
                 List<DestroyCardAction> storedResultsAction = new List<DestroyCardAction> { };
-                var sunder = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.IsOngoing || c.IsDevice), false, storedResultsAction, CharacterCard, GetCardSource());
+                var sunder = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => c.IsOngoing), false, storedResultsAction, CharacterCard, GetCardSource());
                 if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(sunder); } else { this.GameController.ExhaustCoroutine(sunder); }
                 if (DidDestroyCards(storedResultsAction))
                 {

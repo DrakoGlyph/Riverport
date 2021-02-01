@@ -12,7 +12,6 @@ namespace Riverport.Fenrir
     {
         public HungerOfTheWolfCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
-            SpecialStringMaker.ShowIfSpecificCardIsInPlay("LycanForm");
         }
 
         public override void AddTriggers()
@@ -41,8 +40,7 @@ namespace Riverport.Fenrir
                 {
                     var pay = DealDamage(CharacterCard, CharacterCard, 1, DamageType.Psychic, cardSource: GetCardSource());
                     if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(pay); } else { this.GameController.ExhaustCoroutine(pay); }
-                    var transform = this.GameController.PlayCard(TurnTakerController, LycanForm, true, associateCardSource: true, cardSource: GetCardSource());
-                    //var transform = SearchForCards(HeroTurnTakerController, true, true, 1, 1, new LinqCardCriteria(LycanForm), true, false, false);
+                    var transform = Transform();
                     if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(transform); } else { this.GameController.ExhaustCoroutine(transform); }
                 }
             }

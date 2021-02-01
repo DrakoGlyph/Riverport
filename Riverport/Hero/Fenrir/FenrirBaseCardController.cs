@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,13 +23,27 @@ namespace Riverport.Fenrir
             return rtn += " form.";
         }
 
-        protected Card LycanForm
+
+        protected IEnumerator Detransform(GameAction arg = null)
         {
-            get
+            if (!Human.IsInPlay)
             {
-                return FindCard("LycanForm");
+                var swap = this.GameController.SwitchCards(CharacterCardWithoutReplacements, Human, true, false, false, GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(swap); } else { this.GameController.ExhaustCoroutine(swap); }
+            }
+
+        }
+
+        protected IEnumerator Transform()
+        {
+            //Switch To Wolf Form
+            if (!Wolf.IsInPlay)
+            {
+                var swap = this.GameController.SwitchCards(CharacterCardWithoutReplacements, Wolf, true, false, false, GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(swap); } else { this.GameController.ExhaustCoroutine(swap); }
             }
         }
+
 
         protected Card Frenzy
         {

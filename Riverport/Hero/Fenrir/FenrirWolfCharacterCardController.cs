@@ -8,7 +8,7 @@ using System.Collections;
 
 namespace Riverport.Fenrir
 {
-    public class FenrirWolfCharacterCardController : HeroCharacterCardController
+    public class FenrirWolfCharacterCardController : FenrirBaseCharacterCardController
     {
         public FenrirWolfCharacterCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
@@ -19,16 +19,29 @@ namespace Riverport.Fenrir
         {
             base.AddTriggers();
 
-            
+            AddStartOfTurnTrigger(tt => tt == TurnTaker, PayTheCost, TriggerType.DiscardCard);
         }
 
         public override bool CanBeMovedOutOfGame => true;
-        
+
+
+        private IEnumerator PayTheCost(PhaseChangeAction arg)
+        {
+            List<DiscardCardAction> result = new List<DiscardCardAction>();
+            var discard = SelectAndDiscardCards(DecisionMaker, 1, false, 0, result, false, null, () => "Select a card to feed the wolf.");
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(discard); } else { this.GameController.ExhaustCoroutine(discard); }
+            if (!DidDiscardCards(result))
+            {
+                var destroy = Detransform();
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+            }
+        }
+
 
         public override IEnumerator UsePower(int index = 0)
         {
-            var howl = this.GameController.SelectTargetsAndDealDamage(HeroTurnTakerController, new DamageSource(GameController, Card), 1, DamageType.Sonic, 3, false, 0, false, false, false, c => !c.IsHero, cardSource: GetCardSource());
-            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(howl); } else { this.GameController.ExhaustCoroutine(howl); }
+            var destroy = this.GameController.SelectTargetsAndDealDamage(DecisionMaker, Fenrir, 2, DamageType.Melee, 1, false, 0, false, false, false, c => !c.IsHero, cardSource: GetCardSource());
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
         }
 
         public override IEnumerator UseIncapacitatedAbility(int index)

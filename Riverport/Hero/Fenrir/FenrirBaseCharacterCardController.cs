@@ -8,11 +8,36 @@ using Handelabra.Sentinels.Engine.Model;
 
 namespace Riverport.Fenrir
 {
-    class FenrirBaseCharacterCardController : HeroCharacterCardController
+    public class FenrirBaseCharacterCardController : HeroCharacterCardController
     {
         public FenrirBaseCharacterCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
         }
+
+
+		protected Card Human
+		{
+			get
+			{
+				return FindCard("FenrirHumanCharacter");
+			}
+		}
+
+		protected Card Wolf
+		{
+			get
+			{
+				return FindCard("FenrirWolfCharacter");
+			}
+		}
+
+		protected DamageSource Fenrir
+		{
+			get
+			{
+				return new DamageSource(GameController, CharacterCard);
+			}
+		}
 
 		protected override IEnumerator RemoveCardsFromGame(IEnumerable<Card> cards)
 		{
@@ -44,6 +69,26 @@ namespace Riverport.Fenrir
 			else
 			{
 				base.GameController.ExhaustCoroutine(coroutine2);
+			}
+		}
+
+		protected IEnumerator Detransform(GameAction arg = null)
+		{
+			if (!Human.IsInPlay)
+			{
+				var swap = this.GameController.SwitchCards(CharacterCardWithoutReplacements, Human, true, false, false, GetCardSource());
+				if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(swap); } else { this.GameController.ExhaustCoroutine(swap); }
+			}
+
+		}
+
+		protected IEnumerator Transform()
+		{
+			//Switch To Wolf Form
+			if (!Wolf.IsInPlay)
+			{
+				var swap = this.GameController.SwitchCards(CharacterCardWithoutReplacements, Wolf, true, false, false, GetCardSource());
+				if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(swap); } else { this.GameController.ExhaustCoroutine(swap); }
 			}
 		}
 	}
