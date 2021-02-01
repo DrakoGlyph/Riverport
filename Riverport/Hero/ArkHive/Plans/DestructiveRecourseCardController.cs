@@ -24,7 +24,7 @@ namespace Riverport.ArkHive
         {
             if(abilityKey == "enact")
             {
-                var destroy = this.GameController.SelectAndDestroyCard(DecisionMaker, new LinqCardCriteria(c => (c.IsOngoing || c.IsDevice) && c.IsVillain), false);
+                var destroy = this.GameController.SelectAndDestroyCard(DecisionMaker, new LinqCardCriteria(c => (c.IsOngoing) && c.IsVillain), false);
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
             }
         }

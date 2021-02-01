@@ -204,7 +204,7 @@
       "activatableAbilities": [
         {
           "name": "enact",
-          "text": "Destroy a Villain Ongoing or Device."
+          "text": "Destroy a Villain Ongoing."
         }
       ],
       "icons": [
