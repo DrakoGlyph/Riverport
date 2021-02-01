@@ -168,10 +168,10 @@
     <Compile Include="Hero\Weaver\Ongoings\InspirationStrikesCardController.cs" />
     <Compile Include="Hero\Weaver\Patches\AdrenalPatchCardController.cs" />
     <Compile Include="Hero\Weaver\Patches\GaiaPatchCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\HasteweaveCardController.cs" />
+    <Compile Include="Hero\Weaver\Patches\HastePatchCardController.cs" />
     <Compile Include="Hero\Weaver\Patches\PatchCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\PhaseweaveCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\PsychweaveCardController.cs" />
+    <Compile Include="Hero\Weaver\Patches\PhasePatchCardController.cs" />
+    <Compile Include="Hero\Weaver\Patches\PsychPatchCardController.cs" />
     <Compile Include="Hero\Weaver\Ongoings\ResourceReclamationCardController.cs" />
     <Compile Include="Hero\Weaver\Weaves\ReadTheWeaveCardController.cs" />
     <Compile Include="Hero\Weaver\Weaves\QuickWeavingCardController.cs" />

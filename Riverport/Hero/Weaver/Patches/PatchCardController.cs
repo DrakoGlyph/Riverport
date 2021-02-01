@@ -16,11 +16,19 @@ namespace Riverport.Weaver
 
         protected virtual TriggerType TriggerType { get; }
         protected virtual StatusEffect StatusEffect { get; }
-        
+
         protected virtual IEnumerator Empower(GameAction ga = null)
         {
-            var status = AddStatusEffect(StatusEffect);
-            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(status); } else { this.GameController.ExhaustCoroutine(status); }
+            List<YesNoCardDecision> decisions = new List<YesNoCardDecision>();
+            var decide = this.GameController.MakeYesNoCardDecision(FindHeroTurnTakerController(EquippedTurnTaker as HeroTurnTaker), SelectionType.DestroySelf, Card, cardSource: GetCardSource());
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+            if (DidPlayerAnswerYes(decisions))
+            {
+                var status = AddStatusEffect(StatusEffect);
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(status); } else { this.GameController.ExhaustCoroutine(status); }
+                var destroy = this.GameController.DestroyCard(DecisionMaker, Card, cardSource: GetCardSource());
+                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+            }
         }
 
         public override IEnumerator DeterminePlayLocation(List<MoveCardDestination> storedResults, bool isPutIntoPlay, List<IDecision> decisionSources, Location overridePlayArea = null, LinqTurnTakerCriteria additionalTurnTakerCriteria = null)

@@ -16,7 +16,6 @@ namespace Riverport.Artificier
             TrackMana();
         }
 
-        private Trigger<AddTokensToPoolAction> tokenPrevent;
 
         public override IEnumerator Play()
         {
@@ -46,9 +45,5 @@ namespace Riverport.Artificier
             //if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(status); } else { this.GameController.ExhaustCoroutine(status); }
         }
 
-        public void RemoveTokenTrigger()
-        {
-            RemoveTemporaryTrigger(tokenPrevent);
-        }
     }
 }

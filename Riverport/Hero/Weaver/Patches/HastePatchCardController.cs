@@ -8,9 +8,9 @@ using Handelabra.Sentinels.Engine.Model;
 
 namespace Riverport.Weaver
 {
-    public class HasteweaveCardController : PhaseActionPatchCardController
+    public class HastePatchCardController : PhaseActionPatchCardController
     {
-        public HasteweaveCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
+        public HastePatchCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
         }
 

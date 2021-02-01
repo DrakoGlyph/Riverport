@@ -192,7 +192,7 @@
       "body": [
         "Remove all tokens from the Mana Pool, and destroy all Enchantments in play.",
         "{Artificier} deals all non-Hero targets and himself X Energy damage, where X is the number of tokens removed from the Mana Pool.",
-        "Reduce damage dealt by {Artificer} by X until the end of his next turn.",
+        "Reduce damage dealt by {Artificer} by X until the end of his next turn."
       ],
       "icons": [
         "RemoveTokens",
@@ -432,8 +432,7 @@
         "relic"
       ],
       "body": [
-        "At the end of your turn, you may move a Spell card from your Trash to your hand.",
-        "You may remove 2 tokens from your Mana Pool to play it now."
+        "At the end of your turn, you may remove 2 tokens from your Mana Pool. If you do, you may search your trash for a spell card and put it into your hand."
       ],
       "icons": [
         "EndOfTurnAction",

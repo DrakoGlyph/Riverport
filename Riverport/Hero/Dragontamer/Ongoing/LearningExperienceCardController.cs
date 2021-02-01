@@ -17,7 +17,7 @@ namespace Riverport.Dragontamer
         public override void AddTriggers()
         {
             AddTrigger<UsePowerAction>((UsePowerAction upa) => upa.Power.CardController.Card.DoKeywordsContain("dragon"), upa => DrawCard(), TriggerType.DrawCard, TriggerTiming.After);
-            AddTrigger<DrawCardAction>((DrawCardAction dca) => dca.HeroTurnTaker == HeroTurnTaker && !HasBeenSetToTrueThisTurn("LearningExperience"), Learn, TriggerType.HiddenLast, TriggerTiming.After);
+            AddTrigger<DrawCardAction>((DrawCardAction dca) => FindCardsWhere(c=>c.DoKeywordsContain("dragon") && c.IsInPlayAndHasGameText).Count() > 0 && dca.HeroTurnTaker == HeroTurnTaker && !HasBeenSetToTrueThisTurn("LearningExperience"), Learn, TriggerType.HiddenLast, TriggerTiming.After);
         }
 
         private IEnumerator Learn(DrawCardAction arg)

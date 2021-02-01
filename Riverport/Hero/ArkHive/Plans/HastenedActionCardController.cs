@@ -16,7 +16,7 @@ namespace Riverport.ArkHive
 
         public override void AddTriggers()
         {
-            AddTrigger<PlayCardAction>((PlayCardAction pca) => !IsFirstTimeCardPlayedThisTurn(pca.CardToPlay, c => c.IsVillain && GameController.ActiveTurnTaker == c.Owner, TriggerTiming.After), EnactTrigger, TriggerType.ActivateTriggers, TriggerTiming.After); 
+            AddTrigger<PlayCardAction>((PlayCardAction pca) => GameController.ActiveTurnTaker.IsVillain && !IsFirstTimeCardPlayedThisTurn(pca.CardToPlay, c => c.IsVillain && GameController.ActiveTurnTaker == c.Owner, TriggerTiming.After), EnactTrigger, TriggerType.ActivateTriggers, TriggerTiming.After); 
         }
 
         public override IEnumerator ActivateAbility(string abilityKey)

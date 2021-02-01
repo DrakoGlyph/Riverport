@@ -8,9 +8,9 @@ using System.Collections;
 
 namespace Riverport.Weaver
 {
-    public class PsychweaveCardController : PhaseActionPatchCardController
+    public class PsychPatchCardController : PhaseActionPatchCardController
     {
-        public PsychweaveCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
+        public PsychPatchCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
         }
         protected override Phase IncreasedPhase => Phase.DrawCard;

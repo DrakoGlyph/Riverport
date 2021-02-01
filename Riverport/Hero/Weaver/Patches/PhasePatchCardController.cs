@@ -7,9 +7,9 @@ using Handelabra.Sentinels.Engine.Model;
 
 namespace Riverport.Weaver
 {
-    public class PhaseweaveCardController : PatchCardController
+    public class PhasePatchCardController : PatchCardController
     {
-        public PhaseweaveCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
+        public PhasePatchCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
         }
         protected override TriggerType TriggerType => TriggerType.MakeDamageIrreducible;
