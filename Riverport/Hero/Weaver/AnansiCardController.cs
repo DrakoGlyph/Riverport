@@ -14,27 +14,24 @@ namespace Riverport.Weaver
         {
         }
         
-        protected readonly LinqCardCriteria SuitMaterialFilter = new LinqCardCriteria(c => c.DoKeywordsContain("suit") || c.DoKeywordsContain("material"), "Suits or Materials", false, false, "Suit or Material", "Suits or Materials");
+        protected readonly LinqCardCriteria PatchFilter = new LinqCardCriteria(c => c.DoKeywordsContain("patch"), "Patches", false, false, "Patch", "Patches");
 
 
         public override void AddTriggers()
         {
             AddDealDamageAtStartOfTurnTrigger(TurnTaker, Card, c => c == Card, TargetType.All, 2, DamageType.Psychic);
+            AddTrigger<DestroyCardAction>(dca => dca.CardToDestroy.Card.DoKeywordsContain("patch"), Replace, TriggerType.MoveCard, TriggerTiming.After);
         }
 
-        public override IEnumerator Play()
+        private IEnumerator Replace(DestroyCardAction arg)
         {
-            MakeIndestructibleStatusEffect mise = new MakeIndestructibleStatusEffect();
-            mise.CreateImplicitExpiryConditions();
-            mise.CardDestroyedExpiryCriteria.Card = Card;
-            mise.CardsToMakeIndestructible.HasAnyOfTheseKeywords = new List<string>() { "suit" };
-            var protect = AddStatusEffect(mise);
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(protect); } else { this.GameController.ExhaustCoroutine(protect); }
+            arg.SetPostDestroyDestination(HeroTurnTaker.Hand, cardSource: GetCardSource());
+            return DoNothing();
         }
 
         public override IEnumerator UsePower(int index = 0)
         {
-            var craft = SearchForCards(HeroTurnTakerController, true, false, 1, 1, SuitMaterialFilter, true, false, false);
+            var craft = SearchForCards(HeroTurnTakerController, true, false, 1, 1, PatchFilter, true, false, false);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(craft); } else { this.GameController.ExhaustCoroutine(craft); }
             var pay = DealDamage(Card, Card, 2, DamageType.Psychic);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(pay); } else { this.GameController.ExhaustCoroutine(pay); }

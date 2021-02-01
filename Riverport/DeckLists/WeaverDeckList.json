@@ -34,143 +34,133 @@
     },
 
     {
-      "identifier": "InertiaConduitSuit",
-      "title": "Inertia Conduit Suit",
+      "identifier": "InertiaPatch",
+      "title": "Inertia Patch",
       "count": 4,
       "keywords": [
         "equipment",
-        "suit"
+        "patch"
       ],
       "body": [
-        "Play next to a Hero Character card.",
-        "A Hero may only have one Suit next to them at a time. If another suit would be put in play, return all but 1 suit to Weaver's hand.",
-        "If the equipped hero takes 5 or more damage in one blow, destroy this suit.",
-        "Increase damage dealt by the equipped hero to Non-Hero targets by 1"
+        "Play next to a Hero Character.",
+        "At the start of the Equipped Hero's turn, they may destroy this patch to increase their damage by 1 until the start of their next turn."
       ],
       "icons": [
-        "DestroySelf",
+        "Destroy",
         "IncreaseDamageDealt"
       ],
-      "flavorText": "To Keep You Fighting",
-      "flavorReference": "Memo from Weaver to Fenrir"
+      "flavorText": "Woven from Destructive Nature",
+      "flavorReference": "Weaver's Multiverse of Materials"
     },
     {
-      "identifier": "KevlarShellSuit",
-      "title": "Kevlar Shell Suit",
+      "identifier": "KevlarPatch",
+      "title": "Kevlar Patch",
       "count": 4,
       "keywords": [
         "equipment",
-        "suit"
+        "patch"
       ],
       "body": [
-        "Play next to a Hero Character card.",
-        "A Hero may only have one Suit next to them at a time. If another suit would be put in play, return all but 1 suit to Weaver's hand.",
-        "If the equipped hero takes 5 or more damage in one blow, destroy this suit.",
-        "Reduce damage dealt to this hero by 1"
+        "Play next to a Hero Character.",
+        "At the start of the Equipped Hero's turn, they may destroy this patch to reduce damage dealt to this hero by 1 until the start of their next turn."
       ],
       "icons": [
-        "DestroySelf",
+        "Destroy",
         "ReduceDamageTaken"
       ],
-      "flavorText": "To Keep You Safe",
-      "flavorReference": "Memo from Weaver to Artificier"
+      "flavorText": "Woven to Protect and Defend",
+      "flavorReference": "Weaver's Multiverse of Materials"
     },
-
     {
-      "identifier": "Akashaweave",
-      "title": "Akashaweave",
+      "identifier": "GaiaPatch",
+      "title": "Gaia Patch",
       "count": 2,
       "keywords": [
         "equipment",
-        "material"
+        "patch"
       ],
       "body": [
-        "Play next to a suit.",
-        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
-        "If the suit ever leaves play, destroy this card.",
-        "At the end of this Hero's turn, they regain 1 HP"
+        "Play next to a Hero Character.",
+        "At the start of the Equipped Hero's Turn, they may destroy this patch to regain 3 HP"
       ],
       "icons": [
+        "Destroy",
         "GainHP"
       ],
       "flavorText": "Woven from Life Itself",
       "flavorReference": "Weaver's Multiverse of Materials"
     },
     {
-      "identifier": "Hasteweave",
-      "title": "Hasteweave",
+      "identifier": "HastePatch",
+      "title": "Haste Patch",
       "count": 2,
       "keywords": [
         "equipment",
-        "material"
+        "patch"
       ],
       "body": [
-        "Play next to a suit.",
-        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
-        "If the suit ever leaves play, destroy this card.",
-        "This hero may play an additional card."
+        "Play next to a Hero Character.",
+        "At the start of the Equipped Hero's turn, they may destroy this patch to play an additional card this turn."
       ],
       "icons": [
+        "Destroy",
         "PlayCardExtra"
       ],
       "flavorText": "Woven from the Rush of Velocity",
       "flavorReference": "Weaver's Multiverse of Materials"
     },
     {
-      "identifier": "Adrenalweave",
-      "title": "Adrenalweave",
+      "identifier": "AdrenalPatch",
+      "title": "Adrenal Patch",
       "count": 2,
       "keywords": [
         "equipment",
-        "material"
+        "patch"
       ],
       "body": [
-        "Play next to a suit.",
-        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
-        "If the suit ever leaves play, destroy this card.",
-        "This Hero may use an additional Power"
+        "Play next to a Hero Character.",
+        "At the start of the Equipped Hero's turn, they may destroy this patch to use an additional power this turn."
       ],
       "icons": [
+        "Destroy",
         "UsePowerExtra"
       ],
       "flavorText": "Woven from an Essence of Mana",
       "flavorReference": "Weaver's Multiverse of Materials"
     },
     {
-      "identifier": "Psychweave",
-      "title": "Psychweave",
+      "identifier": "PsychPatch",
+      "title": "Psych Patch",
       "count": 2,
       "keywords": [
         "equipment",
-        "material"
+        "patch"
       ],
       "body": [
-        "Play next to a suit.",
-        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
-        "If the suit ever leaves play, destroy this card.",
-        "This Hero may draw an additional card"
+        "Play next to a Hero Character.",
+        "At the start of the Equipped Hero's turn, they may destroy this patch to draw an additional card this turn."
       ],
       "icons": [
+        "Destroy",
         "DrawCardExtra"
       ],
       "flavorText": "Woven from Thoughts of the Future",
       "flavorReference": "Weaver's Multiverse of Materials"
     },
     {
-      "identifier": "Phaseweave",
-      "title": "Phaseweave",
+      "identifier": "PhasePatch",
+      "title": "Phase Patch",
       "count": 2,
       "keywords": [
         "equipment",
-        "material"
+        "patch"
       ],
       "body": [
-        "Play next to a suit.",
-        "A Suit may only have 1 Material in play next to it at a time. If another Material is played next to it, return the others to Weaver's Hand.",
-        "If the suit ever leaves play, destroy this card.",
-        "Damage dealt by this hero is irreducible"
+        "Play next to a Hero Character.",
+        "At the start of the Equipped Hero's turn, they may destroy this patch to make their damage irreducible until the start of their next turn."
       ],
       "icons": [
+        "Destroy",
         "MakeDamageIrreducible"
       ],
       "flavorText": "Woven between Universes",
@@ -210,7 +200,7 @@
         "weave"
       ],
       "body": [
-        "Reveal cards from your deck until you reveal 2 Suits or Materials. Put them in your hand, shuffle the rest back into your deck",
+        "Reveal cards from your deck until you reveal 2 Patches. Put them in your hand, shuffle the rest back into your deck",
         "You may play a card."
       ],
       "icons": [
@@ -234,15 +224,16 @@
         "weave"
       ],
       "body": [
-        "When one of your equipment cards would be destroyed, you may discard a Material to prevent it."
+        "At the start of your turn, you may play a Patch."
       ],
       "powers": [
-        "You may discard a material. If you do, you may put a Suit from your trash into play."
+        "You may discard a Patch to play a Patch from your trash."
       ],
       "icons": [
-        "Discard",
+        "StartOfTurnAction",
+        "PlayCardNow",
         "HasPower",
-        "Search"
+        "Discard"
       ],
       "flavorQuotes": [
         {
@@ -253,17 +244,15 @@
       "flavorReference": "Weaver, Moonlight #5"
     },
     {
-      "identifier": "PremadeMasterpiece",
-      "title": "Premade Masterpiece",
+      "identifier": "QuickWeaving",
+      "title": "Quick Weaving",
       "count": 4,
       "keywords": [
         "one-shot",
         "weave"
       ],
       "body": [
-        "You may play a Suit",
-        "You may play a Material",
-        "You may play a card"
+        "You may play up to 3 Patches now."
       ],
       "icons": [
         "PlayCardNow"
@@ -271,7 +260,7 @@
       "flavorQuotes": [
         {
           "identifier": "Weaver",
-          "text": "I made it ahead of time."
+          "text": "I made them ahead of time."
         }
       ],
       "flavorReference": "Weaver, Weaver #12"
@@ -338,7 +327,7 @@
         "limited"
       ],
       "body": [
-        "When one of your equipments is destroyed, you may draw a card."
+        "When one of your patches is destroyed, you may draw a card."
       ],
       "icons": [
         "DrawCardNow"
@@ -389,10 +378,10 @@
         "relic"
       ],
       "body": [
-        "At the start of your turn, you may put a Suit or Material from your trash into your hand."
+        "At the start of your turn, you may put a Patch from your trash into your hand."
       ],
       "powers": [
-        "You may play a Suit or Material"
+        "You may play a Patch now."
       ],
       "icons": [
         "Search",
@@ -402,7 +391,7 @@
       "flavorQuotes": [
         {
           "identifier": "Skoll",
-          "text": "That loom can rewrite fate itself!"
+          "text": "That Loom can rewrite fate itself!"
         }
       ],
       "flavorReference": "Skoll, Moonlight #12"
@@ -446,10 +435,10 @@
       ],
       "body": [
         "At the start of your turn, {Anansi} deals himself 2 Psychic damage.",
-        "Suits are indestructible"
+        "When Patches are destroyed, they go to your hand instead of your trash."
       ],
       "powers": [
-        "You may search your deck for a Suit or Material and put it into play, then Anansi deals himself 2 Psychic damage."
+        "You may search your deck for a Patch and put it into play, then Anansi deals himself 2 Psychic damage."
       ],
       "icons": [
         "DealDamagePsychic",

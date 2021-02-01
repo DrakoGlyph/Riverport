@@ -13,14 +13,14 @@ namespace Riverport.Weaver
     {
         public RaidTheStockpilesCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
-            SpecialStringMaker.ShowNumberOfCardsAtLocation(HeroTurnTaker.Deck, SuitMaterialFilter) ;
+            SpecialStringMaker.ShowNumberOfCardsAtLocation(HeroTurnTaker.Deck, PatchFilter) ;
         }
 
-        protected readonly LinqCardCriteria SuitMaterialFilter = new LinqCardCriteria(c => c.DoKeywordsContain("suit") || c.DoKeywordsContain("material"), "Suits or Materials", false, false, "Suit or Material", "Suits or Materials");
+        protected readonly LinqCardCriteria PatchFilter = new LinqCardCriteria(c => c.DoKeywordsContain("patch"), "Patches", false, false, "Patch", "Patches");
 
         public override IEnumerator Play()
         {
-            var raid = RevealCards_MoveMatching_ReturnNonMatchingCards(TurnTakerController, TurnTaker.Deck, false, false, true, SuitMaterialFilter, 2, null, true, false, RevealedCardDisplay.ShowMatchingCards, true, false);
+            var raid = RevealCards_MoveMatching_ReturnNonMatchingCards(TurnTakerController, TurnTaker.Deck, false, false, true, PatchFilter, 2, null, true, false, RevealedCardDisplay.ShowMatchingCards, true, false);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(raid); } else { this.GameController.ExhaustCoroutine(raid); }
             var play = SelectAndPlayCardFromHand(HeroTurnTakerController, associateCardSource: true);
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(play); } else { this.GameController.ExhaustCoroutine(play); }
