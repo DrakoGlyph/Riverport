@@ -1,0 +1,569 @@
+{
+  "name": "Artificier",
+  "kind": "Hero",
+  "expansionIdentifier": "RiverportOrigins",
+
+  "initialCardIdentifiers": [
+    "ArtificierCharacter",
+    "ArchiveGauntlets"
+  ],
+
+  "cards": [
+    {
+      "identifier": "ArtificierCharacter",
+      "title": "Artificier",
+      "character": true,
+      "backgroundColor": "9c6735",
+      "count": 1,
+      "hitpoints": 24,
+      "nemesisIdentifiers": "Artificier",
+
+      "setup": [
+        "Start the game with the Archive Gauntlets in play."
+      ],
+      "body": "Seek",
+      "powers": [
+        "Reveal the top card of your deck. If it is a Relic, you may put it into play, otherwise put it into your hand."
+      ],
+      "icons": [
+        "DrawCardNow"
+      ],
+      "incapacitatedAbilities": [
+        "One Hero deals a target 1 Energy damage. They regain HP equal to the damage dealt.",
+        "One Player draws a card, if it is an Equipment, they may play it.",
+        "Choose a Villain target. Increase damage dealt to that target by 1 until the start of your next turn."
+      ],
+      "flippedIcons": [
+        "DealDamageEnergy",
+        "GainHP",
+        "DrawCardNow",
+        "IncreaseDamageDealt"
+      ],
+      "openingLines": {
+        "default": "For the sake of the world, and all knowledge within, you must be stopped.",
+        "ExileCharacter": "Force is not the answer!",
+        "ExWeaverCharacter": "I will not let you destroy all knowledge... or the universe!"
+      },
+      "complexity": 2
+    },
+    {
+      "identifier": "ArchiveGauntlets",
+      "title": "Archive Gauntlets",
+      "count": 1,
+      "kind": "other",
+
+      "tokenPools": [
+
+        {
+          "identifier": "ManaPool",
+          "name": "Mana Pool",
+          "initialValue": 5,
+          "minimumValue": 0,
+          "maximumValue": 20
+        }
+      ],
+      "keywords": [
+        "relic"
+      ],
+      "body": [
+        "At the start of the game, put 5 tokens into the Mana Pool.",
+        "At the start of your turn, add a token to the Mana Pool."
+      ],
+      "power": [
+        "Add a token to the Mana pool."
+      ],
+      "icons": [
+        "AddToken",
+        "HasPower"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "ArkHive",
+          "text": "I made these gauntlets to symbiotically collect the knowledge you have, and grant you access to the Archives."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Ark-Hive: Hunted"
+    },
+
+    {
+      "identifier": "ManaBurn",
+      "title": "Mana Burn",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "spell"
+      ],
+      "body": [
+        "Remove any number of tokens from the Mana Pool",
+        "{Artificier} deals 1 target X Energy damage where X is the number of tokens removed this way."
+      ],
+      "icons": [
+        "RemoveTokens",
+        "DealDamageEnergy"
+      ],
+      "flavorQuotes": {
+        "identifier": "ArkHive",
+        "text": "A crude use of your energy, but effective."
+      },
+      "flavorReference": "Ark-Hive, Ark-Hive: Hunted"
+    },
+    {
+      "identifier": "Dispel",
+      "title": "Dispel",
+      "count": 2,
+      "keywords": [
+        "one-shot",
+        "spell"
+      ],
+      "body": [
+        "Select an Enchanted target. Destroy all enchantments next to that target.",
+        "{Arificier} deals that target 2 Energy damage for each enchantment destroyed this way."
+      ],
+      "icons": [
+        "Destroy",
+        "DealDamageEnergy"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "Time to take back a little of what I left behind."
+        }
+      ],
+      "flavorReference": "Artificier, Moonlight #7"
+    },
+    {
+      "identifier": "Siphon",
+      "title": "Siphon",
+      "count": 2,
+      "keywords": [
+        "one-shot",
+        "spell"
+      ],
+      "body": [
+        "{Artificier} deals each up to 5 non-Hero targets 1 Energy damage.",
+        "Add a token to the Mana Pool for each target that took damage this way."
+      ],
+      "icons": [
+        "DealDamageEnergy",
+        "AddTokens"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "Just take a little from each of you."
+        }
+      ],
+      "flavorReference": "Artificier, Moonbeams and Dragon Heartstrings"
+    },
+    {
+      "identifier": "Leech",
+      "title": "Leech",
+      "count": 2,
+      "keywords": [
+        "one-shot",
+        "spell"
+      ],
+      "body": [
+        "Remove any number of tokens fromt he Mana Pool.",
+        "{Artificier} deals up to X targets 1 Energy damage, where X is the number of tokens removed.",
+        "{Artificier} regains 1 HP for each target dealt damage this way."
+      ],
+      "icons": [
+        "RemoveTokens",
+        "DealDamageEnergy",
+        "GainHP"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "I can just take the Life Energy I need from these guys."
+        }
+      ],
+      "flavorReference": "Artificier, Bahamut's Dusk"
+    },
+    {
+      "identifier": "OverloadMana",
+      "title": "Overload Mana",
+      "count": 2,
+      "keywords": [
+        "one-shot",
+        "spell"
+      ],
+      "body": [
+        "Remove all tokens from the Mana Pool, and destroy all Enchantments in play.",
+        "{Artificier} deals all non-Hero targets and himself X Energy damage, where X is the number of tokens removed from the Mana Pool.",
+        "Reduce damage dealt by {Artificer} by X until the end of his next turn.",
+      ],
+      "icons": [
+        "RemoveTokens",
+        "DealDamageEnergy",
+        "ReduceDamageDealt"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "That is my [b]HUSBAND[/b]!"
+        }
+      ],
+      "flavorReference": "Artificier, Blood Moon"
+    },
+
+    {
+      "identifier": "GravityWell",
+      "title": "Gravity Well",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "enchantment"
+      ],
+      "body": [
+        "At the end of your turn, you may remove one token from your Mana Pool. If you do not, destroy this card.",
+        "Play this card next to a non-Hero target. When that target leaves play, destroy this card.",
+        "Increase damage dealt to this target by 1.",
+        "When this card is destroyed, reduce the next damage of the enchanted target by 1."
+      ],
+      "icons": [
+        "RemoveTokens",
+        "DestroySelf",
+        "IncreaseDamageTaken",
+        "ReduceDamageDealt"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "INCOMING!"
+        }
+      ],
+      "flavorReference": "Artificier, Blood Moon"
+    },
+    {
+      "identifier": "Confuse",
+      "title": "Confuse",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "enchantment"
+      ],
+      "body": [
+        "At the end of your turn, you may remove one token from your Mana Pool. If you do not, destroy this card.",
+        "Play next to a non-Character Villain target. When that target leaves play, destroy this card.",
+        "When that target would deal damage, redirect it to the Villain character they belong to.",
+        "When this card is destroyed, the enchanted target deals itself 2 Psychic damage."
+      ],
+      "icons": [
+        "RemoveTokens",
+        "DestroySelf",
+        "RedirectDamage",
+        "DealDamagePsychic"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Sundancer",
+          "text": "Why are you hitting yourself?"
+        }
+      ],
+      "flavorReference": "Sundancer, Ragnarok"
+    },
+    {
+      "identifier": "Haste",
+      "title": "Haste",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "enchantment"
+      ],
+      "body": [
+        "At the end of your turn, you may remove one token from your Mana Pool. If you do not, destroy this card.",
+        "Play next to a Hero Character. When that target leaves play, destroy this card.",
+        "That Hero may play an additional card during their Play Phase.",
+        "When this card is destroyed, the enchanted hero may draw a card."
+      ],
+      "icons": [
+        "RemoveTokens",
+        "DestroySelf",
+        "PlayCardExtra",
+        "DrawCardNow"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "Something something gotta go fast or something."
+        }
+      ],
+      "flavorReference": "Artificier, Ark-Hive at the Archives"
+    },
+    {
+      "identifier": "Thorns",
+      "title": "Thorns",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "enchantment"
+      ],
+      "body": [
+        "At the end of your turn, you may remove one token from your Mana Pool. If you do not, destroy this card.",
+        "Play next to a Hero Target. When that target leaves play, destroy this card.",
+        "When that target is dealt damage by a non-Hero target, they deal the source of that damage 2 Energy damage.",
+        "When this card is destroyed, the Enchanted target may deal 1 Target 2 Energy damage."
+      ],
+      "icons": [
+        "RemoveTokens",
+        "DestroySelf",
+        "CounterDamage",
+        "DealDamageEnergy"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Skoll",
+          "text": "Ow! What sorcery is this?"
+        },
+        {
+          "identifier": "Artificier",
+          "text": "I told you it would hurt you more."
+        }
+      ],
+      "flavorReference": "Wolf In Thief's Clothing"
+    },
+    {
+      "identifier": "Seal",
+      "title": "Seal",
+      "count": 1,
+      "keywords": [
+        "ongoing",
+        "enchantment"
+      ],
+      "body": [
+        "At the end of your turn, you may remove one token from your Mana Pool. If you do not, destroy this card.",
+        "When this card enters play, put a Nonindestructible Relic or Ongoing under this.",
+        "When this card is destroyed, you may remove 2 tokens from the Mana Pool to destroy the card underneath it. Otherwise, return it to play."
+      ],
+      "icons": [
+        "RemoveTokens",
+        "DestroySelf",
+        "DestroyOngoing"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "There will be no using [b]that[/b]."
+        }
+      ],
+      "flavorReference": "Artificier, Ragnarok"
+    },
+
+    {
+      "identifier": "ManaCollector",
+      "title": "Mana Collector",
+      "count": 2,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "At the start of your turn, add a token to your Mana Pool."
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "AddTokens"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "I crafted these for you, to enhance your Mana powers."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Moonlight #25"
+    },
+    {
+      "identifier": "ManaCrystal",
+      "title": "Mana Crystal",
+      "count": 2,
+      "keywords": [
+        "equipment"
+      ],
+      "body": [
+        "At the start of your turn, you destroy this card.",
+        "When this card is destroyed, add 3 tokens to your Mana Pool."
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "DestroySelf",
+        "AddTokens"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificer",
+          "text": "They're a bit like rechargable batteries."
+        }
+      ],
+      "flavorReference": "Artificier, Ark-Hive at the Archives"
+    },
+    {
+      "identifier": "LifeConverter",
+      "title": "Life Converter",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "When {Artificier} destroys a target, add a token to the Mana Pool.",
+        "At the start of your turn, {Artificier} may deal himself 2 Energy damage. Add tokens to your Mana Pool equal to the damage {Artificier} takes this way."
+      ],
+      "icons": [
+        "AddTokens",
+        "StartOfTurnAction",
+        "DealDamageEnergy"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "This can convert Life Force into Mana, a hefty price, but sometimes necessary."
+        }
+      ],
+      "flavorReference": "Ark-Hive, Blood Moon"
+    },
+    {
+      "identifier": "ArcanaRecycler",
+      "title": "Arcana Recycler",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "At the end of your turn, you may move a Spell card from your Trash to your hand.",
+        "You may remove 2 tokens from your Mana Pool to play it now."
+      ],
+      "icons": [
+        "EndOfTurnAction",
+        "Manipulate",
+        "RemoveTokens"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "OnceAgain actually helped me decipher this one, \"As it was Once, so it will be Again.\""
+        }
+      ],
+      "flavorReference": "Artificier, Here Be Dragons #22"
+    },
+    {
+      "identifier": "SymbioticEvolution",
+      "title": "Symbiotic Evolution",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "At the start of your turn, choose Play Phase or Draw Phase.",
+        "During this turn you get an extra action in that Phase."
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "PlayCardExtra",
+        "DrawCardExtra"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "Interesting! Since you recieved the Gauntlets at a young age, they molded you to be a stronger host!"
+        }
+      ],
+      "flavorReference": "Ark-Hive, Ark-Hive: Hunted"
+    },
+
+    {
+      "identifier": "PreparedSpell",
+      "title": "Prepared Spell",
+      "count": 3,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Search your deck for a Spell and put it into your hand.",
+        "You may remove 2 tokens from your Mana Pool to play a Spell."
+      ],
+      "icons": [
+        "Search",
+        "RemoveTokens",
+        "PlayCardNow"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Roleplayer",
+          "text": "I see our games have helped you."
+        }
+      ],
+      "flavorReference": "Roleplayer, Dungeons and Danger"
+    },
+    {
+      "identifier": "ComplexResearch",
+      "title": "Complex Research",
+      "count": 2,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Reveal the top 5 cards if your deck.",
+        "Put any Spell and Enchantment cards into your hand.",
+        "Shuffle any Relics back into your deck",
+        "Put any remaining cards into your trash."
+      ],
+      "icons": [
+        "Manipulate"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Transition",
+          "text": "Does his research always look like this?"
+        },
+        {
+          "identifier": "Fenrir",
+          "text": "I think growing up with the Archive Gauntlets made him think a little more abstractly."
+        }
+      ],
+      "flavorReference": "Moonlight #47"
+    },
+    {
+      "identifier": "QuestComplete",
+      "title": "Quest Complete!",
+      "count": 3,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "You may search your deck for an Equipment card and put it into play."
+      ],
+      "icons": [
+        "Search"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Roleplayer",
+          "text": "Beautiful, isn't it? It's what we came for."
+        },
+        {
+          "identifier": "Artificier",
+          "text": "It's better than when you described it last week."
+        }
+      ],
+      "flavorReference": "Dungeons and Danger"
+    },
+
+    {
+      "identifier": "DelayedActivation",
+      "title": "Delayed Activation",
+      "count": 3,
+      "keywords": [
+        "ongoing"
+      ],
+      "body": [
+        "When this card is destroyed, you may play an Enchantment.",
+        "At the start of the Villain turn, you may destroy this card."
+      ]
+    }
+  ]
+}
+
