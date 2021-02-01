@@ -398,7 +398,7 @@
         "limited"
       ],
       "body": [
-        "When you destroy a card under a Dragon, you may draw a card.",
+        "When you use a power on a Dragon, you may draw a card.",
         "Once per turn, when you draw a card, you may put a card in your hand under a Dragon."
       ],
       "icons": [
@@ -448,6 +448,7 @@
       "promoIdentifier": "FullyEvolvedDragontamerCharacter",
       "count": 1,
       "title": "Dragontamer, Fully Evolved",
+      "promoTitle": "Dragontamer, Fully Evolved",
       "hitpoints": 29,
       "nemesisIdentifiers": ["Dragontamer"],
       "shortPromoTitle": "Dragontamer FE",

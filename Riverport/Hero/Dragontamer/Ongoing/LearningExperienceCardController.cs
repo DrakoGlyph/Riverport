@@ -16,14 +16,14 @@ namespace Riverport.Dragontamer
 
         public override void AddTriggers()
         {
-            AddTrigger<DestroyCardAction>(FilterDestroy, dca => DrawCard(), TriggerType.DrawCard, TriggerTiming.After);
+            AddTrigger<UsePowerAction>((UsePowerAction upa) => upa.Power.CardController.Card.DoKeywordsContain("dragon"), upa => DrawCard(), TriggerType.DrawCard, TriggerTiming.After);
             AddTrigger<DrawCardAction>((DrawCardAction dca) => dca.HeroTurnTaker == HeroTurnTaker && !HasBeenSetToTrueThisTurn("LearningExperience"), Learn, TriggerType.HiddenLast, TriggerTiming.After);
         }
 
         private IEnumerator Learn(DrawCardAction arg)
         {
             List<YesNoCardDecision> cardDecisions = new List<YesNoCardDecision>();
-            var doIt = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.MoveCardBelowCard, Card, arg, cardDecisions, null, GetCardSource());
+            var doIt = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.MoveCardToUnderCard, Card, arg, cardDecisions, null, GetCardSource());
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(doIt); } else { this.GameController.ExhaustCoroutine(doIt); }
             if (DidPlayerAnswerYes(cardDecisions))
             {
@@ -38,20 +38,5 @@ namespace Riverport.Dragontamer
             }
         }
 
-        private bool FilterDestroy(DestroyCardAction arg)
-        {
-            if (DidDestroyCard(arg))
-            {
-                Card destroyed = arg.CardToDestroy.Card;
-                if (destroyed.IsUnderCard)
-                {
-                    foreach (Card dragon in FindCardsWhere(c => c.DoKeywordsContain("dragon") && c.UnderLocation.HasCards && c.IsInPlayAndHasGameText))
-                    {
-                        if (destroyed.Location == dragon.UnderLocation) return true;
-                    }
-                }
-            }
-            return false;
-        }
     }
 }
