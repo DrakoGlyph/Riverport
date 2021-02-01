@@ -29,6 +29,9 @@ namespace Riverport.Dragontamer
                 TurnTaker owner = arg.Target.Owner;
                 var destroy = this.GameController.SelectAndDestroyCard(HeroTurnTakerController, new LinqCardCriteria(c => (c.IsOngoing || c.IsDevice) && !(c.IsCharacter) && c.Location == owner.PlayArea), false, null, Card, GetCardSource());
                 if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+                destroy = DestroyCardUnderThis();
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+
             }
         }
 
