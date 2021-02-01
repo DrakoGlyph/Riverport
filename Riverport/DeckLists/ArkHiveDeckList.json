@@ -51,7 +51,7 @@
         "plan"
       ],
       "body": [
-        "When a Hero Character would be reduced to 5 or fewer HP, activate the Enact text of your Plan in play, then destroy this card."
+        "When a Hero Character would be reduced to 5 or fewer HP, activate the Enact text of a Plan in play, then destroy this card."
       ],
       "activatableAbilities": [
         {
@@ -112,7 +112,7 @@
         "plan"
       ],
       "body": [
-        "If the Villain puts more than one card into play during their turn, activate the Enact texts a Plan in play, then destroy this card."
+        "If the Villain puts more than one card into play during their turn, activate the Enact text of a Plan in play, then destroy this card."
 
       ],
       "activatableAbilities": [
@@ -127,7 +127,7 @@
       "flavorQuotes": [
         {
           "identifier": "Ark-Hive",
-          "text": "We must work quickly if we are to stop the spread of doom."
+          "text": "We must work quickly if{BR}we are to stop the spread of doom."
         }
       ],
       "flavorReference": "Ark-Hive, Unwoven"
@@ -151,7 +151,18 @@
       ],
       "icons": [
         "IncreaseDamageDealt"
-      ]
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Ark-Hive",
+          "text": "Defensive capabilities are impressive..."
+        },
+        {
+          "identifier": "Transition",
+          "text": "Stop complimenting the enemy!"
+        }
+      ],
+      "flavorReference": "Unwoven"
     },
     {
       "identifier": "KnowledgeAndPower",
@@ -173,15 +184,11 @@
       "icons": "DrawCardNow",
       "flavorQuotes": [
         {
-          "identifier": "Artificier",
-          "text": "There's a saying, Knowledge is Power."
-        },
-        {
           "identifier": "Ark-Hive",
-          "text": "Then the Babylons are the most powerful things in the universe."
+          "text": "If knowledge is power, the Babylon Archives are the most powerful things in the universe."
         }
       ],
-      "flavorReference": "Ark-Hive at the Archives"
+      "flavorReference": "Ark-Hive, Ark-Hive at the Archives"
     },
     {
       "identifier": "DestructiveRecourse",
@@ -237,7 +244,7 @@
       "flavorQuotes": [
         {
           "identifier": "Artificier",
-          "text": "Ark-Hive said wait for the signal."
+          "text": "Ark-Hive said{BR}wait for the signal."
         },
         {
           "identifier": "Transition",
@@ -267,7 +274,7 @@
       "flavorQuotes": [
         {
           "identifier": "Ark-Hive",
-          "text": "We can rest here a moment and catch our breath."
+          "text": "We can rest here a moment{BR}and catch our breath."
         }
       ],
       "flavorReference": "Ark-Hive, Bot and Souled"
@@ -288,7 +295,7 @@
       "flavorQuotes": [
         {
           "identifier": "Ark-Hive",
-          "text": "The chassis is premium Novasteel, forged in a star.{BR}The Babylonians say it will with stand anything short of a Supernova."
+          "text": "The chassis is premium Novasteel,{BR}forged in a star. The Babylonians say it will withstand anything short of a Supernova."
         }
       ],
       "flavorReference": "Ark-Hive, Ark-Hive: Hunted"
@@ -311,7 +318,7 @@
         "DrawCardNow",
         "UsePowerNow"
       ],
-      "flavorText": [
+      "flavorQuotes": [
         {
           "identifier": "Ark-Hive",
           "text": "After fighting Exile, I learned a few tricks."
@@ -357,7 +364,7 @@
       "flavorQuotes": [
         {
           "identifier": "Ark-Hive",
-          "text": "I fail to understand why it is so shocking I have this. It's like you having a First Aid kit.'"
+          "text": "I fail to understand why it is so{BR}shocking I have this. It's like you having a{BR}First Aid kit.'"
         }
       ],
       "flavorReference": "Ark-Hive, Ark-Hive: Hunted"
@@ -398,7 +405,7 @@
       "icons": [
         "Destroy"
       ],
-      "flavorQuote": [
+      "flavorQuotes": [
         {
           "identifier": "Sunchaser",
           "text": "We can't just sit around waiting for him!"
@@ -443,7 +450,7 @@
       "flavorQuotes": [
         {
           "identifier": "Ark-Hive",
-          "text": "Why not use the idea from Greater Than Comics #23?"
+          "text": "Why not use the idea from{BR}Greater Than Comics #23?"
         }
       ],
       "flavorReference": "Ark-Hive, Moonlight #32"
@@ -462,7 +469,7 @@
       "icons": [
         "GainHP"
       ],
-      "flavorQuote": [
+      "flavorQuotes": [
         {
           "identifier": "Ark-Hive",
           "text": "I need a moment to [i]recollect[/i] myself."
@@ -478,13 +485,13 @@
         "one-shot"
       ],
       "body": [
-        "Search your deck for up to {H-1} copies of Spare Nanobot and put them into play.",
+        "Search your deck for up to {H - 1} copies of Spare Nanobot and put them into play.",
         "{ArkHive} deals himself 2 Energy Damage for each card played this way."
       ],
       "flavorQuotes": [
         {
           "identifier": "Artificier",
-          "text": "We need a new plan here, Ark-Hive!"
+          "text": "We need a new{BR}plan here, Ark-Hive!"
         },
         {
           "identifier": "Ark-Hive",
