@@ -17,7 +17,7 @@ namespace Riverport.ArkHive
         public override IEnumerator Play()
         {
             List<MoveCardAction> storedResults = new List<MoveCardAction>();
-            var recall = this.GameController.SelectAndReturnCards(DecisionMaker, SpareNanobots, new LinqCardCriteria(c => c.Identifier == "SpareNanobot"), true, false, true, 0, storedResults, null, GetCardSource());
+            var recall = this.GameController.SelectAndReturnCards(DecisionMaker, SpareNanobots, new LinqCardCriteria(c => c.DoKeywordsContain("nanobot")), true, false, true, 0, storedResults, null, GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(recall); } else { this.GameController.ExhaustCoroutine(recall); }
             int collected = GetNumberOfCardsMoved(storedResults);
             if(collected > 0)

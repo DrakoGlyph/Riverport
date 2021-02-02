@@ -21,19 +21,12 @@ namespace Riverport.Weaver
 
         public override IEnumerator UsePower(int index = 0)
         {
-            List<DiscardCardAction> mat = new List<DiscardCardAction>();
-            var sac = SelectAndDiscardCards(HeroTurnTakerController, 1, false, 0, mat, cardCriteria: new LinqCardCriteria(c=>c.DoKeywordsContain("patch")));
+            var sac = DrawCard();
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(sac); } else { this.GameController.ExhaustCoroutine(sac); }
-            if(DidDiscardCards(mat))
-            {
-                var play = this.GameController.SelectCardFromLocationAndMoveIt(DecisionMaker, TurnTaker.Trash, new LinqCardCriteria(c => c.DoKeywordsContain("patch")), new List<MoveCardDestination> { new MoveCardDestination(TurnTaker.PlayArea) }, false, true, cardSource: GetCardSource());
-                if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(play); } else { this.GameController.ExhaustCoroutine(play); }
-            }
+
+            var play = this.GameController.SelectCardFromLocationAndMoveIt(DecisionMaker, TurnTaker.Trash, new LinqCardCriteria(c => c.DoKeywordsContain("patch")), new List<MoveCardDestination> { new MoveCardDestination(TurnTaker.PlayArea) }, false, true, cardSource: GetCardSource());
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(play); } else { this.GameController.ExhaustCoroutine(play); }
         }
 
-        private string PatchText()
-        {
-            return "Select card to patch with:";
-        }
     }
 }

@@ -200,6 +200,8 @@
     <EmbeddedResource Include="DeckLists\ArkHiveDeckList.json" />
     <EmbeddedResource Include="DeckLists\ArtificierDeckList.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="DeckLists\BahamutDeckList.json" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

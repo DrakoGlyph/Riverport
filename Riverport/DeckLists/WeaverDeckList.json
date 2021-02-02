@@ -227,7 +227,7 @@
         "At the start of your turn, you may play a Patch."
       ],
       "powers": [
-        "You may discard a Patch to play a Patch from your trash."
+        "Draw a card. You may play a patch."
       ],
       "icons": [
         "StartOfTurnAction",

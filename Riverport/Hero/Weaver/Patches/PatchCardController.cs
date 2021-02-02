@@ -20,7 +20,7 @@ namespace Riverport.Weaver
         protected virtual IEnumerator Empower(GameAction ga = null)
         {
             List<YesNoCardDecision> decisions = new List<YesNoCardDecision>();
-            var decide = this.GameController.MakeYesNoCardDecision(FindHeroTurnTakerController(EquippedTurnTaker as HeroTurnTaker), SelectionType.DestroySelf, Card, cardSource: GetCardSource());
+            var decide = this.GameController.MakeYesNoCardDecision(FindHeroTurnTakerController(EquippedTurnTaker as HeroTurnTaker), SelectionType.DestroySelf, Card, storedResults: decisions, cardSource: GetCardSource());
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
             if (DidPlayerAnswerYes(decisions))
             {

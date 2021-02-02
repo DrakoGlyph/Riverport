@@ -377,7 +377,7 @@
         "equipment"
       ],
       "body": [
-        "Once per turn, when a Plan is destroyed, you may play a Plan."
+        "When a Plan is destroyed, draw a card."
       ],
       "icons": [
         "PlayCardNow"
@@ -399,6 +399,7 @@
         "one-shot"
       ],
       "body": [
+        "Draw a card.",
         "You may play a Plan.",
         "You may activate the Enact text of a Plan in play now, then destroy that card."
       ],
@@ -444,7 +445,7 @@
         "one-shot"
       ],
       "body": [
-        "You may put up to X Plans from from your trash into your hand, where X is 1 plus the number of Spare Nanobots in play."
+        "You may put up to X Plans from from your trash into your hand, where X is 1 plus the number of Nanobots in play."
       ],
       "icons": "PlayCardNow",
       "flavorQuotes": [
@@ -463,7 +464,7 @@
         "one-shot"
       ],
       "body": [
-        "You may return any number of Spare Nanobots from play to your hand.",
+        "You may return any number of Nanobots from play to your hand.",
         "For each Nanobot returned this way, Ark-Hive regains 2 HP."
       ],
       "icons": [
@@ -485,8 +486,8 @@
         "one-shot"
       ],
       "body": [
-        "Search your deck for up to {H - 1} copies of Spare Nanobot and put them into play.",
-        "{ArkHive} deals himself 2 Energy Damage for each card played this way."
+        "You may search your deck for a copy of Spare Nanobot and put them into play.",
+        "If you play a card this way, {ArkHive} deals himself 2 Energy Damage."
       ],
       "flavorQuotes": [
         {

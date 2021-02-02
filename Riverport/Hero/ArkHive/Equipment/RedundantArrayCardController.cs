@@ -16,7 +16,7 @@ namespace Riverport.ArkHive
 
         public override void AddTriggers()
         {
-            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => dca.CardToDestroy.Card.DoKeywordsContain("plan") && !HasBeenSetToTrueThisTurn("RedundantArray"), dca => SelectAndPlayCardFromHand(DecisionMaker, cardCriteria: PlanFilter), TriggerType.PlayCard, TriggerTiming.After);
+            AddTrigger<DestroyCardAction>((DestroyCardAction dca) => dca.CardToDestroy.Card.DoKeywordsContain("plan"), dca => DrawCard(), TriggerType.DrawCard, TriggerTiming.After);
         }
 
     }

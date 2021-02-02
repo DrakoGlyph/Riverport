@@ -16,6 +16,9 @@ namespace Riverport.ArkHive
 
         public override IEnumerator Play()
         {
+            var draw = DrawCard(optional: true);
+            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(draw); } else { this.GameController.ExhaustCoroutine(draw); }
+
             var play = SelectAndPlayCardFromHand(DecisionMaker, cardCriteria: PlanFilter, associateCardSource: true);
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(play); } else { this.GameController.ExhaustCoroutine(play); }
 
