@@ -17,8 +17,16 @@ namespace Riverport.Weaver
 
         protected override IEnumerator Empower(GameAction ga = null)
         {
-            var heal = this.GameController.GainHP(Equipped, 3, cardSource: GetCardSource());
-            if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(heal); } else { this.GameController.ExhaustCoroutine(heal); }
+            List<YesNoCardDecision> decisions = new List<YesNoCardDecision>();
+            var decide = this.GameController.MakeYesNoCardDecision(FindHeroTurnTakerController(EquippedTurnTaker as HeroTurnTaker), SelectionType.DestroySelf, Card, storedResults: decisions, cardSource: GetCardSource());
+            if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(decide); } else { this.GameController.ExhaustCoroutine(decide); }
+            if (DidPlayerAnswerYes(decisions))
+            {
+                var heal = this.GameController.GainHP(Equipped, 3, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(heal); } else { this.GameController.ExhaustCoroutine(heal); }
+                var destroy = this.GameController.DestroyCard(DecisionMaker, Card, false, cardSource: GetCardSource());
+                if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(destroy); } else { this.GameController.ExhaustCoroutine(destroy); }
+            }
         }
     }
 }
