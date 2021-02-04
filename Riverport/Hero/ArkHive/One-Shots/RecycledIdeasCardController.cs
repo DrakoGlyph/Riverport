@@ -16,7 +16,7 @@ namespace Riverport.ArkHive
 
         public override IEnumerator Play()
         {
-            var recycle = this.GameController.SelectCardsFromLocationAndMoveThem(DecisionMaker, TurnTaker.Trash, 0, SpareNanobots, PlanFilter, new List<MoveCardDestination>() { new MoveCardDestination(HeroTurnTaker.Hand) }, cardSource: GetCardSource());
+            var recycle = this.GameController.SelectCardsFromLocationAndMoveThem(DecisionMaker, TurnTaker.Trash, 0, 1 + SpareNanobots, PlanFilter, new List<MoveCardDestination>() { new MoveCardDestination(HeroTurnTaker.Hand) }, cardSource: GetCardSource());
             if(UseUnityCoroutines) { yield return this.GameController.StartCoroutine(recycle); } else { this.GameController.ExhaustCoroutine(recycle); }
         }
     }
