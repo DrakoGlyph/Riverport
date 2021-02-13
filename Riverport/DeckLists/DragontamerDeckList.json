@@ -378,7 +378,7 @@
         "At the start of your turn, you may put the top card of your deck under a Dragon in play."
       ],
       "icons": [
-        "DrawCardExtra",
+        "UsePowerExtra",
         "StartOfTurnAction"
       ],
       "flavorQuotes": [
