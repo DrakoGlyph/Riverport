@@ -9,7 +9,7 @@ namespace Riverport.OnceAgainLabs
 {
     public class RaptorCardController : CardController
     {
-        public readonly LinqCardCriteria NonDragon = new LinqCardCriteria(c => !c.DoKeywordsContain("dragon"), "non-Dragon");
+        public readonly LinqCardCriteria NonDragon = new LinqCardCriteria(c => !c.DoKeywordsContain("dragon") && c.IsInPlayAndHasGameText, "non-Dragon");
         public RaptorCardController(Card card, TurnTakerController turnTakerController) : base(card, turnTakerController)
         {
             SpecialStringMaker.ShowNumberOfCardsInPlay(NonDragon);

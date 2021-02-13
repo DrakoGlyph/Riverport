@@ -16,14 +16,14 @@ namespace Riverport.Dragontamer
 
         public override void AddTriggers()
         {
-            AddTrigger<UsePowerAction>((UsePowerAction upa) => upa.Power.CardController.Card.DoKeywordsContain("dragon"), upa => DrawCard(), TriggerType.DrawCard, TriggerTiming.After);
+            AddTrigger<UsePowerAction>((UsePowerAction upa) => upa.Power.CardController.Card.DoKeywordsContain("dragon") && upa.HeroUsingPower.HeroTurnTaker == HeroTurnTaker, upa => DrawCard(), TriggerType.DrawCard, TriggerTiming.After);
             AddTrigger<DrawCardAction>((DrawCardAction dca) => FindCardsWhere(c=>c.DoKeywordsContain("dragon") && c.IsInPlayAndHasGameText).Count() > 0 && dca.HeroTurnTaker == HeroTurnTaker && !HasBeenSetToTrueThisTurn("LearningExperience"), Learn, TriggerType.HiddenLast, TriggerTiming.After);
         }
 
         private IEnumerator Learn(DrawCardAction arg)
         {
             List<YesNoCardDecision> cardDecisions = new List<YesNoCardDecision>();
-            var doIt = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.MoveCardToUnderCard, Card, arg, cardDecisions, null, GetCardSource());
+            var doIt = this.GameController.MakeYesNoCardDecision(DecisionMaker, SelectionType.CardFromHand, Card, arg, cardDecisions, null, GetCardSource());
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(doIt); } else { this.GameController.ExhaustCoroutine(doIt); }
             if (DidPlayerAnswerYes(cardDecisions))
             {

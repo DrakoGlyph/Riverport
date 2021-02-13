@@ -25,7 +25,7 @@ namespace Riverport.Dragontamer
         private IEnumerator Empower(PhaseChangeAction arg)
         {
             List<YesNoCardDecision> results = new List<YesNoCardDecision>();
-            var doIt = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.MoveCard, Card, storedResults: results, cardSource: GetCardSource());
+            var doIt = this.GameController.MakeYesNoCardDecision(HeroTurnTakerController, SelectionType.CardFromHand, Card, storedResults: results, cardSource: GetCardSource());
             if (UseUnityCoroutines) { yield return this.GameController.StartCoroutine(doIt); } else { this.GameController.ExhaustCoroutine(doIt); }
             if (DidPlayerAnswerYes(results))
             {
