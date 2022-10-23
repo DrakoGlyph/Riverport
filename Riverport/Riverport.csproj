@@ -13,11 +13,12 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -42,166 +43,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hero\Artificier\Other\DelayedActivationCardController.cs" />
-    <Compile Include="Hero\Artificier\Other\ComplexResearchCardController.cs" />
-    <Compile Include="Hero\Artificier\Equipment\ArcanaRecyclerCardController.cs" />
-    <Compile Include="Hero\Artificier\ArchiveGauntletsCardController.cs" />
-    <Compile Include="Hero\Artificier\ArtificierCharacterCardController.cs" />
-    <Compile Include="Hero\Artificier\ArtificierBaseCardController.cs" />
-    <Compile Include="Hero\Artificier\ArtificierBaseCharacterCardController.cs" />
-    <Compile Include="Hero\Artificier\Enchantments\ConfuseCardController.cs" />
-    <Compile Include="Hero\Artificier\Enchantments\EnchantmentBaseCardController.cs" />
-    <Compile Include="Hero\Artificier\Enchantments\GravityWellCardController.cs" />
-    <Compile Include="Hero\Artificier\Enchantments\HasteCardController.cs" />
-    <Compile Include="Hero\Artificier\Equipment\ManaCollectorCardController.cs" />
-    <Compile Include="Hero\Artificier\Enchantments\SealCardController.cs" />
-    <Compile Include="Hero\Artificier\Equipment\ManaCrystalCardController.cs" />
-    <Compile Include="Hero\Artificier\Equipment\LifeConverterCardController.cs" />
-    <Compile Include="Hero\Artificier\Other\PreparedSpellCardController.cs" />
-    <Compile Include="Hero\Artificier\Other\QuestCompleteCardController.cs" />
-    <Compile Include="Hero\Artificier\Spells\OverloadManaCardController.cs" />
-    <Compile Include="Hero\Artificier\Spells\LeechCardController.cs" />
-    <Compile Include="Hero\Artificier\Spells\SiphonCardController.cs" />
-    <Compile Include="Hero\Artificier\Spells\DispelCardController.cs" />
-    <Compile Include="Hero\Artificier\Spells\ManaBurnCardController.cs" />
-    <Compile Include="Hero\Artificier\Enchantments\ThornsCardController.cs" />
-    <Compile Include="Hero\Artificier\Equipment\SymbioticEvolutionCardController.cs" />
-    <Compile Include="Hero\ArkHive\ArkHiveBaseCardController.cs" />
-    <Compile Include="Hero\ArkHive\ArkHiveBaseCharacterCardController.cs" />
-    <Compile Include="Hero\ArkHive\ArkHiveCharacterCardController.cs" />
-    <Compile Include="Hero\ArkHive\Equipment\FabricationUnitCardController.cs" />
-    <Compile Include="Hero\ArkHive\Equipment\NovasteelChassisCardController.cs" />
-    <Compile Include="Hero\ArkHive\Equipment\PreprocessorCoreCardController.cs" />
-    <Compile Include="Hero\ArkHive\Equipment\RedundantArrayCardController.cs" />
-    <Compile Include="Hero\ArkHive\Equipment\SpareNanobotCardController.cs" />
-    <Compile Include="Hero\ArkHive\One-Shots\ArchiveAccessCardController.cs" />
-    <Compile Include="Hero\ArkHive\One-Shots\DeploySparesCardController.cs" />
-    <Compile Include="Hero\ArkHive\One-Shots\PreemptiveActionCardController.cs" />
-    <Compile Include="Hero\ArkHive\One-Shots\RecallSparesCardController.cs" />
-    <Compile Include="Hero\ArkHive\One-Shots\RecycledIdeasCardController.cs" />
-    <Compile Include="Hero\ArkHive\Plans\AnticipatedCombatCardController.cs" />
-    <Compile Include="Hero\ArkHive\Plans\ArkhivePlanBaseCardController.cs" />
-    <Compile Include="Hero\ArkHive\Plans\DestructiveRecourseCardController.cs" />
-    <Compile Include="Hero\ArkHive\Plans\ExcessiveForceCardController.cs" />
-    <Compile Include="Hero\ArkHive\Plans\HastenedActionCardController.cs" />
-    <Compile Include="Hero\ArkHive\Plans\KnowledgeAndPowerCardController.cs" />
-    <Compile Include="Hero\ArkHive\Plans\RegenerativeOptionCardController.cs" />
-    <Compile Include="Hero\ArkHive\Plans\TerminalDangerCardController.cs" />
-    <Compile Include="Hero\ArkHive\Plans\UnforseenEmpowermentCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Command\BiteCommandCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Command\BurnCommandCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Command\CommandCardController.cs" />
-    <Compile Include="Hero\Dragontamer\DragontamerTurnTakerController.cs" />
-    <Compile Include="Hero\Dragontamer\Command\WeFightAsOneCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Dragon\DragonCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Dragon\DrakoCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Dragon\ElgorCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Dragon\HydraCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Dragon\JormunganderCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Dragon\TortugaCardController.cs" />
-    <Compile Include="Hero\Dragontamer\DragontamerCharacterCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Equipment\SerumApplicatorCardController.cs" />
-    <Compile Include="Hero\Dragontamer\FullyEvolvedDragontamerCharacterCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Ongoing\LearningExperienceCardController.cs" />
-    <Compile Include="Hero\Dragontamer\One-Shot\HereBeDragonsCardController.cs" />
-    <Compile Include="Hero\Dragontamer\One-Shot\OnTheFlyCardController.cs" />
-    <Compile Include="Hero\Dragontamer\One-Shot\StrategizeCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Ongoing\ActiveTrainingCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Ongoing\DragonEggCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Treat\HealthyTreatCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Treat\ProteinSnackCardController.cs" />
-    <Compile Include="Hero\Dragontamer\Treat\TreatCardController.cs" />
-    <Compile Include="Hero\Fenrir\FenrirBaseCharacterCardController.cs" />
-    <Compile Include="Hero\Fenrir\Non-feral\ByPaleMoonlightCardController.cs" />
-    <Compile Include="Hero\Fenrir\FenrirBaseCardController.cs" />
-    <Compile Include="Hero\Fenrir\FenrirHumanCharacterCardController.cs" />
-    <Compile Include="Hero\Fenrir\FenrirTurnTakeController.cs" />
-    <Compile Include="Hero\Fenrir\FenrirWolfCharacterCardController.cs" />
-    <Compile Include="Hero\Fenrir\Gimmick\FrenzyCardController.cs" />
-    <Compile Include="Hero\Fenrir\Feral\FuriousStrikesCardController.cs" />
-    <Compile Include="Hero\Fenrir\Feral\GeekAndSunderCardController.cs" />
-    <Compile Include="Hero\Fenrir\Feral\GreatCleaveCardController.cs" />
-    <Compile Include="Hero\Fenrir\Gimmick\HungerOfTheWolfCardController.cs" />
-    <Compile Include="Hero\Fenrir\Non-feral\MaintainControlCardController.cs" />
-    <Compile Include="Hero\Fenrir\Gimmick\MeditateCardController.cs" />
-    <Compile Include="Hero\Fenrir\Non-feral\MoonlightInvestigationsCardController.cs" />
-    <Compile Include="Hero\Fenrir\Non-feral\NaturalWeaponsCardController.cs" />
-    <Compile Include="Hero\Fenrir\Non-feral\OtherHandCardController.cs" />
-    <Compile Include="Hero\Fenrir\Gimmick\PaleMoonPendantCardController.cs" />
-    <Compile Include="Hero\Fenrir\Non-feral\TameYourselfCardController.cs" />
-    <Compile Include="Hero\Fenrir\Feral\TransformingHowlCardController.cs" />
-    <Compile Include="Hero\Fenrir\Feral\UnleashYourselfCardController.cs" />
+    <Compile Include="Hero\Fenrir\CharacterCards\FenrirHumanCharacterCardController.cs" />
+    <Compile Include="Hero\Fenrir\BaseFenrirCharacterCardController.cs" />
+    <Compile Include="Hero\Fenrir\BaseFenrirCardController.cs" />
+    <Compile Include="Hero\Fenrir\Equipment\FenrirPaleMoonPendantCardController.cs" />
+    <Compile Include="Hero\Fenrir\Equipment\FenrirNaturalWeaponsCardController.cs" />
+    <Compile Include="Hero\Fenrir\FenrirIntimidateCardController.cs" />
+    <Compile Include="Hero\Fenrir\One-Shot\FenrirHackAndSlashCardController.cs" />
+    <Compile Include="Hero\Fenrir\One-Shot\FenrirBrainAndBrawnCardController.cs" />
+    <Compile Include="Hero\Fenrir\Ongoing\FenrirEndurePainCardController.cs" />
+    <Compile Include="Hero\Fenrir\Ongoing\FenrirHonedDisciplineCardController.cs" />
+    <Compile Include="Hero\Fenrir\One-Shot\FenrirWildSwingCardController.cs" />
+    <Compile Include="Hero\Fenrir\Ongoing\FenrirTheOtherHandCardController.cs" />
+    <Compile Include="Hero\Fenrir\One-Shot\FenrirControlAndRageCardController.cs" />
+    <Compile Include="Hero\Fenrir\One-Shot\FenrirKnowledgeAndPowerCardController.cs" />
+    <Compile Include="Hero\Fenrir\One-Shot\FenrirRefocusCardController.cs" />
+    <Compile Include="Hero\Fenrir\Ongoing\FenrirTheWolfWithinCardController.cs" />
+    <Compile Include="Hero\Fenrir\Ongoing\FenrirFearTheWolfCardController.cs" />
+    <Compile Include="Hero\Fenrir\One-Shot\FenrirTransformingHowlCardController.cs" />
+    <Compile Include="Hero\Fenrir\CharacterCards\FenrirWolfCharacterCardController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Hero\ScarletX\Ongoings\SkilledMarkswomanCardController.cs" />
-    <Compile Include="Environment\OnceAgainLabs\Misc\DestroyTheEvidenceCardController.cs" />
-    <Compile Include="Environment\OnceAgainLabs\Dragon\ChameleonCardController.cs" />
-    <Compile Include="Environment\OnceAgainLabs\Dragon\RaptorCardController.cs" />
-    <Compile Include="Environment\OnceAgainLabs\Dragon\DrKlawsCardController.cs" />
-    <Compile Include="Environment\OnceAgainLabs\Scientist\DrKlausCardController.cs" />
-    <Compile Include="Environment\OnceAgainLabs\Scientist\DrFaunaCardController.cs" />
-    <Compile Include="Environment\OnceAgainLabs\Misc\Replic8VatCardController.cs" />
-    <Compile Include="Environment\OnceAgainLabs\Scientist\ResearchHandlerCardController.cs" />
-    <Compile Include="Environment\OnceAgainLabs\Misc\SpecimenContainmentCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\PhaseActionPatchCardController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Hero\ScarletX\Ongoings\BetweenTheShotsCardController.cs" />
-    <Compile Include="Hero\ScarletX\Ongoings\AnticipateTheNeedCardController.cs" />
-    <Compile Include="Hero\ScarletX\Arrows\DebilitatingArrowCardController.cs" />
-    <Compile Include="Hero\ScarletX\Arrows\DetonationArrowCardController.cs" />
-    <Compile Include="Hero\ScarletX\OneShots\HunterInstinctCardController.cs" />
-    <Compile Include="Hero\ScarletX\OneShots\CallOnTheLightCardController.cs" />
-    <Compile Include="Hero\ScarletX\OneShots\QuickestDrawCardController.cs" />
-    <Compile Include="Hero\ScarletX\Relics\ArgentLightQuiverCardController.cs" />
-    <Compile Include="Hero\ScarletX\Arrows\ArrowBaseCardController.cs" />
-    <Compile Include="Hero\ScarletX\Relics\MoonbeamCardController.cs" />
-    <Compile Include="Hero\ScarletX\Relics\ScarletMantleCardController.cs" />
-    <Compile Include="Hero\ScarletX\Arrows\SappingArrowCardController.cs" />
-    <Compile Include="Hero\ScarletX\OneShots\RestockCardController.cs" />
-    <Compile Include="Hero\ScarletX\ScarletXCharacterCardController.cs" />
-    <Compile Include="Hero\ScarletX\Arrows\SilverArrowCardController.cs" />
-    <Compile Include="Hero\ScarletX\Ongoings\WasteNotWantNotCardController.cs" />
-    <Compile Include="Hero\ScarletX\ScarletXTurnTakerController.cs" />
-    <Compile Include="Hero\Weaver\AnansiCardController.cs" />
-    <Compile Include="Hero\Weaver\Equipments\BookOfFateCardController.cs" />
-    <Compile Include="Hero\Weaver\Equipments\DivineNeedlesCardController.cs" />
-    <Compile Include="Hero\Weaver\Equipments\LoomOfFateCardController.cs" />
-    <Compile Include="Hero\Weaver\Ongoings\InspirationStrikesCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\AdrenalPatchCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\GaiaPatchCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\HastePatchCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\PatchCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\PhasePatchCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\PsychPatchCardController.cs" />
-    <Compile Include="Hero\Weaver\Ongoings\ResourceReclamationCardController.cs" />
-    <Compile Include="Hero\Weaver\Weaves\ReadTheWeaveCardController.cs" />
-    <Compile Include="Hero\Weaver\Weaves\QuickWeavingCardController.cs" />
-    <Compile Include="Hero\Weaver\Weaves\QuickPatchworkCardController.cs" />
-    <Compile Include="Hero\Weaver\Weaves\RaidTheStockpilesCardController.cs" />
-    <Compile Include="Hero\Weaver\Weaves\SpoolTheThreadCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\InertiaPatchCardController.cs" />
-    <Compile Include="Hero\Weaver\Patches\KevlarPatchCardController.cs" />
-    <Compile Include="Hero\Weaver\WeaverCharacterCardController.cs" />
-    <Compile Include="Hero\Weaver\WeaverTurnTakerController.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="DeckLists\DragontamerDeckList.json" />
-    <EmbeddedResource Include="DeckLists\WeaverDeckList.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DeckLists\FenrirDeckList.json" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DeckLists\ScarletXDeckList.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="DeckLists\OnceAgainLabsDeckList.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="DeckLists\ArkHiveDeckList.json" />
-    <EmbeddedResource Include="DeckLists\ArtificierDeckList.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DeckLists\BahamutDeckList.json" />
+    <Folder Include="Environment\" />
+    <Folder Include="Hero\Fenrir\Promos\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

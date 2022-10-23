@@ -1,0 +1,441 @@
+{
+  "name": "Fenrir",
+  "kind": "Hero",
+  "expansionIdentifier": "RiverportOrigins",
+  "initialCardIdentifiers": [
+    "FenrirHumanCharacter"
+  ],
+  "initialOffToTheSideCardIdentifiers": [
+    "FenrirWolfCharacter"
+  ],
+
+  "cards": [
+    {
+      "identifier": "FenrirHumanCharacter",
+      "character": true,
+      "sharedIdentifier": "FenrirCharacter",
+      "title": "Fenrir",
+      "backgroundColor": "AFAFAF",
+      "count": 1,
+      "hitpoints": 32,
+      "nemesisIdentifiers": "Fenrir",
+      "gameplay": [
+        "When a card says to Transform, switch to Fenrir's Wolf Form.",
+        "You may activate {human} text.",
+        ""
+      ],
+      "keywords": [
+        "human"
+      ],
+      "body": "Inquire",
+      "powers": "Draw a card",
+      "icons": "DrawCardNow",
+      "incapacitatedAbilities": [
+        "One Hero may regain 1 HP",
+        "One player may draw a card now",
+        "Reduce Damage dealt to hero targets by 1 until the start of your next turn"
+      ],
+      "openingLines": {
+        "default": "In the name of Moonlight Investigations, I request you desist.",
+        "HatiCharacter": "Your shenanigans are going to destroy the city!",
+        "RedHoodCharacter": "Perhaps you should be hunting the [i]real[/i] monsters!"
+      },
+      "complexity": 3
+    },
+    {
+      "identifier": "FenrirWolfCharacter",
+      "character": true,
+      "sharedIdentifier": "FenrirCharacter",
+      "title": "Fenrir",
+      "backgroundColor": "AFAFAF",
+      "count": 1,
+      "hitpoints": 32,
+      "keywords": [
+        "wolf"
+      ],
+      "gameplay": [
+        "When a card says Detransform, switch to Fenrir's Human Form.",
+        "You may activate {wolf} text.",
+        "At the start of your turn, discard a card or switch to Fenrir's Human character card."
+      ],
+      "body": "Slash",
+      "powers": "{Fenrir} deals 1 target 2 Melee damage.",
+      "icons": "DealDamageSonic",
+      "incapacitatedAbilities": [
+        "Destroy a Device or Ongoing",
+        "Increase damage dealt by Heroes by 1",
+        "One hero may play a card now."
+      ]
+    },
+
+    
+    {
+      "identifier": "PaleMoonPendant",
+      "title": "The Pale Moon Pendant",
+      "count": 1,
+      "keywords": [
+        "equipment",
+        "relic"
+      ],
+      "body": [
+        "{human} At the end of your turn, Fenrir regains 1 HP",
+        "{wolf} Reduce the damage dealt to Fenrir by 1"
+      ],
+      "powers": [
+        "Fenrir deals 2 Radiant damage to 1 target. If Fenrir deals damage this way, you may play a card."
+      ],
+      "icons": [
+        "GainHP",
+        "ReduceDamageTaken",
+        "DealDamageRadiant",
+        "PlayCardNow"
+      ],
+      "flavorText": "By the Pale Moon's Light",
+      "flavorReference": "Inscription on Pale Moon's Pendant"
+    },
+    {
+      "identifier": "HungerOfTheWolf",
+      "title": "Hunger of The Wolf",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "feral",
+        "limited"
+      ],
+      "body": [
+        "{human} At the start of your turn, Fenrir may deal himself 1 Psychic damaage. If he does, Transform.",
+        "{wolf} When Fenrir reduces a target to 0 HP, he regains 1 HP"
+      ],
+      "icons": [
+        "DealDamagePsychic",
+        "GainHP"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Fenrir",
+          "text": "Sometimes, I can't hold the wolf in."
+        }
+      ],
+      "flavorReference": "Fenrir, Blood Moon #11"
+    },
+    {
+      "identifier": "Frenzy",
+      "title": "Frenzy",
+      "count": 1,
+      "keywords": [
+        "ongoing",
+        "feral"
+      ],
+      "body": [
+        "At the start of your turn, if Fenrir is not in Wolf Form, or if there are no cards under this, destroy this card. Otherwise destroy a card under this one.",
+        "{wolf} When Fenrir destroys a target, put it under this card. Increase damage dealt by Fenrir by 1 for every 2 cards under this one.",
+        "When this card enters play, destroy a non-character target with 3HP or less or a Device."
+      ],
+      "icons": [
+        "DestroySelf",
+        "IncreaseDamageDealt"
+      ],
+      "flavorQuotes": [
+        {
+          "text": "Hun, Go Wild.",
+          "identifier": "Artificier"
+        }
+      ],
+      "flavorReference": "Artificier, Blood Moon #11"
+    },
+    {
+      "identifier": "Meditate",
+      "title": "Meditate",
+      "count": 1,
+      "keywords": "ongoing",
+      "body": [
+        "{human} When you would draw a card, instead search your deck for a card and put it in your hand. At the start of your turn, destroy this card.",
+        "{wolf} At the end of your turn, destroy this card and draw a card.",
+        "If Fenrir would deal or be dealt damage, destroy this card."
+      ],
+      "icons": [
+        "Search",
+        "DestroySelf"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Soulmaurai",
+          "text": "A deep mindstate and{BR}you might yet reach him."
+        }
+      ],
+      "flavorReference": "Soulmaurai, Bot and Souled #3"
+    },
+
+    {
+      "identifier": "GeekAndSunder",
+      "title": "Geek And Sunder",
+      "count": 3,
+      "keywords": [
+        "one-shot",
+        "feral"
+      ],
+      "body": [
+        "{human} Draw 2 cards",
+        "{wolf} Destroy an Ongoing card, then deal its owner 2 Melee damage."
+      ],
+      "icons": [
+        "DrawCardNow",
+        "DestroyOngoing",
+        "DestroyDevice",
+        "DealDamageMelee"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "A beautiful mind, razor sharp claws.{BR}What's not to love."
+        }
+      ],
+      "flavorReference": "Artificier, Moonbeams and Dragon Heartstrings"
+    },
+    {
+      "identifier": "FuriousStrikes",
+      "title": "Furious Strikes",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "feral"
+      ],
+      "body": [
+        "Deal 1 target 1 Melee damage",
+        "{wolf} Deal up to 2 targets 2 Melee damage. If {Frenzy} is in play, Deal up to 2 targets 2 Melee Damage"
+      ],
+      "icons": [
+        "DealDamageMelee"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "You have me surrounded?{BR}I doubt you've met my husband."
+        }
+      ],
+      "flavorReference": "Artificier, Moonbeams and Dragon Heartstrings"
+    },
+    {
+      "identifier": "NaturalWeapons",
+      "title": "Natural Weapons",
+      "count": 2,
+      "keywords": [
+        "equipment",
+        "limited"
+      ],
+      "body": "{wolf} When Fenrir deals Psychic damage to a target, reduce damage dealt by that target until the start of your next turn.",
+      "powers": [
+        "{human} One hero may draw a card now.{BR}{wolf} Fenrir deals 1 target 1 Melee then 1 Psychic Damage. If {Frenzy} is in play, increase the Melee damage by 2"
+      ],
+      "icons": [
+        "ReduceDamageDealt",
+        "DrawCardNow",
+        "DealDamageMelee",
+        "DealDamagePsychic"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Fenrir",
+          "text": "I shall rend you all in twain{BR}should you hurt him!"
+        }
+      ],
+      "flavorReference": "Fenrir, Ark-Hive: Hunted"
+    },
+    {
+      "identifier": "UnleashYourself",
+      "title": "Unleash Yourself",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "feral"
+      ],
+      "body": [
+        "{human} Transform. You may use Fenrir's innate power now.",
+        "{wolf} You may search your deck for Frenzy and put it into hand. You may play a card or deal 1 target 3 Melee damage."
+      ],
+      "icons": [
+        "Search",
+        "DealDamagePsychic",
+        "DealDamageMelee"
+      ],
+      "flavorQuotes": [
+        {
+          "text": "Sometimes you just have to let loose.",
+          "identifier": "Fenrir"
+        }
+      ],
+      "flavorReference": "Fenrir, Bahamut's Dusk"
+    },
+
+    {
+      "identifier": "MaintainControl",
+      "title": "Maintain Control",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": [
+        "{human} At the end of your turn, you may discard any number of Feral cards. You may draw as many cards as you discarded this way.",
+        "{wolf} The first time you play a Feral card each turn, you may play a non-Feral card."
+      ],
+      "icons": [
+        "StartOfTurnAction",
+        "Discard",
+        "DrawCardNow",
+        "PlayCardNow"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Soulmaurai",
+          "text": "Just focus on your center,{BR}bring the two halves together"
+        }
+      ],
+      "flavorReference": "Soulmaurai, New Moonlight #2"
+    },
+    {
+      "identifier": "MoonlightInvestigations",
+      "title": "Moonlight Investigations",
+      "count": 3,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": "You may draw an extra card on your draw phase.",
+      "powers": "You may search your deck for a Non-Feral card and put it into your hand. You may destroy this card to play a card now.",
+      "icons": [
+        "DrawCardExtra",
+        "Search",
+        "DestroySelf",
+        "PlayCardNow"
+      ],
+      "flavorText": "We take the cases no one else will",
+      "flavorReference": "Moonlight Investigations Slogan"
+    },
+    {
+      "identifier": "OtherHand",
+      "title": "The Other Hand",
+      "count": 2,
+      "keywords": [
+        "ongoing",
+        "limited"
+      ],
+      "body": [
+        "{human} You may play an additional card on your play phase.",
+        "{wolf} The first time Fenrir deals Melee damage each turn, he then deals that target 1 Psychic damage."
+      ],
+      "icons": [
+        "PlayCardExtra",
+        "DealDamagePsychic"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "RedHood",
+          "text": "I'm not afraid of you!"
+        },
+        {
+          "identifier": "Fenrir",
+          "text": "You [b]should[/b] be"
+        }
+      ],
+      "flavorReference": "Blood Moon #13"
+    },
+
+    {
+      "identifier": "TameYourself",
+      "title": "Tame Yourself",
+      "count": 4,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "{human} Search your deck or trash for Meditate and put it into play.",
+        "{wolf} Destroy all cards under Frenzy, then destroy Frenzy. For each card destroyed this way, Fenrir regains 1 HP. If no cards are destroyed this way, Detransform."
+      ],
+      "icons": [
+        "Search",
+        "DestroyCard",
+        "RegainHP"
+      ],
+      "flavorQuotes": [
+        {
+          "text": "No. [b]I[/b] am in control.",
+          "identifier": "Fenrir"
+        }
+      ],
+      "flavorReference": "Fenrir, Bot and Souled #12"
+    },
+    {
+      "identifier": "ByPaleMoonlight",
+      "title": "By Pale Moonlight",
+      "count": 4,
+      "keywords": [
+        "one-shot"
+      ],
+      "body": [
+        "Search for the Pale Moon Pendant and put it into play.",
+        "{human} {Fenrir} regains 2 HP",
+        "{wolf} Increase the next damage dealt to a non-Hero target by {Fenrir} by 2"
+      ],
+      "icons": [
+        "Search",
+        "GainHP",
+        "IncreaseDamageDealt"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Fenrir",
+          "text": "The Moon is the only light."
+        },
+        {
+          "identifier": "ScarletX",
+          "text": "That's why I like it."
+        }
+      ],
+      "flavorReference": "Silver Moonlight"
+    },
+    {
+      "identifier": "GreatCleave",
+      "title": "Great Cleave",
+      "count": 3,
+      "keywords": [
+        "one-shot",
+        "feral"
+      ],
+      "body": [
+        "{human} Reveal the top card of your deck, if it is a One-shot, put it into play, otherwise discard it.",
+        "{wolf} Deal 1 target 5 Melee damage.{BR}If the target would be reduced to less than 0 HP, {Fenrir} deals the difference to a second target."
+      ],
+      "icons": [
+        "Manipulate",
+        "DealDamageMelee"
+      ],
+      "flavorQuotes": [
+        {
+          "identifier": "Artificier",
+          "text": "Nothing will stop him until he finds me."
+        }
+      ],
+      "flavorReference": "Artificer, Moonbeams and Dragon Heartstrings"
+    },
+    {
+      "identifier": "TransformingHowl",
+      "title": "Transforming Howl",
+      "count": 4,
+      "keywords": [
+        "one-shot",
+        "feral"
+      ],
+      "body": [
+        "{human} Transform.",
+        "{wolf} {Fenrir} deals each Non-Hero target 1 Sonic damage."
+      ],
+      "icons": [
+        "Search",
+        "DealDamageSonic"
+      ],
+      "flavorText": "A howl that instills fear to all{BR}who threaten Riverport.",
+      "flavorReference": "Artificier, Moonlight #1"
+    }
+  ]
+}

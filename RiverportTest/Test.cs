@@ -15,18 +15,13 @@ namespace RiverportTest
         //protected TurnTakerController baddies { get { return FindVillain("TheBaddies"); } }
         //protected TurnTakerController hug { get { return FindVillain("TheHugMonsterTeam"); } }
         //protected HeroTurnTakerController migrant { get { return FindHero("MigrantCoder"); } }
-        protected HeroTurnTakerController dragontamer { get { return FindHero("Dragontamer"); } }
         protected HeroTurnTakerController fenrir { get { return FindHero("Fenrir"); } }
-        protected HeroTurnTakerController weaver { get { return FindHero("Weaver"); } }
-        protected HeroTurnTakerController scarletX { get { return FindHero("ScarletX"); } }
-        protected HeroTurnTakerController arkhive { get { return FindHero("ArkHive"); } }
-        protected HeroTurnTakerController artificer { get { return FindHero("Artificier"); } }
         [Test()]
         public void TestModWorks()
         {
             //SetupGameController("Workshopping.TheBaddies", "Workshopping.MigrantCoder", "Workshopping.DevStream");
             //Assert.AreEqual(3, this.GameController.TurnTakerControllers.Count());
-            SetupGameController("BaronBlade", "Riverport.Weaver", "Riverport.Dragontamer", "Riverport.Fenrir", "Riverport.ArkHive", "FreedomTower");
+            SetupGameController("BaronBlade", "Riverport.Fenrir", "Legacy", "Wraith", "FreedomTower");
 
             //Assert.IsNotNull(baddies);
             //Assert.IsInstanceOf(typeof(TheBaddiesTurnTakerController), baddies);
@@ -35,11 +30,8 @@ namespace RiverportTest
             //Assert.IsNotNull(migrant);
             //Assert.IsInstanceOf(typeof(MigrantCoderTurnTakerController), migrant);
             //Assert.IsInstanceOf(typeof(MigrantCoderCharacterCardController), migrant.CharacterCardController);
-            Assert.IsNotNull(dragontamer);
-            Assert.IsNotNull(weaver);
             Assert.IsNotNull(fenrir);
-            Assert.IsNotNull(env);
-
+            
             //Assert.AreEqual(40, baddies.CharacterCard.HitPoints);
             //Assert.AreEqual(39, migrant.CharacterCard.HitPoints);
             //QuickHPStorage(baddies, migrant);
@@ -58,68 +50,8 @@ namespace RiverportTest
             //    QuickHPCheck(1, 1);
         }
 
-        [Test()]
-        public void TestLycanFormSwap()
-        {
-            SetupGameController("BaronBlade", "Riverport.Fenrir", "FreedomTower");
-            AssertIsInPlay("FenrirHumanCharacter");
-            PlayCard("LycanForm");
-            AssertIsInPlay("FenrirWolfCharacter");
-            DestroyCard("LycanForm");
-            AssertIsInPlay("FenrirHumanCharacter");
-        }
 
         
-
-        [Test()]
-        public void TestPaleMoonPendantAbilities()
-        {
-            SetupGameController("BaronBlade", "Riverport.Fenrir", "FreedomTower");
-
-            QuickHPStorage(fenrir);
-            PlayCard("SlashAndBurn");
-            QuickHPCheck(-4);
-            PlayCard("PaleMoonPendant");
-            QuickHPStorage(fenrir);
-            GoToEndOfTurn(fenrir);
-            GoToNextTurn();
-            QuickHPCheck(1);
-            PlayCard("LycanForm");
-            QuickHPStorage(fenrir);
-            PlayCard("SlashAndBurn");
-            QuickHPCheck(-2);
-        }
-
-        [Test()]
-        public void TestArchiveGauntletsExist()
-        {
-            SetupGameController("BaronBlade", "Riverport.Artificier", "Riverport.OnceAgain");
-
-            AssertIsInPlay("ArchiveGauntlets", 1, 1);
-            Card ArchiveGauntlets = FindCard(c => c.Identifier == "ArchiveGauntlets");
-            TokenPool tp = ArchiveGauntlets.FindTokenPool("ManaPool");
-            AssertTokenPoolCount(tp, 5);
-        }
-
-        [Test()]
-        public void TestKnowledgeAndPowerWithNanobot()
-        {
-            SetupGameController("BaronBlade", "Riverport.ArkHive", "Riverport.Fenrir", "Riverport.Weaver", "FreedomTower");
-
-            Card Spare = GetCard("SpareNanobot");
-            Card KnowledgeAndPower = GetCard("KnowledgeAndPower");
-
-            PlayCard(KnowledgeAndPower);
-            DecisionSelectCard = fenrir.CharacterCard;
-            PlayCard(Spare);
-            AssertNextToCard(Spare, fenrir.CharacterCard);
-            QuickHandStorage(arkhive, fenrir);
-            DecisionSelectCard = KnowledgeAndPower;
-            DecisionYesNo = true;
-            DiscardCard(fenrir);
-            QuickHandCheck(1, 0);
-        }
-
         //[Test()]
         //public void TestPunchingBag()
         //{

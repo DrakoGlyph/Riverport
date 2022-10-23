@@ -1,0 +1,96 @@
+{
+  "main": {
+    "id": "8762d335664fade3",
+    "type": "split",
+    "children": [
+      {
+        "id": "a851c5ac9dc4e5bb",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Lake Origin.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a018ec42f003d398",
+    "type": "split",
+    "children": [
+      {
+        "id": "e8698a3e094c61f4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d7fb1c47697d5a80",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "d35e647c7f91a196",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "27bfd590313c577f",
+    "type": "split",
+    "children": [
+      {
+        "id": "72037d262d48d279",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "440fc9f3e0505a8b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Lake Origin.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "a851c5ac9dc4e5bb",
+  "lastOpenFiles": [
+    "Lake Origin.md",
+    "Events/The Monster At Summer Camp.md",
+    "Heroes/Grayson Lunabellum.md"
+  ]
+}

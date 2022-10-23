@@ -16,7 +16,7 @@ namespace RiverportTest
             Log.WarningDelegate += Output;
             Log.ErrorDelegate += Output;
 
-            var Riverport = Assembly.GetAssembly(typeof(Riverport.Dragontamer.DragontamerTurnTakerController));
+            var Riverport = Assembly.GetAssembly(typeof(Riverport.Fenrir.FenrirHumanCharacterCardController));
             ModHelper.AddAssembly("Riverport", Riverport);
 
             // Tell the engine about our mod assembly so it can load up our code.

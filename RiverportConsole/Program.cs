@@ -17,8 +17,7 @@ using Handelabra;
 using Boomlagoon.JSON;
 using System.Xml.XPath;
 
-using Riverport.Dragontamer;
-using Riverport.Weaver;
+using Riverport.Fenrir;
 
 namespace Handelabra.MyModConsole // this has to be this way to work around an EngineCommon issue, will be fixed soon.
 {
@@ -53,7 +52,7 @@ namespace Handelabra.MyModConsole // this has to be this way to work around an E
             bool challenge = false;
             Dictionary<string, string> promos = new Dictionary<string, string>();
 
-            var Riverport = Assembly.GetAssembly(typeof(DragontamerTurnTakerController));
+            var Riverport = Assembly.GetAssembly(typeof(FenrirHumanCharacterCardController));
             ModHelper.AddAssembly("Riverport", Riverport);
             
             // Set up a game how you want, stack decks, etc.
