@@ -6,7 +6,7 @@ This is officially the "2022 Reboot" of my mod, after a long battle with inner d
 
 I'll be adding art assets as I can make them, with what humble skills I do have.
 
-> Ambitions <
+## Ambitions 
 
 Riverport is divided into 6 Phases, with the goal of telling a self-contained story ranging from humble beginnings to saving Riverport's own little pocket of the Multiverse!
 
