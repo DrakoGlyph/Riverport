@@ -10,9 +10,14 @@ I'll be adding art assets as I can make them, with what humble skills I do have.
 
 Riverport is divided into 6 Phases, with the goal of telling a self-contained story ranging from humble beginnings to saving Riverport's own little pocket of the Multiverse!
 
-Origins             < -- We are here!
+Origins             <- We are here!
+
 Rogue's Gallery
+
 Into the Fray
+
 Fantasy Incursion
+
 Reckoning
+
 Redemption
